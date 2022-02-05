@@ -54,4 +54,4 @@ Here are some ideas to get you started:
 3. QQ: 2369913161
 4. Discord: Catrol#4908
 
-[![Ashutosh's github activity graph](https://activity-graph.herokuapp.com/graph?username=weclont&theme=minimal)](https://github.com/ashutosh00710/github-readme-activity-graph)
+[![Ashutosh's github activity graph](https://activity-graph.herokuapp.com/graph?username=Dynesshely&theme=minimal)](https://github.com/ashutosh00710/github-readme-activity-graph)

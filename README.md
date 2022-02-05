@@ -32,3 +32,5 @@ Here are some ideas to get you started:
   2. Gmail: dynesshely@gmail.com
 3. QQ: 2369913161
 4. Discord: Catrol#4908
+
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Dynesshely)](https://github.com/anuraghazra/github-readme-stats)

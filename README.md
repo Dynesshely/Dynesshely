@@ -20,13 +20,13 @@ Here are some ideas to get you started:
   <!-- &theme=graywhite -->
 </a>
 
-# 🔭 I’m currently working on
+# 🔭 Currently working on
 1. OI
 2. KitX
 3. CatrolHub
 4. CoronaLauncher
 
-# 🌱 I’m currently learning
+# 🌱 Currently learning
 1. Algorithms
 2. Node.js
 3. C++

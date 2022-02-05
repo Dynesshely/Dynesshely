@@ -15,6 +15,10 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
+<a href="https://github.com/anuraghazra/github-readme-stats">
+  <img align="right" src="https://github-readme-stats.vercel.app/api?username=weclont&show_icons=true&theme=graywhite" />
+</a>
+
 # 🔭 I’m currently working on
 1. OI
 2. KitX
@@ -33,4 +37,4 @@ Here are some ideas to get you started:
 3. QQ: 2369913161
 4. Discord: Catrol#4908
 
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Dynesshely)](https://github.com/anuraghazra/github-readme-stats)
+<!--[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Dynesshely)](https://github.com/anuraghazra/github-readme-stats)-->

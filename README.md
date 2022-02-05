@@ -31,11 +31,13 @@ Here are some ideas to get you started:
 2. Node.js
 3. C++
 
+<div align="right">
 # 📫 How to reach me
 1. Mail:
   1. QQ Mail: 2369913161@qq.com
   2. Gmail: dynesshely@gmail.com
 3. QQ: 2369913161
 4. Discord: Catrol#4908
+</div>
 
 <!--[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Dynesshely)](https://github.com/anuraghazra/github-readme-stats)-->

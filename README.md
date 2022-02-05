@@ -21,13 +21,13 @@ Here are some ideas to get you started:
   <!-- &theme=graywhite -->
 </a>
 
-# 🔭 Currently working on
+# 🔭 Working on
 1. OI
 2. KitX
 3. CatrolHub
 4. CoronaLauncher
 
-# 🌱 Currently learning
+# 🌱 Learning
 ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 ![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)

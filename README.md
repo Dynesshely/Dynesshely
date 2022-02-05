@@ -14,3 +14,21 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+# 🔭 I’m currently working on
+1. OI
+2. KitX
+3. CatrolHub
+4. CoronaLauncher
+
+# 🌱 I’m currently learning
+1. Algorithms
+2. Node.js
+3. C++
+
+# 📫 How to reach me
+1. Mail:
+  1. QQ Mail: 2369913161@qq.com
+  2. Gmail: dynesshely@gmail.com
+3. QQ: 2369913161
+4. Discord: Catrol#4908

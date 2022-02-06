@@ -1,9 +1,5 @@
 ### Hi there 👋
 
-[![](https://img.shields.io/badge/blog-blog.catrol.cn-blue.svg?style=for-the-badge)](https://blog.catrol.cn)
-[![](https://img.shields.io/badge/mail-2369913161@qq.com-red.svg?style=for-the-badge)](mailto:2369913161@qq.com)
-[![](https://img.shields.io/badge/mail-dynesshely@gmail.com-yellow.svg?style=for-the-badge)](mailto:dynesshely@gmail.com)
-
 <!--
 **Dynesshely/Dynesshely** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
@@ -57,9 +53,11 @@ Here are some ideas to get you started:
 
 # 📫 How to reach me
 1. Mail:
-  1. QQ Mail: 2369913161@qq.com
-  2. Gmail: dynesshely@gmail.com
-3. QQ: 2369913161
-4. Discord: Catrol#4908
+[![](https://img.shields.io/badge/mail-2369913161@qq.com-red.svg?style=for-the-badge)](mailto:2369913161@qq.com)
+[![](https://img.shields.io/badge/mail-dynesshely@gmail.com-yellow.svg?style=for-the-badge)](mailto:dynesshely@gmail.com)
+2. QQ: 2369913161
+3. Discord: Catrol#4908
+4. Blog:
+[![](https://img.shields.io/badge/blog-blog.catrol.cn-blue.svg?style=for-the-badge)](https://blog.catrol.cn)
 
 [![Ashutosh's github activity graph](https://activity-graph.herokuapp.com/graph?username=Dynesshely&theme=minimal)](https://github.com/ashutosh00710/github-readme-activity-graph)

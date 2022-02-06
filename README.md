@@ -59,14 +59,18 @@ Here are some ideas to get you started:
 ![Gitee](https://img.shields.io/badge/Gitee-C71D23?style=for-the-badge&logo=gitee&logoColor=white)
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 ![GitLab](https://img.shields.io/badge/gitlab-%23181717.svg?style=for-the-badge&logo=gitlab&logoColor=white)
+![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white)
+![MicrosoftSQLServer](https://img.shields.io/badge/SQL%20Sever-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white)
 
 # 📫 How to reach me
 [![](https://img.shields.io/badge/Blog-blog.catrol.cn-blue.svg?style=for-the-badge)](https://blog.catrol.cn)
 [![](https://img.shields.io/badge/Mail-2369913161@qq.com-red.svg?style=for-the-badge)](mailto:2369913161@qq.com)
-[![](https://img.shields.io/badge/Mail-dynesshely@gmail.com-yellow.svg?style=for-the-badge)](mailto:dynesshely@gmail.com)
+[![Gmail](https://img.shields.io/badge/dynesshely@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:dynesshely@gmail.com)
 [![](https://img.shields.io/badge/QQ-2369913161-blue.svg?style=for-the-badge)](tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=2369913161&website=www.oicqzone.com)
 ![Discord](https://img.shields.io/badge/Catrol%234908-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white)
-[![Slack](https://img.shields.io/badge/@U028VNT9XD1-4A154B?style=for-the-badge&logo=slack&logoColor=white)](https://catrolworkspace.slack.com/team/U028VNT9XD1)
+![Slack](https://img.shields.io/badge/@U028VNT9XD1-4A154B?style=for-the-badge&logo=slack&logoColor=white)]
 [![Twitter](https://img.shields.io/badge/@CATROL18-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/CATROL18)
 [![Twitch](https://img.shields.io/badge/dynesshely-%239146FF.svg?style=for-the-badge&logo=Twitch&logoColor=white)](https://www.twitch.tv/dynesshely)
 ![WeChat](https://img.shields.io/badge/2369913161-07C160?style=for-the-badge&logo=wechat&logoColor=white)

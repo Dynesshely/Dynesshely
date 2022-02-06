@@ -55,7 +55,7 @@ Here are some ideas to get you started:
 [![](https://img.shields.io/badge/Mail-2369913161@qq.com-red.svg?style=for-the-badge)](mailto:2369913161@qq.com)
 [![](https://img.shields.io/badge/Mail-dynesshely@gmail.com-yellow.svg?style=for-the-badge)](mailto:dynesshely@gmail.com)
 [![](https://img.shields.io/badge/QQ-2369913161-blue.svg?style=for-the-badge)](tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=2369913161&website=www.oicqzone.com)
-[![](https://img.shields.io/badge/Discord-Catrol#4908-blue.svg?style=for-the-badge)](https://blog.catrol.cn)
+[![](https://img.shields.io/badge/Discord-Catrol%234908-blue.svg?style=for-the-badge)](https://blog.catrol.cn)
 [![](https://img.shields.io/badge/Blog-blog.catrol.cn-blue.svg?style=for-the-badge)](https://blog.catrol.cn)
 
 

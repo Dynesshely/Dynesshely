@@ -30,7 +30,7 @@ Here are some ideas to get you started:
 4. CoronaLauncher
 
 # 🌱 Learning
-<!--![C#](https://img.shields.io/badge/c#-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=green)-->
+![C#](https://img.shields.io/badge/csharp.svg?style=for-the-badge&logo=c%2B%2B&logoColor=green)
 ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![HTML](https://img.shields.io/badge/-HTML5-333.svg?style=for-the-badge&logo=node.js&logoColor=white)

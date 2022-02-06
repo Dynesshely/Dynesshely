@@ -75,4 +75,4 @@ Here are some ideas to get you started:
 [![Twitch](https://img.shields.io/badge/dynesshely-%239146FF.svg?style=for-the-badge&logo=Twitch&logoColor=white)](https://www.twitch.tv/dynesshely)
 ![WeChat](https://img.shields.io/badge/2369913161-07C160?style=for-the-badge&logo=wechat&logoColor=white)
 
-[![Ashutosh's github activity graph](https://activity-graph.herokuapp.com/graph?username=Dynesshely&theme=minimal)](https://github.com/ashutosh00710/github-readme-activity-graph?theme=dark)
+[![Ashutosh's github activity graph](https://activity-graph.herokuapp.com/graph?username=Dynesshely&theme=react-dark)](https://github.com/ashutosh00710/github-readme-activity-graph)

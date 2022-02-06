@@ -1,6 +1,8 @@
 ### Hi there 👋
 
 [![](https://img.shields.io/badge/blog-@catrol-blue.svg?style=for-the-badge)](https://blog.catrol.cn)
+[![](https://img.shields.io/badge/mail-@2369913161@qq.com-red.svg?style=for-the-badge)](mailto:2369913161@qq.com)
+[![](https://img.shields.io/badge/mail-@dynesshely@gmail.com-yellow.svg?style=for-the-badge)](mailto:dynesshely@gmail.com)
 
 <!--
 **Dynesshely/Dynesshely** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.

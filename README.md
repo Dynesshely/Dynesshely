@@ -66,9 +66,9 @@ Here are some ideas to get you started:
 [![](https://img.shields.io/badge/Mail-dynesshely@gmail.com-yellow.svg?style=for-the-badge)](mailto:dynesshely@gmail.com)
 [![](https://img.shields.io/badge/QQ-2369913161-blue.svg?style=for-the-badge)](tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=2369913161&website=www.oicqzone.com)
 ![Discord](https://img.shields.io/badge/Catrol%234908-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white)
-[![Slack](https://img.shields.io/badge/U028VNT9XD1-4A154B?style=for-the-badge&logo=slack&logoColor=white)](https://catrolworkspace.slack.com/team/U028VNT9XD1)
-[![Twitter](https://img.shields.io/badge/<handle>-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/CATROL18)
-[![Twitch](https://img.shields.io/badge/<handle>-%239146FF.svg?style=for-the-badge&logo=Twitch&logoColor=white)](https://www.twitch.tv/dynesshely)
+[![Slack](https://img.shields.io/badge/@U028VNT9XD1-4A154B?style=for-the-badge&logo=slack&logoColor=white)](https://catrolworkspace.slack.com/team/U028VNT9XD1)
+[![Twitter](https://img.shields.io/badge/@CATROL18-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/CATROL18)
+[![Twitch](https://img.shields.io/badge/dynesshely-%239146FF.svg?style=for-the-badge&logo=Twitch&logoColor=white)](https://www.twitch.tv/dynesshely)
 ![WeChat](https://img.shields.io/badge/2369913161-07C160?style=for-the-badge&logo=wechat&logoColor=white)
 
 [![Ashutosh's github activity graph](https://activity-graph.herokuapp.com/graph?username=Dynesshely&theme=minimal)](https://github.com/ashutosh00710/github-readme-activity-graph)

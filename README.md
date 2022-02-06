@@ -28,7 +28,7 @@ Here are some ideas to get you started:
 4. CoronaLauncher
 
 # 🌱 Learning
-![C#](https://img.shields.io/badge/csharp.svg?style=for-the-badge&logo=c%2B%2B&logoColor=green)
+![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c%2B%2B&logoColor=green)
 ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![HTML](https://img.shields.io/badge/-HTML5-333.svg?style=for-the-badge&logo=node.js&logoColor=white)
@@ -52,11 +52,11 @@ Here are some ideas to get you started:
 -->
 
 # 📫 How to reach me
+[![](https://img.shields.io/badge/Blog-blog.catrol.cn-blue.svg?style=for-the-badge)](https://blog.catrol.cn)
 [![](https://img.shields.io/badge/Mail-2369913161@qq.com-red.svg?style=for-the-badge)](mailto:2369913161@qq.com)
 [![](https://img.shields.io/badge/Mail-dynesshely@gmail.com-yellow.svg?style=for-the-badge)](mailto:dynesshely@gmail.com)
 [![](https://img.shields.io/badge/QQ-2369913161-blue.svg?style=for-the-badge)](tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=2369913161&website=www.oicqzone.com)
-[![](https://img.shields.io/badge/Discord-Catrol%234908-blue.svg?style=for-the-badge)](https://blog.catrol.cn)
-[![](https://img.shields.io/badge/Blog-blog.catrol.cn-blue.svg?style=for-the-badge)](https://blog.catrol.cn)
+[![](https://img.shields.io/badge/Discord-Catrol%234908-blue.svg?style=for-the-badge)]()
 
 
 [![Ashutosh's github activity graph](https://activity-graph.herokuapp.com/graph?username=Dynesshely&theme=minimal)](https://github.com/ashutosh00710/github-readme-activity-graph)

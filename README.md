@@ -33,10 +33,11 @@ Here are some ideas to get you started:
 <!--![C#](https://img.shields.io/badge/c#-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=green)-->
 ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![HTML](https://img.shields.io/badge/-HTML5-333.svg?style=for-the-badge&logo=node.js&logoColor=white)
 ![CSS](https://img.shields.io/badge/-CSS3-1572B6.svg?style=for-the-badge&logo=node.js&logoColor=white)
 ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
+![JavaScript](https://img.shields.io/badge/Javascript-276DC3.svg?style=for-the-badge&logo=node.js&logoColor=white)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Material UI](https://img.shields.io/badge/materialui-%230081CB.svg?style=for-the-badge&logo=material-ui&logoColor=white)
 
 <!--

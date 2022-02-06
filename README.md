@@ -15,9 +15,11 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
+[![](https://img.shields.io/badge/blog-@champyin-red.svg)](https://blog.catrol.cn)
+
 <!--[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Dynesshely)](https://github.com/anuraghazra/github-readme-stats)-->
 <a href="https://github.com/anuraghazra/github-readme-stats">
-  <img align="right" src="https://github-readme-stats.vercel.app/api?username=Dynesshely&show_icons=true" />
+  <img align="right" src="https://github-readme-stats.vercel.app/api?username=Dynesshely&show_icons=true&theme=dark" />
   <!-- &theme=graywhite -->
 </a>
 
@@ -28,10 +30,12 @@ Here are some ideas to get you started:
 4. CoronaLauncher
 
 # 🌱 Learning
-![C#](https://img.shields.io/badge/c#-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=green)
+<!--![C#](https://img.shields.io/badge/c#-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=green)-->
 ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![HTML](https://img.shields.io/badge/-HTML5-333.svg?style=for-the-badge&logo=node.js&logoColor=white)
+![CSS](https://img.shields.io/badge/-CSS3-1572B6.svg?style=for-the-badge&logo=node.js&logoColor=white)
 ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
 ![Material UI](https://img.shields.io/badge/materialui-%230081CB.svg?style=for-the-badge&logo=material-ui&logoColor=white)
 

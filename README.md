@@ -36,7 +36,7 @@ Here are some ideas to get you started:
 ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/Javascript-276DC3.svg?style=for-the-badge&logo=node.js&logoColor=white)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
-![Material UI](https://img.shields.io/badge/materialui-%230081CB.svg?style=for-the-badge&logo=material-ui&logoColor=white)
+![MaterialDesign](https://img.shields.io/badge/materialui-%230081CB.svg?style=for-the-badge&logo=material-ui&logoColor=white)
 
 <!--
 ![Socket.io](https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101)
@@ -52,12 +52,11 @@ Here are some ideas to get you started:
 -->
 
 # 📫 How to reach me
-1. Mail:
-[![](https://img.shields.io/badge/mail-2369913161@qq.com-red.svg?style=for-the-badge)](mailto:2369913161@qq.com)
-[![](https://img.shields.io/badge/mail-dynesshely@gmail.com-yellow.svg?style=for-the-badge)](mailto:dynesshely@gmail.com)
-2. QQ: 2369913161
-3. Discord: Catrol#4908
-4. Blog:
-[![](https://img.shields.io/badge/blog-blog.catrol.cn-blue.svg?style=for-the-badge)](https://blog.catrol.cn)
+[![](https://img.shields.io/badge/Mail-2369913161@qq.com-red.svg?style=for-the-badge)](mailto:2369913161@qq.com)
+[![](https://img.shields.io/badge/Mail-dynesshely@gmail.com-yellow.svg?style=for-the-badge)](mailto:dynesshely@gmail.com)
+[![](https://img.shields.io/badge/QQ-2369913161-blue.svg?style=for-the-badge)](tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=2369913161&website=www.oicqzone.com)
+[![](https://img.shields.io/badge/Discord-Catrol#4908-blue.svg?style=for-the-badge)](https://blog.catrol.cn)
+[![](https://img.shields.io/badge/Blog-blog.catrol.cn-blue.svg?style=for-the-badge)](https://blog.catrol.cn)
+
 
 [![Ashutosh's github activity graph](https://activity-graph.herokuapp.com/graph?username=Dynesshely&theme=minimal)](https://github.com/ashutosh00710/github-readme-activity-graph)

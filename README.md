@@ -26,7 +26,7 @@ Here are some ideas to get you started:
 3. CatrolHub
 4. CoronaLauncher
 
-<br>
+<br><br>
 
 <a href="https://github.com/anuraghazra/github-readme-stats">
   <img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dynesshely&theme=dark&layout=compact" />
@@ -46,6 +46,7 @@ Here are some ideas to get you started:
 ![LaTeX](https://img.shields.io/badge/Latex-%23008080.svg?style=for-the-badge&logo=latex&logoColor=white)
 ![Shell Script](https://img.shields.io/badge/Shell_Script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
 
+<br>
 
 # 🍞 More
 |  🥩 Used OS   | 👌 Used Tools  |

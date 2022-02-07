@@ -22,8 +22,8 @@ Here are some ideas to get you started:
 
 # 🔭 Working on
 1. OI
-2. KitX
-3. CatrolHub
+2. [KitX](https://github.com/Catrol-org/KitX)
+3. [CatrolHub](https://github.com/Catrol-org/CatrolHub)
 4. CoronaLauncher
 
 <br><br>

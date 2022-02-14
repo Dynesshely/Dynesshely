@@ -65,6 +65,7 @@ Here are some ideas to get you started:
 [![](https://img.shields.io/badge/QQ-2369913161-blue.svg?style=for-the-badge)](tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=2369913161&website=www.oicqzone.com)
 ![WeChat](https://img.shields.io/badge/2369913161-07C160?style=for-the-badge&logo=wechat&logoColor=white)
 ![Discord](https://img.shields.io/badge/Catrol%234908-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white)
+[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/Dynesshely)
 ![Slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)
 [![Twitter](https://img.shields.io/badge/@CATROL18-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/CATROL18)
 [![Twitch](https://img.shields.io/badge/dynesshely-%239146FF.svg?style=for-the-badge&logo=Twitch&logoColor=white)](https://www.twitch.tv/dynesshely)

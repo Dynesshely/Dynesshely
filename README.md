@@ -15,6 +15,10 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
+<a href="https://github.com/anuraghazra/github-readme-stats" target="_blank">
+  <img align="right" src="https://github-readme-stats.vercel.app/api?username=Dynesshely&show_icons=true&theme=dracula&include_all_commits=true"/>
+</a>
+
 # 🌱 Learning
 ![C#](https://img.shields.io/badge/C%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)
 ![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
@@ -32,25 +36,16 @@ Here are some ideas to get you started:
 ![Rust](https://img.shields.io/badge/rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white)
 ![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white)
 
-# ✈️ Status
-
-<p align="center">
-  <a href="https://github.com/anuraghazra/github-readme-stats" target="_blank">
-    <img align="left" src="https://github-readme-stats.vercel.app/api?username=Dynesshely&show_icons=true&theme=dracula&include_all_commits=true"/>
-  </a>
-  <a href="https://github.com/anuraghazra/github-readme-stats" target="_blank">
-    <img align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dynesshely&theme=dark&layout=compact"/>
-  </a>
-</p>
-
-<br><br><br><br><br><br><br><br>
-
 # 🍞 More
 |  🥩 Used OS   | 👌 Used Tools  |
 |  ----  | ----  |
 | ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white) ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white) ![Kali](https://img.shields.io/badge/Kali-268BEE?style=for-the-badge&logo=kalilinux&logoColor=white) ![Mac OS](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=macos&logoColor=F0F0F0) ![IOS](https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white) ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white) ![Debian](https://img.shields.io/badge/Debian-D70A53?style=for-the-badge&logo=debian&logoColor=white) ![Deepin](https://img.shields.io/badge/Deepin-007CFF?style=for-the-badge&logo=deepin&logoColor=white) ![Cent OS](https://img.shields.io/badge/cent%20os-002260?style=for-the-badge&logo=centos&logoColor=F0F0F0)  |  ![CMake](https://img.shields.io/badge/CMake-%23008FBA.svg?style=for-the-badge&logo=cmake&logoColor=white) ![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white) ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white) ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white) ![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white) ![MicrosoftSQLServer](https://img.shields.io/badge/SQL%20Sever-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white) |
 
 <br>
+
+<a href="https://github.com/anuraghazra/github-readme-stats" target="_blank">
+  <img align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dynesshely&theme=dark&layout=compact"/>
+</a>
 
 # 📫 How to reach me
 [![](https://img.shields.io/badge/Blog-blog.catrol.cn-blue.svg?style=for-the-badge)](https://blog.catrol.cn)

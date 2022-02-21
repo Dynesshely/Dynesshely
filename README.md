@@ -34,9 +34,14 @@ Here are some ideas to get you started:
 
 # ✈️ Status
 
-| Readme Stats | Top langs |
-| ----- | ----- |
-| [![](https://github-readme-stats.vercel.app/api?username=Dynesshely&show_icons=true&theme=dracula&include_all_commits=true)](https://github.com/anuraghazra/github-readme-stats) | [![](https://github-readme-stats.vercel.app/api/top-langs/?username=Dynesshely&theme=dark&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
+<p align="center">
+  <a href="https://github.com/anuraghazra/github-readme-stats" target="_blank">
+    <img src="https://github-readme-stats.vercel.app/api?username=Dynesshely&show_icons=true&theme=dracula&include_all_commits=true"/>
+  </a>
+  <a href="https://github.com/anuraghazra/github-readme-stats" target="_blank">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dynesshely&theme=dark&layout=compact"/>
+  </a>
+</p>
 
 # 🍞 More
 |  🥩 Used OS   | 👌 Used Tools  |

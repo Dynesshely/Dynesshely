@@ -15,11 +15,12 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
+# 🌱 Learning
+
 <a href="https://github.com/anuraghazra/github-readme-stats" target="_blank">
   <img align="right" src="https://github-readme-stats.vercel.app/api?username=Dynesshely&show_icons=true&theme=dracula&include_all_commits=true"/>
 </a>
 
-# 🌱 Learning
 ![C#](https://img.shields.io/badge/C%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)
 ![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
 ![C++](https://img.shields.io/badge/C++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
@@ -36,6 +37,8 @@ Here are some ideas to get you started:
 ![Rust](https://img.shields.io/badge/rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white)
 ![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white)
 
+<br><br><br>
+
 # 🍞 More
 |  🥩 Used OS   | 👌 Used Tools  |
 |  ----  | ----  |
@@ -43,11 +46,12 @@ Here are some ideas to get you started:
 
 <br>
 
+# 📫 How to reach me
+
 <a href="https://github.com/anuraghazra/github-readme-stats" target="_blank">
   <img align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dynesshely&theme=dark&layout=compact"/>
 </a>
 
-# 📫 How to reach me
 [![](https://img.shields.io/badge/Blog-blog.catrol.cn-blue.svg?style=for-the-badge)](https://blog.catrol.cn)
 [![](https://img.shields.io/badge/Mail-2369913161@qq.com-red.svg?style=for-the-badge)](mailto:2369913161@qq.com)
 [![Gmail](https://img.shields.io/badge/dynesshely@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:dynesshely@gmail.com)
@@ -62,6 +66,6 @@ Here are some ideas to get you started:
 [![GitLab](https://img.shields.io/badge/gitlab-%23181717.svg?style=for-the-badge&logo=gitlab&logoColor=white)](https://gitlab.com/Dynesshely)
 [![Gitee](https://img.shields.io/badge/Gitee-C71D23?style=for-the-badge&logo=gitee&logoColor=white)](https://gitee.com/catrol)
 
-<br>
+<br><br><br><br><br>
 
 [![Ashutosh's github activity graph](https://activity-graph.herokuapp.com/graph?username=Dynesshely&theme=react-dark)](https://github.com/ashutosh00710/github-readme-activity-graph)

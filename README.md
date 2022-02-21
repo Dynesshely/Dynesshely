@@ -15,24 +15,6 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-<!--[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Dynesshely)](https://github.com/anuraghazra/github-readme-stats)-->
-<a href="https://github.com/anuraghazra/github-readme-stats">
-  <img align="right" src="https://github-readme-stats.vercel.app/api?username=Dynesshely&show_icons=true&theme=dracula&include_all_commits=true" />
-</a>
-
-# 🔭 Working on
-1. OI
-2. [KitX](https://github.com/Catrol-org/KitX)
-3. [CatrolHub](https://github.com/Catrol-org/CatrolHub)
-4. [conconcon-tri-buter](https://github.com/Dynesshely/conconcon-tri-buter)
-5. CoronaLauncher
-
-<br><br>
-
-<a href="https://github.com/anuraghazra/github-readme-stats">
-  <img align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dynesshely&theme=dark&layout=compact" />
-</a>
-
 # 🌱 Learning
 ![C#](https://img.shields.io/badge/C%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)
 ![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
@@ -50,7 +32,11 @@ Here are some ideas to get you started:
 ![Rust](https://img.shields.io/badge/rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white)
 ![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white)
 
-<br>
+# ✈️ Status
+
+| Readme Stats | Top langs |
+| ----- | ----- |
+| [![](https://github-readme-stats.vercel.app/api?username=Dynesshely&show_icons=true&theme=dracula&include_all_commits=true)](https://github.com/anuraghazra/github-readme-stats) | [![](https://github-readme-stats.vercel.app/api/top-langs/?username=Dynesshely&theme=dark&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
 
 # 🍞 More
 |  🥩 Used OS   | 👌 Used Tools  |

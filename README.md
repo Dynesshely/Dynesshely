@@ -82,10 +82,10 @@ Here are some ideas to get you started:
 <br>
 
 # 📫 How to reach me
-[![](https://img.shields.io/badge/Blog-blog.catrol.cn-blue.svg?style=for-the-badge)](https://blog.catrol.cn)
-[![](https://img.shields.io/badge/Mail-2369913161@qq.com-red.svg?style=for-the-badge)](mailto:2369913161@qq.com)
+[![Blog](https://img.shields.io/badge/Blog-blog.catrol.cn-blue.svg?style=for-the-badge)](https://blog.catrol.cn)
+[![QQMail](https://img.shields.io/badge/Mail-2369913161@qq.com-red.svg?style=for-the-badge)](mailto:2369913161@qq.com)
 [![Gmail](https://img.shields.io/badge/dynesshely@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:dynesshely@gmail.com)
-[![](https://img.shields.io/badge/QQ-2369913161-blue.svg?style=for-the-badge)](tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=2369913161&website=www.oicqzone.com)
+[![QQ](https://img.shields.io/badge/QQ-2369913161-blue.svg?style=for-the-badge)](tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=2369913161&website=www.oicqzone.com)
 ![WeChat](https://img.shields.io/badge/2369913161-07C160?style=for-the-badge&logo=wechat&logoColor=white)
 ![Discord](https://img.shields.io/badge/Catrol%234908-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white)
 [![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/Dynesshely)

@@ -28,11 +28,11 @@ Here are some ideas to get you started:
 </a>
 
 # 🔭 Working on
-1. OI
+1. OI ([competition](https://github.com/Dynesshely/competition))
 2. [KitX](https://github.com/Catrol-org/KitX)
 3. [CatrolHub](https://github.com/Catrol-org/CatrolHub)
 4. [conconcon-tri-buter](https://github.com/Dynesshely/conconcon-tri-buter)
-5. CoronaLauncher
+5. RA3 Mod -> [Corona](https://github.com/RA3CoronaDevelopers)
 
 <br><br>
 

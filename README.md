@@ -28,16 +28,18 @@ Here are some ideas to get you started:
 </a>
 
 # 🔭 Working on
-1. OI ([competition](https://github.com/Dynesshely/competition))
-2. [KitX](https://github.com/Catrol-org/KitX)
-3. [CatrolHub](https://github.com/Catrol-org/CatrolHub)
-4. [conconcon-tri-buter](https://github.com/Dynesshely/conconcon-tri-buter)
-5. RA3 Mod -> [Corona](https://github.com/RA3CoronaDevelopers)
+1. ([`competition`](https://github.com/Dynesshely/competition)) -> OI
+2. [`KitX`](https://github.com/Catrol-org/KitX) -> An all-purpose toolbox, which allows plugins
+3. [`CatrolHub`](https://github.com/Catrol-org/CatrolHub) -> To manage your local Catrol's apps
+4. [`conconcon-tri-buter`](https://github.com/Dynesshely/conconcon-tri-buter) -> To help you to fake your github contributiong graph
+5. [`Corona`](https://github.com/RA3CoronaDevelopers) -> RA3 Mod Corona
+6. [`WDOS`](https://github.com/Catrol-org/Working-Desktop-OS) -> Desktop OS for new working environment
+7. [`Vaulc`](https://github.com/Vaulc/Vaulc) -> Version Control System (tmporary private and archived)
 
 <br><br>
 
 <a href="https://github.com/anuraghazra/github-readme-stats">
-  <img align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dynesshely&theme=dark&layout=compact" />
+<img align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dynesshely&theme=dark&layout=compact" />
 </a>
 
 # 🌱 Learning

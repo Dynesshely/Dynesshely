@@ -28,13 +28,13 @@ Here are some ideas to get you started:
 </a>
 
 # 🔭 Working on
-1. ([`competition`](https://github.com/Dynesshely/competition)) -> OI
-2. [`KitX`](https://github.com/Catrol-org/KitX) -> An all-purpose toolbox, which allows plugins
-3. [`CatrolHub`](https://github.com/Catrol-org/CatrolHub) -> To manage your local Catrol's apps
-4. [`conconcon-tri-buter`](https://github.com/Dynesshely/conconcon-tri-buter) -> To help you to fake your github contributiong graph
-5. [`Corona`](https://github.com/RA3CoronaDevelopers) -> RA3 Mod Corona
-6. [`WDOS`](https://github.com/Catrol-org/Working-Desktop-OS) -> Desktop OS for new working environment
-7. [`Vaulc`](https://github.com/Vaulc/Vaulc) -> Version Control System (tmporary private and archived)
+[`competition` -> OI](https://github.com/Dynesshely/competition)  
+[`KitX` -> Toolbox](https://github.com/Catrol-org/KitX)  
+[`CatrolHub`-> Catrol Apps Center](https://github.com/Catrol-org/CatrolHub)  
+[`conconcon-tri-buter` -> 🎭](https://github.com/Dynesshely/conconcon-tri-buter)  
+[`Corona` -> RA3 Mod](https://github.com/RA3CoronaDevelopers)  
+[`WDOS` -> Desktop OS](https://github.com/Catrol-org/Working-Desktop-OS)  
+[`Vaulc` -> Version Control System](https://github.com/Vaulc/Vaulc)  
 
 <br><br>
 

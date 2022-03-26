@@ -39,7 +39,7 @@ Here are some ideas to get you started:
 <br><br>
 
 <a href="https://github.com/anuraghazra/github-readme-stats">
-<img align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dynesshely&theme=dark&layout=compact&langs_count=8" />
+<img align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dynesshely&theme=dark&layout=compact&langs_count=10" />
 </a>
 
 # 🌱 Learning

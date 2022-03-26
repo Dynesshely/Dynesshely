@@ -24,7 +24,7 @@ Here are some ideas to get you started:
 
 <!--[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Dynesshely)](https://github.com/anuraghazra/github-readme-stats)-->
 <a href="https://github.com/anuraghazra/github-readme-stats">
-  <img align="right" src="https://github-readme-stats.vercel.app/api?username=Dynesshely&show_icons=true&theme=dracula&include_all_commits=true" />
+  <img align="right" src="https://github-readme-stats.vercel.app/api?username=Dynesshely&show_icons=true&theme=dracula&include_all_commits=true&count_private=true" />
 </a>
 
 # 🔭 Working on
@@ -39,7 +39,7 @@ Here are some ideas to get you started:
 <br><br>
 
 <a href="https://github.com/anuraghazra/github-readme-stats">
-<img align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dynesshely&theme=dark&layout=compact" />
+<img align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dynesshely&theme=dark&layout=compact&langs_count=8" />
 </a>
 
 # 🌱 Learning

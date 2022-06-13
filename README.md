@@ -33,8 +33,6 @@ Here are some ideas to get you started:
 [`CatrolHub`-> Catrol Apps Center](https://github.com/Catrol-org/CatrolHub)  
 [`conconcon-tri-buter` -> 🎭](https://github.com/Dynesshely/conconcon-tri-buter)  
 [`Corona` -> RA3 Mod](https://github.com/RA3CoronaDevelopers)  
-[`WDOS` -> Desktop OS](https://github.com/Catrol-org/Working-Desktop-OS)  
-[`Vaulc` -> Version Control System](https://github.com/Vaulc/Vaulc)  
 
 <br><br>
 

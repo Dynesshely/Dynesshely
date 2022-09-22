@@ -29,7 +29,7 @@ Here are some ideas to get you started:
 
 # 🔭 Working on
 [`competition` -> OI](https://github.com/Dynesshely/competition)  
-[`KitX` -> Toolbox](https://github.com/Catrol-org/KitX)  
+[`KitX` -> Toolbox](https://github.com/Crequency/KitX)  
 [`CatrolHub`-> Catrol Apps Center](https://github.com/Catrol-org/CatrolHub)  
 [`conconcon-tri-buter` -> 🎭](https://github.com/Dynesshely/conconcon-tri-buter)  
 [`Corona` -> RA3 Mod](https://github.com/RA3CoronaDevelopers)  

@@ -16,10 +16,10 @@
 
 # 🔭 Working on
 [`KitX` -> Toolbox](https://github.com/Crequency/KitX)  
-[`competition` -> OI](https://github.com/Dynesshely/competition)  
-[`Common.Update`-> Easy to update apps](https://github.com/Crequency/Common.Update)  
-[`conconcon-tri-buter` -> 🎭](https://github.com/Dynesshely/conconcon-tri-buter)  
-[`Corona` -> RA3 Mod](https://github.com/RA3CoronaDevelopers)  
+[`Competition` -> OI](https://github.com/Dynesshely/Competition)  
+[`CppEnhanced`-> More utils for Cpp](https://github.com/Dynesshely/CppEnhanced)  
+[`Common.Algorithm`-> Nice algorithms lib](https://github.com/Crequency/Common.Algorithm)  
+[`Common.BasicHelper`-> C# utils lib](https://github.com/Crequency/Common.BasicHelper)  
 
 <br><br>
 

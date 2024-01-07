@@ -1,4 +1,3 @@
-### Hi there 👋
 
 <pre align="center">
 ██████╗ ██╗   ██╗███╗   ██╗███████╗███████╗███████╗██╗  ██╗███████╗██╗  ██╗   ██╗
@@ -20,14 +19,16 @@
 [`CppEnhanced`-> More utils for Cpp](https://github.com/Dynesshely/CppEnhanced)  
 [`Common.Algorithm`-> Nice algorithms lib](https://github.com/Crequency/Common.Algorithm)  
 [`Common.BasicHelper`-> C# utils lib](https://github.com/Crequency/Common.BasicHelper)  
+[`Prouter` -> Cpp algorithm tracer/visualizer](https://github.com/Dynesshely/Prouter)  
+[`Csharpell` -> REPL for csharp](https://github.com/Dynesshely/Csharpell)  
 
-<br><br>
+<br>
 
 <a href="https://github.com/anuraghazra/github-readme-stats">
-<img align="right" src="https://github-readme-stats-two-theta-93.vercel.app/api/top-langs/?username=Dynesshely&theme=dark&layout=compact&langs_count=10" />
+  <img align="right" src="https://github-readme-stats-two-theta-93.vercel.app/api/top-langs/?username=Dynesshely&theme=dark&layout=compact&langs_count=10" />
 </a>
 
-# 🌱 Learning
+# 🌱 Learning and using
 [![C#](https://img.shields.io/badge/C%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)](https://docs.microsoft.com/dotnet/csharp/)
 [![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)](https://wikipedia.org/wiki/C_(programming_language))
 [![C++](https://img.shields.io/badge/C++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://wikipedia.org/wiki/C%2B%2B)
@@ -54,27 +55,15 @@
 
 <br>
 
-Reaches me at [my blog](https://blog.catrol.cn) https://blog.catrol.cn
+# ☎️ Reaches me
 
-<!-- <details>
-  
-<summary>More</summary>
-  
-# 🍞 More
-|  🥩 Used OS   | 👌 Used Tools/Apps/Services  |
-|  ----  | ----  |
-| [![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://www.microsoft.com/windows/) [![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)](https://ubuntu.com/) [![Kali](https://img.shields.io/badge/Kali-268BEE?style=for-the-badge&logo=kalilinux&logoColor=white)](https://www.kali.org/) [![Mac OS](https://img.shields.io/badge/mac-000000?style=for-the-badge&logo=macos&logoColor=F0F0F0)](https://www.apple.com/macos/) [![IOS](https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white)](https://www.apple.com/ios/) [![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://www.android.com/) [![Debian](https://img.shields.io/badge/Debian-D70A53?style=for-the-badge&logo=debian&logoColor=white)](https://www.debian.org/) [![Deepin](https://img.shields.io/badge/Deepin-007CFF?style=for-the-badge&logo=deepin&logoColor=white)](https://www.deepin.org/index/zh) [![Cent OS](https://img.shields.io/badge/cent-002260?style=for-the-badge&logo=centos&logoColor=F0F0F0)](https://www.centos.org/) [![Windows XP](https://img.shields.io/badge/xp-003399?style=for-the-badge&logo=windowsxp&logoColor=white)](https://wikipedia.org/wiki/Windows_XP) [![Windows 95](https://img.shields.io/badge/95-008484?style=for-the-badge&logo=windows95&logoColor=white)](https://en.wikipedia.org/wiki/Windows_95) [![Arch](https://img.shields.io/badge/Arch-1793D1?logo=arch-linux&logoColor=fff&style=for-the-badge)](https://archlinux.org/) | [![CMake](https://img.shields.io/badge/CMake-%23008FBA.svg?style=for-the-badge&logo=cmake&logoColor=white)](https://cmake.org/) [![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white)](https://www.nginx.com/) [![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/) [![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/) [![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/) [![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white)](https://redis.io/) [![MicrosoftSQLServer](https://img.shields.io/badge/SQL%20Sever-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white)](https://www.microsoft.com/sql-server/) [![Edge](https://img.shields.io/badge/Edge-0078D7?style=for-the-badge&logo=Microsoft-edge&logoColor=white)](https://www.microsoft.com/edge) [![Google Chrome](https://img.shields.io/badge/Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white)](https://www.google.com/chrome/) [![Firefox](https://img.shields.io/badge/Firefox-FF7139?style=for-the-badge&logo=Firefox-Browser&logoColor=white)](https://www.mozilla.org/firefox/) [![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/) [![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/index.html) [![Azure](https://img.shields.io/badge/azure-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://azure.microsoft.com/) [![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white)](https://www.cloudflare.com/) |
-
-|  🖥️ IDEs / Editors I love | 📫 How to reach me |
-|  ----  | ---- |
-| [![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91.svg?style=for-the-badge&logo=visual-studio&logoColor=white)](https://visualstudio.microsoft.com/) [![PyCharm](https://img.shields.io/badge/pycharm-143?style=for-the-badge&logo=pycharm&logoColor=black&color=black&labelColor=green)](https://www.jetbrains.com/pycharm/) [![Xcode](https://img.shields.io/badge/Xcode-007ACC?style=for-the-badge&logo=Xcode&logoColor=white)](https://developer.apple.com/xcode/) [![IntelliJ IDEA](https://img.shields.io/badge/IDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white)](https://www.jetbrains.com/idea/) [![Rider](https://img.shields.io/badge/Rider-000000.svg?style=for-the-badge&logo=Rider&logoColor=white&color=black&labelColor=crimson)](https://www.jetbrains.com/rider/) [![Eclipse](https://img.shields.io/badge/Eclipse-FE7A16.svg?style=for-the-badge&logo=Eclipse&logoColor=white)](https://www.eclipse.org/) [![PhpStorm](https://img.shields.io/badge/phpstorm-143?style=for-the-badge&logo=phpstorm&logoColor=black&color=black&labelColor=darkorchid)](https://www.jetbrains.com/phpstorm/) [![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84.svg?style=for-the-badge&logo=android-studio&logoColor=white)](https://developer.android.com/studio) [![CLion](https://img.shields.io/badge/CLion-black?style=for-the-badge&logo=clion&logoColor=white)](https://www.jetbrains.com/clion/) [![GoLand](https://img.shields.io/badge/GoLand-0f0f0f?&style=for-the-badge&logo=goland&logoColor=white)](https://www.jetbrains.com/go/) [![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org/) [![Sublime Text](https://img.shields.io/badge/sublime_text-%23575757.svg?style=for-the-badge&logo=sublime-text&logoColor=important)](https://www.sublimetext.com/) [![Vim](https://img.shields.io/badge/VIM-%2311AB00.svg?style=for-the-badge&logo=vim&logoColor=white)](https://www.vim.org/) [![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)](https://neovim.io/) [![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com/) [![Obsidian](https://img.shields.io/badge/Obsidian-%23483699.svg?style=for-the-badge&logo=obsidian&logoColor=white)](https://obsidian.md/) | [![Gmail](https://img.shields.io/badge/dynesshely@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:dynesshely@gmail.com) [![Telegram](https://img.shields.io/badge/@Dynesshely-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/Dynesshely) ![Discord](https://img.shields.io/badge/Dynesshely%234908-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white) [![Twitter](https://img.shields.io/badge/@CATROL18-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/CATROL18) [![Twitch](https://img.shields.io/badge/dynesshely-%239146FF.svg?style=for-the-badge&logo=Twitch&logoColor=white)](https://www.twitch.tv/dynesshely) [![GitHub](https://img.shields.io/badge/Dynesshely-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Dynesshely) |
-  
- </details> -->
+At [my blog](https://blog.catrol.cn) .
 
 <br>
 
 [![Ashutosh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=Dynesshely&theme=react-dark)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
+<!--
 <p align="center">
 <pre align="center">
 ███████╗              ███╗   ██╗              ██████╗ 
@@ -85,3 +74,4 @@ Reaches me at [my blog](https://blog.catrol.cn) https://blog.catrol.cn
 ╚══════╝              ╚═╝  ╚═══╝              ╚═════╝ 
 </pre>
 </p>
+--!>

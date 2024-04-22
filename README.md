@@ -25,7 +25,7 @@
 <br>
 
 <a href="https://github.com/anuraghazra/github-readme-stats">
-  <img align="right" src="https://github-readme-stats-two-theta-93.vercel.app/api/top-langs/?username=Dynesshely&theme=dark&layout=compact&langs_count=10" />
+  <img align="right" src="https://github-readme-stats-two-theta-93.vercel.app/api/top-langs/?username=Dynesshely&theme=dark&layout=compact&langs_count=10&hide=html" />
 </a>
 
 # 🌱 Learning and using

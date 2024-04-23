@@ -29,7 +29,7 @@
   <img align="right" src="https://github-readme-stats-two-theta-93.vercel.app/api/top-langs/?username=Dynesshely&theme=dark&layout=compact&langs_count=10&hide=html" />
 </a>
 
-[![C#](https://img.shields.io/badge/C%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)](https://docs.microsoft.com/dotnet/csharp/)
+[![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white)](https://docs.microsoft.com/dotnet/csharp/)
 [![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)](https://wikipedia.org/wiki/C_(programming_language))
 [![C++](https://img.shields.io/badge/C++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://wikipedia.org/wiki/C%2B%2B)
 [![Rust](https://img.shields.io/badge/rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)

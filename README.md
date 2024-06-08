@@ -59,7 +59,7 @@
 
 > By the way: I love `C#` at most
 
-I have an org account [Hello Computer Science](https://github.com/Hello-Computer-Science) .
+I have an organization account named [Hello Computer Science](https://github.com/Hello-Computer-Science) .
 
 # ☎️ Reaches me
 

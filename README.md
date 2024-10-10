@@ -1,5 +1,4 @@
 
-<!--
 <pre align="center">
 ██████╗ ██╗   ██╗███╗   ██╗███████╗███████╗███████╗██╗  ██╗███████╗██╗  ██╗   ██╗
 ██╔══██╗╚██╗ ██╔╝████╗  ██║██╔════╝██╔════╝██╔════╝██║  ██║██╔════╝██║  ╚██╗ ██╔╝
@@ -8,7 +7,6 @@
 ██████╔╝   ██║   ██║ ╚████║███████╗███████║███████║██║  ██║███████╗███████╗██║   
 ╚═════╝    ╚═╝   ╚═╝  ╚═══╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝   
 </pre>
--->
 
 <!--
 
@@ -79,6 +77,8 @@ At [my blog](https://blog.catrol.cn) .
 
 -->
 
+<br/>
+
 <!-- https://github.com/DenverCoder1/readme-typing-svg -->
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&pause=1000&center=true&width=435&lines=Hello+GitHub+%40+Dynesshely" />
@@ -100,7 +100,17 @@ At [my blog](https://blog.catrol.cn) .
   <br/>
   <br/>
   <!-- https://github.com/LelouchFR/skill-icons -->
-  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=cs,c,cpp,rust,dart,kotlin,java,py,html,css,js,ts,php,zig,lua,fortran,julia,pwsh,bash,haskell,swift,go,ruby,md,latex,mermaid,sqlite,matlab">
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=cs,c,cpp,rust,dart,kotlin,java,py,html,css,js,ts,nodejs,php,zig,visualbasic,lua,fortran,julia,pwsh,bash,haskell,swift,go,ruby">
+  <br/><br/>
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=sqlite,sqlserver,mongo,postgresql,mysql,redis">
+  <br/><br/>
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=blazor,flutter,qt,tauri,electron,angular,vuejs,react">
+  <br/><br/>
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=unity,unreal,godot,cuda,pytorch,tensorflow,threejs">
+  <br/><br/>
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=arduino,platformio">
+  <br/><br/>
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=mermaid,md,matlab,latex,jupyter,regex">
 </p>
 
 <br>

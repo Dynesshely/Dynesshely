@@ -10,21 +10,6 @@
 
 <!--
 
-# 🔭 Working on
-
-<a href="https://github.com/anuraghazra/github-readme-stats">
-  <img align="right" src="https://github-readme-stats-two-theta-93.vercel.app/api?username=Dynesshely&show_icons=true&theme=dracula&include_all_commits=true&count_private=true" />
-</a>
-
-[`KitX` -> Toolbox](https://github.com/Crequency/KitX)  
-[`Competition` -> OI](https://github.com/Dynesshely/Competition)  
-[`CppEnhanced`-> More utils for Cpp](https://github.com/Dynesshely/CppEnhanced)  
-[`Common.Algorithm`-> Nice algorithms lib](https://github.com/Crequency/Common.Algorithm)  
-[`Common.BasicHelper`-> C# utils lib](https://github.com/Crequency/Common.BasicHelper)  
-[`Prouter` -> Cpp algorithm tracer/visualizer](https://github.com/Dynesshely/Prouter)  
-[`Csharpell` -> REPL for csharp](https://github.com/Dynesshely/Csharpell)  
-[`ServerEntry` -> Server Panel](https://github.com/ServerEntry/ServerEntry)  
-
 # 🌱 Learning and using
 
 <a href="https://github.com/anuraghazra/github-readme-stats">
@@ -65,40 +50,29 @@ I have an organization account named [Hello Computer Science](https://github.com
 
 -->
 
-<!--
-
-# ☎️ Reaches me
-
-At [my blog](https://blog.catrol.cn) .
-
-<br>
-
-[![Ashutosh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=Dynesshely&theme=react-dark)](https://github.com/ashutosh00710/github-readme-activity-graph)
-
--->
-
-<br/>
+<br/><br/>
 
 <!-- https://github.com/DenverCoder1/readme-typing-svg -->
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&pause=1000&center=true&width=435&lines=Hello+GitHub+%40+Dynesshely" />
 </p>
 
+<br/>
+
 <p align="center">
   <!-- https://github.com/anuraghazra/github-readme-stats -->
   <img align="center" width="400" src="https://github-readme-stats.vercel.app/api?username=Dynesshely&theme=transparent&show_icons=true&hide_border=true&show=reviews&hide_title=true&hide=contribs&number_format=long" />
   <!-- https://github.com/DenverCoder1/github-readme-streak-stats -->
   <img align="center" width="400" src="https://streak-stats.demolab.com?user=Dynesshely&theme=transparent&hide_border=true" />
-  <br/>
+  <br/><br/>
   <!-- https://github.com/Ashutosh00710/github-readme-activity-graph -->
   <img width="800" src="https://github-readme-activity-graph.vercel.app/graph?username=Dynesshely&theme=github-compact&hide_border=true&area=true&custom_title=Contribution%20Graph" />
-  <br/>
+  <br/><br/>
   <!-- https://github.com/anuraghazra/github-readme-stats -->
   <img align="center" src="https://github-readme-stats.vercel.app/api/wakatime?username=Dynesshely&theme=transparent&hide_border=true&layout=compact&langs_count=22" />
   <!-- https://github.com/anuraghazra/github-readme-stats -->
-  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dynesshely&theme=transparent&hide_border=true&layout=donut-vertical&langs_count=6" />
-  <br/>
-  <br/>
+  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dynesshely&theme=transparent&hide_border=true&layout=donut-vertical&langs_count=10&hide=html" />
+  <br/><br/>
   <!-- https://github.com/LelouchFR/skill-icons -->
   <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=cs,c,cpp,rust,dart,kotlin,java,py,html,css,js,ts,nodejs,php,zig,visualbasic,lua,fortran,julia,pwsh,bash,haskell,swift,go,ruby">
   <br/><br/>
@@ -115,20 +89,19 @@ At [my blog](https://blog.catrol.cn) .
 
 <br>
 
-## 🔭 Working on
-
-<a href="https://github.com/anuraghazra/github-readme-stats">
-  <img align="right" src="https://github-readme-stats-two-theta-93.vercel.app/api/top-langs/?username=Dynesshely&theme=dark&layout=compact&langs_count=10&hide=html" />
-</a>
-
-[`KitX` -> Toolbox](https://github.com/Crequency/KitX)  
-[`Competition` -> OI](https://github.com/Dynesshely/Competition)  
-[`CppEnhanced`-> More utils for Cpp](https://github.com/Dynesshely/CppEnhanced)  
-[`Common.Algorithm`-> Nice algorithms lib](https://github.com/Crequency/Common.Algorithm)  
-[`Common.BasicHelper`-> C# utils lib](https://github.com/Crequency/Common.BasicHelper)  
-[`Prouter` -> Cpp algorithm tracer/visualizer](https://github.com/Dynesshely/Prouter)  
-[`Csharpell` -> REPL for csharp](https://github.com/Dynesshely/Csharpell)  
-[`ServerEntry` -> Server Panel](https://github.com/ServerEntry/ServerEntry) 
+<p align="center">
+  <br/><br/><br/>
+  <img src="https://capsule-render.vercel.app/api?type=venom&height=150&color=timeGradient&text=Working%20On&fontSize=50&fontAlignY=55&animation=twinkling&fontColor=9daaf8"/>
+  <br/><br/><br/><br/><br/>
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Crequency&repo=KitX&show_owner=true" />
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Crequency&repo=Common.Algorithm&show_owner=true" />
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Crequency&repo=Common.BasicHelper&show_owner=true" />
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=NimbusAsm&repo=ServerEntry&show_owner=true" />
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Dynesshely&repo=Competition&show_owner=true" />
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Dynesshely&repo=CppEnhanced&show_owner=true" />
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Dynesshely&repo=Prouter&show_owner=true" />
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Dynesshely&repo=Csharpell&show_owner=true" />
+</p>
 
 <br>
 

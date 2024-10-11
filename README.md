@@ -1,3 +1,10 @@
+<!--
+<p align="center">
+  <br/>
+  <img src="https://capsule-render.vercel.app/api?type=venom&height=150&color=timeGradient&text=Welcome&fontSize=50&fontAlignY=55&animation=twinkling&fontColor=9daaf8"/>
+  <br/><br/><br/>
+</p>
+-->
 
 <pre align="center">
 ██████╗ ██╗   ██╗███╗   ██╗███████╗███████╗███████╗██╗  ██╗███████╗██╗  ██╗   ██╗
@@ -18,6 +25,8 @@
 <br/><br/>
 
 <p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=venom&height=150&color=timeGradient&text=Status&fontSize=50&fontAlignY=55&animation=twinkling&fontColor=9daaf8"/>
+  <br/><br/><br/><br/><br/>
   <!-- https://github.com/anuraghazra/github-readme-stats -->
   <img align="center" width="400" src="https://github-readme-stats.vercel.app/api?username=Dynesshely&theme=transparent&show_icons=true&hide_border=true&show=reviews&hide_title=true&hide=contribs&number_format=long" />
   <!-- https://github.com/DenverCoder1/github-readme-streak-stats -->
@@ -31,25 +40,47 @@
   <!-- https://github.com/anuraghazra/github-readme-stats -->
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dynesshely&theme=transparent&hide_border=true&layout=donut-vertical&langs_count=10&hide=html" />
   <br/><br/><br/><br/>
+  <img src="https://capsule-render.vercel.app/api?type=venom&height=150&color=timeGradient&text=Skills&fontSize=50&fontAlignY=55&animation=twinkling&fontColor=9daaf8"/>
+  <br/><br/><br/><br/><br/>
   <!-- https://github.com/LelouchFR/skill-icons -->
+  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Programing+Languages">
+  <br/><br/>
   <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=cs,c,cpp,rust,dart,kotlin,java,py,html,css,js,ts,nodejs,php,zig,visualbasic,lua,fortran,julia,pwsh,bash,haskell,swift,go,ruby&perline=5">
   <br/><br/><br/><br/>
+  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Databases">
+  <br/><br/>
   <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=sqlite,sqlserver,mongo,postgresql,mysql,redis">
   <br/><br/><br/><br/>
+  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=UI+Frameworks">
+  <br/><br/>
   <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=blazor,flutter,qt,tauri,electron,angular,vuejs,react&perline=4">
   <br/><br/><br/><br/>
+  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Game+Engines+/+3D+/+AI">
+  <br/><br/>
   <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=unity,unreal,godot,cuda,pytorch,tensorflow,threejs">
   <br/><br/><br/><br/>
+  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Hardwares">
+  <br/><br/>
   <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=arduino,platformio">
   <br/><br/><br/><br/>
+  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Learn+/+Research">
+  <br/><br/>
   <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=mermaid,md,matlab,latex,jupyter,regex">
   <br/><br/><br/><br/>
+  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Operating+Systems">
+  <br/><br/>
   <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=windows,apple,android,linux,ubuntu,debian,kali,arch,redhat,raspberrypi&perline=5">
   <br/><br/><br/><br/>
+  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=IDEs+/+Editors">
+  <br/><br/>
   <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=visualstudio,vscode,rider,rustrover,clion,idea,androidstudio,resharper,pycharm,fleet,eclipse,vim,neovim,sublime,obsidian&perline=5">
   <br/><br/><br/><br/>
+  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Medias+Editors">
+  <br/><br/>
   <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=photoshop,premiere,aftereffects,audition,illustrator,davinci,blender,gimp,inkscape,figma&perline=5">
   <br/><br/><br/><br/>
+  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Internet+Browsers">
+  <br/><br/>
   <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=chrome,chromium,edge,firefox,brave,arcbrowser">
 </p>
 

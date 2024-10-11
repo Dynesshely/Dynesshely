@@ -8,41 +8,49 @@
 ╚═════╝    ╚═╝   ╚═╝  ╚═══╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝   
 </pre>
 
-<br/><br/>
+<br/><br/><br/>
 
 <!-- https://github.com/DenverCoder1/readme-typing-svg -->
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&pause=1000&center=true&width=435&lines=Hello+GitHub+%40+Dynesshely" />
 </p>
 
-<br/>
+<br/><br/>
 
 <p align="center">
   <!-- https://github.com/anuraghazra/github-readme-stats -->
   <img align="center" width="400" src="https://github-readme-stats.vercel.app/api?username=Dynesshely&theme=transparent&show_icons=true&hide_border=true&show=reviews&hide_title=true&hide=contribs&number_format=long" />
   <!-- https://github.com/DenverCoder1/github-readme-streak-stats -->
   <img align="center" width="400" src="https://streak-stats.demolab.com?user=Dynesshely&theme=transparent&hide_border=true" />
-  <br/><br/>
+  <br/><br/><br/><br/>
   <!-- https://github.com/Ashutosh00710/github-readme-activity-graph -->
   <img width="800" src="https://github-readme-activity-graph.vercel.app/graph?username=Dynesshely&theme=github-compact&hide_border=true&area=true&custom_title=Contribution%20Graph" />
-  <br/><br/>
+  <br/><br/><br/><br/>
   <!-- https://github.com/anuraghazra/github-readme-stats -->
   <img align="center" src="https://github-readme-stats.vercel.app/api/wakatime?username=Dynesshely&theme=transparent&hide_border=true&layout=compact&langs_count=22" />
   <!-- https://github.com/anuraghazra/github-readme-stats -->
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dynesshely&theme=transparent&hide_border=true&layout=donut-vertical&langs_count=10&hide=html" />
-  <br/><br/>
+  <br/><br/><br/><br/>
   <!-- https://github.com/LelouchFR/skill-icons -->
-  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=cs,c,cpp,rust,dart,kotlin,java,py,html,css,js,ts,nodejs,php,zig,visualbasic,lua,fortran,julia,pwsh,bash,haskell,swift,go,ruby">
-  <br/><br/>
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=cs,c,cpp,rust,dart,kotlin,java,py,html,css,js,ts,nodejs,php,zig,visualbasic,lua,fortran,julia,pwsh,bash,haskell,swift,go,ruby&perline=5">
+  <br/><br/><br/><br/>
   <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=sqlite,sqlserver,mongo,postgresql,mysql,redis">
-  <br/><br/>
-  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=blazor,flutter,qt,tauri,electron,angular,vuejs,react">
-  <br/><br/>
+  <br/><br/><br/><br/>
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=blazor,flutter,qt,tauri,electron,angular,vuejs,react&perline=4">
+  <br/><br/><br/><br/>
   <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=unity,unreal,godot,cuda,pytorch,tensorflow,threejs">
-  <br/><br/>
+  <br/><br/><br/><br/>
   <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=arduino,platformio">
-  <br/><br/>
+  <br/><br/><br/><br/>
   <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=mermaid,md,matlab,latex,jupyter,regex">
+  <br/><br/><br/><br/>
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=windows,apple,android,linux,ubuntu,debian,kali,arch,redhat,raspberrypi&perline=5">
+  <br/><br/><br/><br/>
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=visualstudio,vscode,rider,rustrover,clion,idea,androidstudio,resharper,pycharm,fleet,eclipse,vim,neovim,sublime,obsidian&perline=5">
+  <br/><br/><br/><br/>
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=photoshop,premiere,aftereffects,audition,illustrator,davinci,blender,gimp,inkscape,figma&perline=5">
+  <br/><br/><br/><br/>
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=chrome,chromium,edge,firefox,brave,arcbrowser">
 </p>
 
 <br>

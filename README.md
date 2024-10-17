@@ -61,7 +61,7 @@
   <br/><br/><br/><br/>
   <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Package+/+Build">
   <br/><br/>
-  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=cmake,gradle,vite,webpack,npm,yarn,pnpm">
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=cmake,maven,gradle,vite,webpack,npm,yarn,pnpm">
   <br/><br/><br/><br/>
   <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Tools">
   <br/><br/>
@@ -85,7 +85,11 @@
   <br/><br/><br/><br/>
   <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Medias+Editors">
   <br/><br/>
-  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=photoshop,premiere,aftereffects,audition,illustrator,davinci,blender,gimp,inkscape,figma&perline=5">
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=photoshop,premiere,aftereffects,audition,illustrator,lightroom,davinci,blender,gimp,inkscape,figma,lunacy&perline=4">
+  <br/><br/><br/><br/>
+  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Cloud+Services">
+  <br/><br/>
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=github,gitlab,gitea,bitbucket,azure,aws,cloudflare,vercel,codepen&perline=3">
   <br/><br/><br/><br/>
   <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Operating+Systems">
   <br/><br/>
@@ -93,7 +97,7 @@
   <br/><br/><br/><br/>
   <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Virtual+Environment">
   <br/><br/>
-  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=proxmox,virtualbox,vmwareworkstation,wsl">
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=proxmox,virtualbox,vmwareworkstation,wsl,docker">
   <br/><br/><br/><br/>
   <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Internet+Browsers">
   <br/><br/>
@@ -130,6 +134,15 @@
   <a href="https://github.com/Dynesshely/Csharpell">
     <img src="https://github-readme-stats.vercel.app/api/pin/?username=Dynesshely&repo=Csharpell&show_owner=true" />
   </a>
+</p>
+
+<p align="center">
+  <br/><br/><br/>
+  <img src="https://capsule-render.vercel.app/api?type=venom&height=150&color=timeGradient&text=Contact&fontSize=50&fontAlignY=55&animation=twinkling&fontColor=9daaf8"/>
+  <br/><br/><br/><br/><br/>
+  <a href="https://x.com/dynesshely"><img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=x"></a>
+  <a href="https://mastodon.social/@dynesshely"><img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=mastodon"></a>
+  <a href="mailto:cronyet@gmail.com"><img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=gmail"></a>
 </p>
 
 <br>

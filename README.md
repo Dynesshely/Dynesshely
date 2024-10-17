@@ -53,7 +53,7 @@
   <br/><br/><br/><br/>
   <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=UI+Frameworks">
   <br/><br/>
-  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=blazor,flutter,qt,tauri,electron,angular,vuejs,react&perline=4">
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=avaloniaui,flutter,blazor,qt,tauri,electron,angular,vuejs,react&perline=3">
   <br/><br/><br/><br/>
   <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Game+Engines+/+3D+/+AI">
   <br/><br/>

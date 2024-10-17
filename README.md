@@ -45,7 +45,7 @@
   <!-- https://github.com/LelouchFR/skill-icons -->
   <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Programing+Languages">
   <br/><br/>
-  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=cs,c,cpp,rust,dart,kotlin,java,py,html,css,js,ts,nodejs,php,zig,visualbasic,lua,fortran,julia,pwsh,bash,haskell,swift,go,ruby&perline=5">
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=cs,c,cpp,rust,dart,kotlin,java,py,html,css,js,ts,php,zig,visualbasic,lua,fortran,julia,pwsh,bash,haskell,swift,go,ruby,perl&perline=5">
   <br/><br/><br/><br/>
   <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Databases">
   <br/><br/>
@@ -55,9 +55,21 @@
   <br/><br/>
   <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=avaloniaui,flutter,blazor,qt,tauri,electron,angular,vuejs,react&perline=3">
   <br/><br/><br/><br/>
-  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Game+Engines+/+3D+/+AI">
+  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Platforms+/+Frameworks">
   <br/><br/>
-  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=unity,unreal,godot,cuda,pytorch,tensorflow,threejs">
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=dotnet,nodejs,deno,spring,yew">
+  <br/><br/><br/><br/>
+  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Package+/+Build">
+  <br/><br/>
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=cmake,gradle,vite,webpack,npm,yarn,pnpm">
+  <br/><br/><br/><br/>
+  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Tools">
+  <br/><br/>
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=git,svn,postman,swagger,ipfs,nginx,tomcat,caddy,pm2,tor,terminal,thunderbird&perline=6">
+  <br/><br/><br/><br/>
+  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Game+Engines+/+3D+/+AI+/+CV">
+  <br/><br/>
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=unity,unreal,godot,cuda,pytorch,tensorflow,threejs,opencv">
   <br/><br/><br/><br/>
   <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Hardwares">
   <br/><br/>
@@ -65,19 +77,23 @@
   <br/><br/><br/><br/>
   <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Learn+/+Research">
   <br/><br/>
-  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=mermaid,md,matlab,latex,jupyter,regex">
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=mermaid,md,matlab,latex,jupyter,anaconda,numpy">
+  <br/><br/><br/><br/>
+  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=IDEs+/+Editors">
+  <br/><br/>
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=visualstudio,vscode,xcode,rider,rustrover,clion,idea,androidstudio,resharper,pycharm,fleet,eclipse,vim,neovim,sublime,obsidian&perline=4">
+  <br/><br/><br/><br/>
+  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Medias+Editors">
+  <br/><br/>
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=photoshop,premiere,aftereffects,audition,illustrator,davinci,blender,gimp,inkscape,figma&perline=5">
   <br/><br/><br/><br/>
   <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Operating+Systems">
   <br/><br/>
   <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=windows,apple,android,linux,ubuntu,debian,kali,arch,redhat,raspberrypi&perline=5">
   <br/><br/><br/><br/>
-  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=IDEs+/+Editors">
+  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Virtual+Environment">
   <br/><br/>
-  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=visualstudio,vscode,rider,rustrover,clion,idea,androidstudio,resharper,pycharm,fleet,eclipse,vim,neovim,sublime,obsidian&perline=5">
-  <br/><br/><br/><br/>
-  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Medias+Editors">
-  <br/><br/>
-  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=photoshop,premiere,aftereffects,audition,illustrator,davinci,blender,gimp,inkscape,figma&perline=5">
+  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=proxmox,virtualbox,vmwareworkstation,wsl">
   <br/><br/><br/><br/>
   <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Internet+Browsers">
   <br/><br/>

@@ -28,9 +28,11 @@
   <img src="https://capsule-render.vercel.app/api?type=venom&height=150&color=timeGradient&text=Status&fontSize=50&fontAlignY=55&animation=twinkling&fontColor=9daaf8"/>
   <br/><br/><br/><br/><br/>
   <!-- https://github.com/anuraghazra/github-readme-stats -->
-  <img align="center" width="400" src="https://github-readme-stats.vercel.app/api?username=Dynesshely&theme=transparent&show_icons=true&hide_border=true&show=reviews&hide_title=true&hide=contribs&number_format=long" />
+  <!-- <img align="center" width="400" src="https://github-readme-stats.vercel.app/api?username=Dynesshely&theme=transparent&show_icons=true&hide_border=true&show=reviews&hide_title=true&hide=contribs&number_format=long" /> -->
+  <img align="center" width="400" src="https://github-readme-stats-eaucooh.vercel.app/api?username=Dynesshely&theme=transparent&show_icons=true&hide_border=true&show=reviews&hide_title=true&hide=contribs&number_format=long" />
   <!-- https://github.com/DenverCoder1/github-readme-streak-stats -->
-  <img align="center" width="400" src="https://streak-stats.demolab.com?user=Dynesshely&theme=transparent&hide_border=true" />
+  <!-- <img align="center" width="400" src="https://streak-stats.demolab.com?user=Dynesshely&theme=transparent&hide_border=true" /> -->
+  <img align="center" width="400" src="https://github-readme-streak-stats-eaucooh.vercel.app/?user=Dynesshely&theme=transparent&hide_border=true" />
   <br/><br/><br/><br/>
   <!-- https://github.com/Ashutosh00710/github-readme-activity-graph -->
   <img width="800" src="https://github-readme-activity-graph.vercel.app/graph?username=Dynesshely&theme=github-compact&hide_border=true&area=true&custom_title=Contribution%20Graph" />

@@ -44,10 +44,10 @@
   <br /><br /><br /><br />
   <!-- https://github.com/anuraghazra/github-readme-stats -->
   <img align="center"
-    src="https://github-readme-stats.vercel.app/api/wakatime?username=Dynesshely&theme=transparent&hide_border=true&layout=compact&langs_count=22" />
+    src="https://github-readme-stats-vercel-lovat-chi.vercel.app/api/wakatime?username=Dynesshely&theme=transparent&hide_border=true&layout=compact&langs_count=22" />
   <!-- https://github.com/anuraghazra/github-readme-stats -->
   <img align="center"
-    src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dynesshely&theme=transparent&hide_border=true&layout=donut-vertical&langs_count=10&hide=html" />
+    src="https://github-readme-stats-vercel-lovat-chi.vercel.app/api/top-langs/?username=Dynesshely&theme=transparent&hide_border=true&layout=donut-vertical&langs_count=10&hide=html" />
   <br /><br /><br /><br />
 </p>
 

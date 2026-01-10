@@ -155,7 +155,7 @@
 
 <br>
 
-<p align="center">
+<!-- <p align="center">
   <br /><br /><br />
   <img
     src="https://capsule-render.vercel.app/api?type=venom&height=150&color=timeGradient&text=Working%20On&fontSize=50&fontAlignY=55&animation=twinkling&fontColor=9daaf8" />
@@ -186,7 +186,7 @@
   <a href="https://github.com/Dynesshely/Csharpell">
     <img src="https://github-readme-stats.vercel.app/api/pin/?username=Dynesshely&repo=Csharpell&show_owner=true" />
   </a>
-</p>
+</p> -->
 
 <p align="center">
   <br /><br /><br />
@@ -196,7 +196,7 @@
   <a href="https://x.com/dynesshely"><img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=x"></a>
   <a href="https://mastodon.social/@dynesshely"><img align="center"
       src="https://go-skill-icons.vercel.app/api/icons?i=mastodon"></a>
-  <a href="mailto:cronyet@gmail.com"><img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=gmail"></a>
+  <a href="mailto:dynesshely@gmail.com"><img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=gmail"></a>
 </p>
 
 <br>

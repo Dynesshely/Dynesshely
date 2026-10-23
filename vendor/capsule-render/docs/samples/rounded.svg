@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="854" height="200" viewBox="0 0 854 200">
+    <script xmlns="" />
+    <script xmlns="" />
+    <style>
+        .text { font-size: 40px; font-weight: 700; font-family:
+        -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe
+        UI Emoji; } .desc { font-size: 20px; font-weight: 500; font-family:
+        -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe
+        UI Emoji; }
+        .text, .desc { animation: fadeIn 1.2s ease-in-out forwards; } @keyframes fadeIn { from {
+        opacity: 0; } to { opacity: 1; } }
+    </style>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 854 200">
+
+        <path fill="#F7EFE9" fill-opacity="1"
+            d="M 61 0 L 793 0 Q 854 0 854 61 L 854 139 Q 854 200 793 200 L 61 200 Q 0 200 0 139 L 0 61 Q 0 0 61 0 z" />
+    </svg>
+    <text text-anchor="middle" dominant-baseline="middle" x="50%" y="50%" class="text"
+        style="fill:#363636;" stroke="#000000" stroke-width="2">Rounded with stroke</text>
+
+</svg>

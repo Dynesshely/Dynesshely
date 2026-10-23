@@ -1,0 +1,146 @@
+name: README assets
+
+# Every image in README.md is generated from the vendored sources under vendor/.
+# This workflow rebuilds them on a schedule and commits the result.
+
+on:
+  schedule:
+    # GitHub Actions cron is UTC: every 5 hours.
+    - cron: "0 */5 * * *"
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - "tools/**"
+      - "vendor/**"
+      - "assets/**"
+      - "README.md"
+      - ".github/workflows/readme-assets.yml"
+  push:
+    branches: [main]
+    paths:
+      - "tools/**"
+      - "vendor/**"
+      - "assets/**"
+      - "README.md"
+      - ".github/workflows/readme-assets.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: readme-assets
+  cancel-in-progress: false
+
+jobs:
+  regenerate:
+    name: Regenerate README images
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      # Some vendored packages run `husky` from their `prepare` script; there is
+      # no repository root inside vendor/, so keep it quiet.
+      HUSKY: "0"
+      CI: "true"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: |
+            tools/package-lock.json
+            vendor/github-readme-stats/package-lock.json
+            vendor/github-readme-activity-graph/package-lock.json
+
+      - name: Set up PHP + Composer
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          # intl is required by github-readme-streak-stats.
+          extensions: intl, mbstring, dom, curl, json
+          tools: composer
+          coverage: none
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.23"
+          cache-dependency-path: vendor/skill-icons/go.sum
+
+      - name: Install generator dependencies
+        working-directory: tools
+        run: npm ci
+
+      - name: Install github-readme-stats dependencies
+        working-directory: vendor/github-readme-stats
+        run: npm ci
+
+      - name: Install github-readme-activity-graph dependencies
+        working-directory: vendor/github-readme-activity-graph
+        run: npm ci
+
+      - name: Cache PHP service dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            vendor/readme-typing-svg/vendor
+            vendor/github-readme-streak-stats/vendor
+          key: composer-${{ hashFiles('vendor/readme-typing-svg/composer.lock', 'vendor/github-readme-streak-stats/composer.lock') }}
+
+      - name: Install PHP service dependencies
+        run: |
+          composer install --no-interaction --no-progress --no-dev --working-dir=vendor/readme-typing-svg
+          composer install --no-interaction --no-progress --no-dev --working-dir=vendor/github-readme-streak-stats
+
+      - name: Report missing optional secrets
+        env:
+          PAT_1: ${{ secrets.PAT_1 }}
+        run: |
+          if [ -z "${PAT_1}" ]; then
+            echo "::warning title=PAT_1 secret is not set::github-readme-stats needs a personal access token; the stats and top-languages cards will be skipped and their committed SVGs left untouched."
+          fi
+
+      - name: Generate images
+        working-directory: tools
+        env:
+          # github-readme-stats reads other accounts' data, which the workflow's
+          # own GITHUB_TOKEN is not allowed to do ("Resource not accessible by
+          # integration"), so it needs a personal access token. Without the
+          # secret the two stats cards are skipped by tools/generate.mjs and the
+          # previously committed SVGs stay in place.
+          PAT_1: ${{ secrets.PAT_1 }}
+          # github-readme-activity-graph accepts the built-in token.
+          TOKEN: ${{ secrets.PAT_1 || github.token }}
+          # Optional. Without it the WakaTime card stays on the remote deployment.
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+        run: node generate.mjs
+
+      - name: Verify README references
+        run: node tools/check.mjs
+
+      - name: Commit regenerated assets
+        # PR runs must not write to the repository; they only validate.
+        if: github.event_name != 'pull_request'
+        run: |
+          if git diff --quiet -- assets; then
+            echo "Assets are already up to date - nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets
+          git commit -m "chore(assets): regenerate README images" -m "Rendered from the vendored generators in vendor/ via tools/generate.mjs."
+          git push
+
+      - name: Upload generated assets
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: readme-assets
+          path: assets/
+          if-no-files-found: warn

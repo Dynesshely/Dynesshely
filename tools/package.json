@@ -1,0 +1,14 @@
+{
+  "name": "readme-assets",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Regenerates every image used by README.md from the vendored generator sources",
+  "scripts": {
+    "generate": "node generate.mjs",
+    "generate:dry": "node generate.mjs --dry-run"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.10"
+  }
+}

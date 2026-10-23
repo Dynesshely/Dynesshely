@@ -1,0 +1,19 @@
+# --- generator scratch -------------------------------------------------------
+.build/
+
+# --- node --------------------------------------------------------------------
+node_modules/
+
+# --- vendored services: installed dependencies / build output ----------------
+vendor/*/node_modules/
+vendor/*/dist/
+vendor/*/.vercel/
+vendor/*/.next/
+
+# --- vendored php services: composer dependencies ----------------------------
+vendor/*/vendor/
+
+# --- local noise -------------------------------------------------------------
+*.log
+.DS_Store
+Thumbs.db

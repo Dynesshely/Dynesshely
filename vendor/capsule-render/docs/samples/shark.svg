@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="854" height="140" viewBox="0 0 854 140">
+    <script xmlns="" />
+    <script xmlns="" />
+    <style>
+        .text { font-size: 70px; font-weight: 700; font-family:
+        -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe
+        UI Emoji; } .desc { font-size: 20px; font-weight: 500; font-family:
+        -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe
+        UI Emoji; }
+        .text, .desc { animation: fadeIn 1.2s ease-in-out forwards; } @keyframes fadeIn { from {
+        opacity: 0; } to { opacity: 1; } }
+    </style>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 854 140">
+        <defs>
+            <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#00C9FF" />
+                <stop offset="100%" stop-color="#92FE9D" />
+            </linearGradient>
+        </defs>
+        <path fill="url(#linear)" fill-opacity="1"
+            d="M 0 45 C 61 167 61 167 122 45 C 183 167 183 167 244 45 C 305 167 305 167 366 45 C 427 167 427 167 488 45 C 549 167 549 167 610 45 C 671 167 671 167 732 45 C 793 167 793 167 854 45  L 854 0 L 0 0 L 0 305 " />
+    </svg>
+
+
+</svg>

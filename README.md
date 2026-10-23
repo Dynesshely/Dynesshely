@@ -20,34 +20,34 @@
 <!-- https://github.com/DenverCoder1/readme-typing-svg -->
 <p align="center">
   <img
-    src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&pause=1000&center=true&width=435&lines=Hello+GitHub+%40+Dynesshely" />
+    src="assets/typing/hello.svg" />
 </p>
 
 <br /><br />
 
 <p align="center">
   <img
-    src="https://capsule-render.vercel.app/api?type=venom&height=150&color=timeGradient&text=Status&fontSize=50&fontAlignY=55&animation=twinkling&fontColor=9daaf8" />
+    src="assets/banner/status.svg" />
   <br /><br /><br /><br /><br />
   <!-- https://github.com/anuraghazra/github-readme-stats -->
   <!-- <img align="center" width="400" src="https://github-readme-stats.vercel.app/api?username=Dynesshely&theme=transparent&show_icons=true&hide_border=true&show=reviews&hide_title=true&hide=contribs&number_format=long" /> -->
   <img align="center" width="400"
-    src="https://github-readme-stats-eaucooh.vercel.app/api?username=Dynesshely&theme=transparent&show_icons=true&hide_border=true&show=reviews&hide_title=true&hide=contribs&number_format=long" />
+    src="assets/stats/github.svg" />
   <!-- https://github.com/DenverCoder1/github-readme-streak-stats -->
   <!-- <img align="center" width="400" src="https://streak-stats.demolab.com?user=Dynesshely&theme=transparent&hide_border=true" /> -->
   <img align="center" width="400"
-    src="https://github-readme-streak-stats-eaucooh.vercel.app/?user=Dynesshely&theme=transparent&hide_border=true" />
+    src="assets/stats/streak.svg" />
   <br /><br /><br /><br />
   <!-- https://github.com/Ashutosh00710/github-readme-activity-graph -->
   <img width="800"
-    src="https://github-readme-activity-graph.vercel.app/graph?username=Dynesshely&theme=github-compact&hide_border=true&area=true&custom_title=Contribution%20Graph" />
+    src="assets/stats/activity-graph.svg" />
   <br /><br /><br /><br />
   <!-- https://github.com/anuraghazra/github-readme-stats -->
   <img align="center"
     src="https://github-readme-stats-vercel-lovat-chi.vercel.app/api/wakatime?username=Dynesshely&theme=transparent&hide_border=true&layout=compact&langs_count=22" />
   <!-- https://github.com/anuraghazra/github-readme-stats -->
   <img align="center"
-    src="https://github-readme-stats-vercel-lovat-chi.vercel.app/api/top-langs/?username=Dynesshely&theme=transparent&hide_border=true&layout=donut-vertical&langs_count=10&hide=html" />
+    src="assets/stats/top-langs.svg" />
   <br /><br /><br /><br />
 </p>
 
@@ -55,7 +55,7 @@
 
 <p align="center">
   <img
-    src="https://capsule-render.vercel.app/api?type=venom&height=150&color=timeGradient&text=Intro&fontSize=50&fontAlignY=55&animation=twinkling&fontColor=9daaf8" />
+    src="assets/banner/intro.svg" />
   <br /><br /><br /><br /><br />
   <h2 align="center">
     CEO & CTO of <a href="https://nimatattic.com" target="_blank">Nimatattic</a>
@@ -78,79 +78,79 @@
 
 <p align="center">
   <img
-    src="https://capsule-render.vercel.app/api?type=venom&height=150&color=timeGradient&text=Skills&fontSize=50&fontAlignY=55&animation=twinkling&fontColor=9daaf8" />
+    src="assets/banner/skills.svg" />
   <br /><br /><br /><br /><br />
   <!-- https://github.com/LelouchFR/skill-icons -->
-  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Programing+Languages">
+  <img align="center" src="assets/typing/programing-languages.svg">
   <br /><br />
   <img align="center"
-    src="https://go-skill-icons.vercel.app/api/icons?i=cs,c,cpp,rust,dart,kotlin,java,py,html,css,js,ts,php,zig,visualbasic,lua,fortran,julia,pwsh,bash,haskell,swift,go,ruby,perl&perline=5">
+    src="assets/icons/languages.svg">
   <br /><br /><br /><br />
-  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Databases">
+  <img align="center" src="assets/typing/databases.svg">
   <br /><br />
-  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=sqlite,sqlserver,mongo,postgresql,mysql,redis">
+  <img align="center" src="assets/icons/databases.svg">
   <br /><br /><br /><br />
-  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=UI+Frameworks">
-  <br /><br />
-  <img align="center"
-    src="https://go-skill-icons.vercel.app/api/icons?i=avaloniaui,flutter,blazor,qt,tauri,electron,angular,vuejs,react&perline=3">
-  <br /><br /><br /><br />
-  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Platforms+/+Frameworks">
-  <br /><br />
-  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=dotnet,nodejs,deno,spring,yew">
-  <br /><br /><br /><br />
-  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Package+/+Build">
-  <br /><br />
-  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=cmake,maven,gradle,vite,webpack,npm,yarn,pnpm">
-  <br /><br /><br /><br />
-  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Tools">
+  <img align="center" src="assets/typing/ui-frameworks.svg">
   <br /><br />
   <img align="center"
-    src="https://go-skill-icons.vercel.app/api/icons?i=git,svn,postman,swagger,ipfs,nginx,tomcat,caddy,pm2,tor,terminal,thunderbird&perline=6">
+    src="assets/icons/ui-frameworks.svg">
   <br /><br /><br /><br />
-  <img align="center"
-    src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Game+Engines+/+3D+/+AI+/+CV">
+  <img align="center" src="assets/typing/platforms-frameworks.svg">
+  <br /><br />
+  <img align="center" src="assets/icons/platforms-frameworks.svg">
+  <br /><br /><br /><br />
+  <img align="center" src="assets/typing/package-build.svg">
+  <br /><br />
+  <img align="center" src="assets/icons/package-build.svg">
+  <br /><br /><br /><br />
+  <img align="center" src="assets/typing/tools.svg">
   <br /><br />
   <img align="center"
-    src="https://go-skill-icons.vercel.app/api/icons?i=unity,unreal,godot,cuda,pytorch,tensorflow,threejs,opencv">
+    src="assets/icons/tools.svg">
   <br /><br /><br /><br />
-  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Hardwares">
-  <br /><br />
-  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=arduino,platformio">
-  <br /><br /><br /><br />
-  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Learn+/+Research">
+  <img align="center"
+    src="assets/typing/game-engines.svg">
   <br /><br />
   <img align="center"
-    src="https://go-skill-icons.vercel.app/api/icons?i=mermaid,md,matlab,latex,jupyter,anaconda,numpy">
+    src="assets/icons/game-engines.svg">
   <br /><br /><br /><br />
-  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=IDEs+/+Editors">
+  <img align="center" src="assets/typing/hardwares.svg">
+  <br /><br />
+  <img align="center" src="assets/icons/hardwares.svg">
+  <br /><br /><br /><br />
+  <img align="center" src="assets/typing/learn-research.svg">
   <br /><br />
   <img align="center"
-    src="https://go-skill-icons.vercel.app/api/icons?i=visualstudio,vscode,xcode,rider,rustrover,clion,idea,androidstudio,resharper,pycharm,fleet,eclipse,vim,neovim,sublime,obsidian&perline=4">
+    src="assets/icons/learn-research.svg">
   <br /><br /><br /><br />
-  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Medias+Editors">
+  <img align="center" src="assets/typing/ides-editors.svg">
   <br /><br />
   <img align="center"
-    src="https://go-skill-icons.vercel.app/api/icons?i=photoshop,premiere,aftereffects,audition,illustrator,lightroom,davinci,blender,gimp,inkscape,figma,lunacy&perline=4">
+    src="assets/icons/ides-editors.svg">
   <br /><br /><br /><br />
-  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Cloud+Services">
+  <img align="center" src="assets/typing/medias-editors.svg">
   <br /><br />
   <img align="center"
-    src="https://go-skill-icons.vercel.app/api/icons?i=github,gitlab,gitea,bitbucket,azure,aws,cloudflare,vercel,codepen&perline=3">
+    src="assets/icons/medias-editors.svg">
   <br /><br /><br /><br />
-  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Operating+Systems">
+  <img align="center" src="assets/typing/cloud-services.svg">
   <br /><br />
   <img align="center"
-    src="https://go-skill-icons.vercel.app/api/icons?i=windows,apple,android,linux,ubuntu,debian,kali,arch,redhat,raspberrypi&perline=5">
+    src="assets/icons/cloud-services.svg">
   <br /><br /><br /><br />
-  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Virtual+Environment">
+  <img align="center" src="assets/typing/operating-systems.svg">
   <br /><br />
   <img align="center"
-    src="https://go-skill-icons.vercel.app/api/icons?i=proxmox,virtualbox,vmwareworkstation,wsl,docker">
+    src="assets/icons/operating-systems.svg">
   <br /><br /><br /><br />
-  <img align="center" src="https://readme-typing-svg.demolab.com?center=true&repeat=false&lines=Internet+Browsers">
+  <img align="center" src="assets/typing/virtual-environment.svg">
   <br /><br />
-  <img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=chrome,chromium,edge,firefox,brave,arcbrowser">
+  <img align="center"
+    src="assets/icons/virtual-environment.svg">
+  <br /><br /><br /><br />
+  <img align="center" src="assets/typing/internet-browsers.svg">
+  <br /><br />
+  <img align="center" src="assets/icons/internet-browsers.svg">
 </p>
 
 <br>
@@ -191,19 +191,19 @@
 <p align="center">
   <br /><br /><br />
   <img
-    src="https://capsule-render.vercel.app/api?type=venom&height=150&color=timeGradient&text=Contact&fontSize=50&fontAlignY=55&animation=twinkling&fontColor=9daaf8" />
+    src="assets/banner/contact.svg" />
   <br /><br /><br /><br /><br />
-  <a href="https://x.com/dynesshely"><img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=x"></a>
+  <a href="https://x.com/dynesshely"><img align="center" src="assets/icons/contact-x.svg"></a>
   <a href="https://mastodon.social/@dynesshely"><img align="center"
-      src="https://go-skill-icons.vercel.app/api/icons?i=mastodon"></a>
-  <a href="mailto:dynesshely@gmail.com"><img align="center" src="https://go-skill-icons.vercel.app/api/icons?i=gmail"></a>
+      src="assets/icons/contact-mastodon.svg"></a>
+  <a href="mailto:dynesshely@gmail.com"><img align="center" src="assets/icons/contact-gmail.svg"></a>
 </p>
 
 <br>
 
 <p align="center">
   <img
-    src="https://capsule-render.vercel.app/api?type=venom&height=300&color=timeGradient&text=...&section=header&reversal=false&fontAlignY=44"
+    src="assets/banner/footer.svg"
     alt="decoration | ..." />
 </p>
 

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="854" height="210" viewBox="0 0 854 210">
+    <script xmlns="" />
+    <script xmlns="" />
+    <style>
+        .text { font-size: 70px; font-weight: 700; font-family:
+        -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe
+        UI Emoji; } .desc { font-size: 20px; font-weight: 500; font-family:
+        -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe
+        UI Emoji; }
+        .text, .desc { animation: fadeIn 1.2s ease-in-out forwards; } @keyframes fadeIn { from {
+        opacity: 0; } to { opacity: 1; } }
+    </style>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 854 210">
+
+        <path fill="#A3DCBE" fill-opacity="1"
+            d="M 427 210 Q 327 70 213.5 210 Q 100 70 0 210 Q 50 0 427 0 Q 750 0 854 210 Q 727 70 639.5 210 Q 527 70 427 210" />
+    </svg>
+
+</svg>

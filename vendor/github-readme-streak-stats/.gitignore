@@ -1,0 +1,23 @@
+# Generated files
+vendor/
+node_modules/
+*.log
+composer.phar
+.vercel
+
+# Cache directory
+cache/
+
+# Local Configuration
+.DS_Store
+
+# Environment
+.env
+.env*.local
+.php-version
+DOCKER_ENV
+docker_tag
+
+# IDE
+.vscode/
+.idea/

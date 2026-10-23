@@ -1,0 +1,65 @@
+{
+  "name": "capsule-render",
+  "version": "1.0.0",
+  "description": "🌈 Dynamic Coloful Image Render",
+  "keywords": [
+    "capsule-render",
+    "dynamic-image",
+    "image-generator"
+  ],
+  "main": "api/index.ts",
+  "scripts": {
+    "start": "vercel dev",
+    "dev": "vite",
+    "build": "tsc --project tsconfig.app.json && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --project tsconfig.app.json",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "prepare": "husky install",
+    "test:update": "jest --updateSnapshot"
+  },
+  "author": "kyechan99",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kyechan99/capsule-render/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kyechan99/capsule-render.git"
+  },
+  "dependencies": {
+    "bmates-ui": "^1.1.5",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "vercel": "^54.0.0",
+    "xmldom": "^0.6.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.9",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
+    "@babel/preset-typescript": "^7.26.0",
+    "@commitlint/cli": "^19.0.0",
+    "@commitlint/config-conventional": "^19.0.0",
+    "@jest/globals": "^29.7.0",
+    "@types/jest": "^29.5.14",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.0.4",
+    "babel-jest": "^29.7.0",
+    "husky": "^9.0.0",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.2.0",
+    "prettier": "3.8.3",
+    "prettier-2": "npm:prettier@^3.0.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.7.3",
+    "vite": "^7.1.7"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,json,css}": [
+      "prettier --cache --write"
+    ]
+  }
+}

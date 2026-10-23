@@ -1,0 +1,84 @@
+## Contributing
+
+Contributions are welcome! Feel free to open an issue or submit a pull request if you have a way to improve this project.
+
+Make sure your request is meaningful and you have tested the app locally before submitting a pull request.
+
+### Installing Requirements
+
+#### Requirements
+
+- [PHP 8.1+](https://www.apachefriends.org/index.html)
+- [Composer](https://getcomposer.org)
+
+#### Linux
+
+```bash
+sudo apt-get install php
+sudo apt-get install php-curl
+sudo apt-get install composer
+```
+
+#### macOS
+
+Using [Homebrew](https://brew.sh):
+
+```bash
+brew install php
+brew install composer
+```
+
+PHP on macOS typically includes the curl extension. If you need to enable it, ensure `php.ini` has `extension=curl` uncommented (run `php --ini` to find your config file).
+
+#### Windows
+
+Install PHP from [XAMPP](https://www.apachefriends.org/index.html) or [php.net](https://windows.php.net/download)
+
+[▶ How to install and run PHP using XAMPP (Windows)](https://www.youtube.com/watch?v=K-qXW9ymeYQ)
+
+[📥 Download Composer](https://getcomposer.org/download/)
+
+### Clone the repository
+
+```
+git clone https://github.com/DenverCoder1/readme-typing-svg.git
+cd readme-typing-svg
+```
+
+### Running the app locally
+
+```bash
+composer start
+```
+
+Open http://localhost:8000/ and add parameters to run the project locally.
+
+### Running the tests
+
+Before you can run tests, PHPUnit must be installed. You can install it using Composer by running the following command.
+
+```bash
+composer install
+```
+
+### Format and test the code
+
+Run the following command to format the code with Prettier:
+
+```
+composer run format
+```
+
+Run the following command to check if your code is formatted properly:
+
+```
+composer run format:check
+```
+
+> **Note** You need to have [`prettier`](https://prettier.io/) and the [prettier-php plugin](https://github.com/prettier/plugin-php) installed globally in order to run this command.
+
+Run the following command to run the PHPUnit test script which will verify that the tested functionality is still working.
+
+```bash
+composer test
+```

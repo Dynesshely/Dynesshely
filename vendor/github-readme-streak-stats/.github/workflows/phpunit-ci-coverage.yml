@@ -1,0 +1,31 @@
+name: PHPUnit CI
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+
+env:
+  PHP_VERSION: 8.2
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: php-actions/composer@v6
+        with:
+          php_extensions: intl
+          php_version: ${{ env.PHP_VERSION }}
+      - name: PHPUnit Tests
+        uses: php-actions/phpunit@v4
+        with:
+          php_extensions: intl
+          php_version: ${{ env.PHP_VERSION }}
+          bootstrap: vendor/autoload.php
+          configuration: tests/phpunit/phpunit.xml
+          args: --testdox
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}

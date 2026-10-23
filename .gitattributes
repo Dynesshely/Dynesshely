@@ -1,0 +1,8 @@
+# Generated images are committed byte-for-byte. Normalising their line endings on
+# checkout would make the generator's "did anything change?" diff dirty on every
+# run, which is exactly what the scheduled workflow uses to decide whether to
+# commit. Keep them LF everywhere.
+assets/**/*.svg text eol=lf
+
+# Vendored upstream snapshots are kept as downloaded from their release tarballs.
+vendor/** -text

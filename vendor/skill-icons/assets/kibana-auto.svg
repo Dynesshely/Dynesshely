@@ -1,0 +1,14 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" id="kibana">
+<style>
+#kibana {
+    rect {fill: #242938}
+    @media (prefers-color-scheme: light) {
+        rect {fill: #F4F2ED}
+    }
+}
+</style>
+<rect width="256" height="256" rx="60" fill="#242938"/>
+<path fill="#F04E98" d="M195.1,39.2H56.3v66.6c24,0,46.5,6.2,66.2,16.9L195.1,39.2z"/>
+<path fill="#343741" d="M56.3,105.8V199l66.2-76.3C102.8,112,80.3,105.8,56.3,105.8z"/>
+<path fill="#00BFB3" d="M136.8,131.6l-68,78.3l-6,6.9h129.4C185.2,181.8,164.9,151.7,136.8,131.6z"/>
+</svg>

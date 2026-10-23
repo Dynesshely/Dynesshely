@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="854" height="120" viewBox="0 0 854 120">
+    <script xmlns="" />
+    <script xmlns="" />
+    <style>
+        .text { font-size: 30px; font-weight: 700; font-family:
+        -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe
+        UI Emoji; } .desc { font-size: 20px; font-weight: 500; font-family:
+        -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe
+        UI Emoji; }
+        .text, .desc { animation: fadeIn 1.2s ease-in-out forwards; } @keyframes fadeIn { from {
+        opacity: 0; } to { opacity: 1; } }
+    </style>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 854 120">
+        <defs>
+            <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#ff6a00" />
+                <stop offset="100%" stop-color="#f720db" />
+            </linearGradient>
+        </defs>
+        <path fill="url(#linear)" fill-opacity="1" d="m 0 0 l 0 120 l 854 0 l 0 -120 z" />
+    </svg>
+
+    <rect fill="#282829" height="70" width="160" x="30%" y="50%" transform="translate(-80, -35)"
+        rx="25" ry="25" />
+    <text text-anchor="middle" dominant-baseline="middle" x="30%" y="50%" class="text"
+        style="fill:#f7f5f5;" stroke="#none" stroke-width="1"> RECT </text>
+    <text text-anchor="middle" dominant-baseline="middle" x="60%" y="50%" class="desc"
+        style="fill:#f7f5f5;">Use 'textBg' to highlight 'text'</text>
+</svg>

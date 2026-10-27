@@ -44,7 +44,7 @@
   <br /><br /><br /><br />
   <!-- https://github.com/anuraghazra/github-readme-stats -->
   <img align="center"
-    src="https://github-readme-stats-vercel-lovat-chi.vercel.app/api/wakatime?username=Dynesshely&theme=transparent&hide_border=true&layout=compact&langs_count=22" />
+    src="assets/stats/wakatime.svg" />
   <!-- https://github.com/anuraghazra/github-readme-stats -->
   <img align="center"
     src="assets/stats/top-langs.svg" />

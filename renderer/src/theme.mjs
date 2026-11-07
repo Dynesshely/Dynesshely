@@ -115,3 +115,71 @@ export const THEMES = {
     },
   },
 };
+
+/**
+ * Section banners. One Morandi hue per section so the page reads as a family
+ * without repeating the same colour, and none of them competes with the status
+ * panel below.
+ *
+ *   Status   dusty blue
+ *   Intro    dusty violet
+ *   Skills   sage green
+ *   Contact  clay rose
+ *   Footer   neutral slate (pure decoration, no label)
+ */
+export const BANNER_FONT =
+  "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif";
+
+export const BANNERS = [
+  { id: "status", title: "Status", height: 150, gradient: ["#93A9C4", "#6E87A6"] },
+  { id: "intro", title: "Intro", height: 150, gradient: ["#A79BB8", "#817293"] },
+  { id: "skills", title: "Skills", height: 150, gradient: ["#9CAF9F", "#76897A"] },
+  { id: "contact", title: "Contact", height: 150, gradient: ["#C2A199", "#9A776F"] },
+  { id: "footer", title: "", height: 300, gradient: ["#8C9AA8", "#5F6C79"] },
+];
+
+/** Typing line shown above the status panel. */
+export const TYPING = {
+  text: "Hello GitHub @Dynesshely",
+  fontSize: 26,
+  color: "#6E87A6",
+  caret: "#A9B8CC",
+  typeMs: 1800,
+};
+
+const GROUP_COLOR = "#6E87A6";
+
+/**
+ * Every typing line in the README. The first one is the animated greeting; the
+ * rest are the small centred section labels inside the Skills block. They used to
+ * come from readme-typing-svg (blue/black) and would otherwise stay on that
+ * palette forever, since tools/ no longer runs in CI.
+ */
+export const TYPING_LINES = [
+  { id: "hello", ...TYPING },
+  ...[
+    ["programing-languages", "Programing Languages"],
+    ["databases", "Databases"],
+    ["ui-frameworks", "UI Frameworks"],
+    ["platforms-frameworks", "Platforms / Frameworks"],
+    ["package-build", "Package / Build"],
+    ["tools", "Tools"],
+    ["game-engines", "Game Engines / 3D / AI / CV"],
+    ["hardwares", "Hardwares"],
+    ["learn-research", "Learn / Research"],
+    ["ides-editors", "IDEs / Editors"],
+    ["medias-editors", "Medias Editors"],
+    ["cloud-services", "Cloud Services"],
+    ["operating-systems", "Operating Systems"],
+    ["virtual-environment", "Virtual Environment"],
+    ["internet-browsers", "Internet Browsers"],
+  ].map(([id, text]) => ({
+    id,
+    text,
+    fontSize: 20,
+    color: GROUP_COLOR,
+    align: "center",
+    caret: false,
+    typeMs: 1200,
+  })),
+];

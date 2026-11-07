@@ -1,13 +1,24 @@
-# tools - local README image generator
+# tools - legacy per-card generator (kept as a fallback)
+
+> **This folder no longer runs in CI.** The status block in `README.md` is
+> rendered by [`../renderer/`](../renderer/README.md) (plain Node), and
+> [`../.github/workflows/readme-assets.yml`](../.github/workflows/readme-assets.yml)
+> only runs the renderer. The per-card pipeline below is kept so reverting the
+> README to the old five-card layout stays possible: run it manually, the
+> committed `assets/stats/*.svg` are also still there.
+>
+> `check.mjs` **is** still used by CI - it validates the asset references in
+> `README.md` and `demos/*.md` and does not need PHP or Go.
+>
+> Running `node generate.mjs` here also overwrites `assets/banner/*.svg` and
+> `assets/typing/*.svg` with the pre-Morandi versions. Those paths are owned by
+> [`../renderer/`](../renderer/README.md) now; only do this if you are reverting the
+> whole page, then re-run the renderer to get the Morandi chrome back.
 
 Every image in `README.md` is a committed SVG under `assets/`, produced by the
 vendored generators in `../vendor/`. Nothing on the profile page depends on a
 third-party rendering service any more, so an upstream outage (like the
 `402 DEPLOYMENT_DISABLED` from `github-readme-activity-graph`) cannot break it.
-
-> The composed status panel now shown in the README is rendered by `../renderer/`
-> instead. This folder still generates the individual cards (`assets/stats/*.svg`)
-> and is kept as a fallback, so reverting the README block is a one-commit revert.
 
 ## How it works
 
@@ -94,7 +105,7 @@ Never commit tokens - pass them through the shell environment only.
 
 `.github/workflows/readme-assets.yml` runs on a 5-hour cron (plus on pushes that
 touch `tools/`, `vendor/`, `assets/` or `README.md`, and manual dispatch). It
-installs all three runtimes, regenerates the assets, runs `tools/check.mjs`, and
+installs Node, regenerates the panel, runs `tools/check.mjs`, and
 commits `assets/` back to `main` only when something changed.
 
 Secrets:

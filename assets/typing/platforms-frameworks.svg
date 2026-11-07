@@ -1,23 +1,17 @@
-<!-- https://github.com/DenverCoder1/readme-typing-svg/ -->
-<svg xmlns='http://www.w3.org/2000/svg'
-    xmlns:xlink='http://www.w3.org/1999/xlink'
-    viewBox='0 0 400 50'
-    style='background-color: #00000000;'
-    width='400px' height='50px'>
-
-    
-                    <path id='path0'>
-                            <!-- Single line -->
-                                <animate id='d0' attributeName='d' begin='0s'
-                    dur='5000ms' fill='freeze'
-                    values='m0,25 h0 ; m0,25 h400 ; m0,25 h400 ; m0,25 h400' keyTimes='0;0.8;0.8;1' />
-                    </path>
-    <text font-family='"monospace", monospace' fill='#36BCF7' font-size='20'
-        dominant-baseline='auto'
-        x='50%' text-anchor='middle'
-        letter-spacing='normal'>
-        <textPath xlink:href='#path0'>
-            Platforms / Frameworks
-        </textPath>
-    </text>
+<svg width="336" height="60" viewBox="0 0 336 60" fill="none"
+    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Platforms / Frameworks">
+  <title>Platforms / Frameworks</title>
+  <style>
+    tspan {
+      opacity: 1;
+      animation: glyph 110ms both;
+    }
+    @keyframes glyph {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+  </style>
+  <text x="36.0" y="37" fill="#6E87A6" font-family="'Fira Code', 'Cascadia Code', 'Segoe UI Mono', 'SFMono-Regular', Consolas, monospace"
+    font-size="20" font-weight="500" letter-spacing="0" xml:space="preserve"><tspan style="animation-delay:0.200s">P</tspan><tspan style="animation-delay:0.255s">l</tspan><tspan style="animation-delay:0.309s">a</tspan><tspan style="animation-delay:0.364s">t</tspan><tspan style="animation-delay:0.418s">f</tspan><tspan style="animation-delay:0.473s">o</tspan><tspan style="animation-delay:0.527s">r</tspan><tspan style="animation-delay:0.582s">m</tspan><tspan style="animation-delay:0.636s">s</tspan><tspan style="animation-delay:0.691s">&#160;</tspan><tspan style="animation-delay:0.745s">/</tspan><tspan style="animation-delay:0.800s">&#160;</tspan><tspan style="animation-delay:0.855s">F</tspan><tspan style="animation-delay:0.909s">r</tspan><tspan style="animation-delay:0.964s">a</tspan><tspan style="animation-delay:1.018s">m</tspan><tspan style="animation-delay:1.073s">e</tspan><tspan style="animation-delay:1.127s">w</tspan><tspan style="animation-delay:1.182s">o</tspan><tspan style="animation-delay:1.236s">r</tspan><tspan style="animation-delay:1.291s">k</tspan><tspan style="animation-delay:1.345s">s</tspan></text>
+  
 </svg>

@@ -55,9 +55,19 @@ async function walk(dir) {
 }
 
 const generated = await walk(assetsDir);
+
+// assets/stats/*.svg are the individual cards produced by the old per-card
+// pipeline. The README no longer uses them (it shows the composed panel from
+// renderer/), but they are kept as a fallback, so their absence from the docs is
+// expected rather than a warning.
+const RETIRED_PREFIXES = ["assets/stats/"];
+
 for (const file of generated) {
   const relative = path.relative(repoRoot, file).split(path.sep).join("/");
-  if (!referenced.has(relative)) warnings.push(`${relative}: generated but not referenced by README.md or demos/`);
+  const retired = RETIRED_PREFIXES.some((prefix) => relative.startsWith(prefix));
+  if (!referenced.has(relative) && !retired) {
+    warnings.push(`${relative}: generated but not referenced by README.md or demos/`);
+  }
   const content = await fs.readFile(file, "utf8").catch(() => "");
   if (!/<svg[\s>]/i.test(content)) problems.push(`${relative}: generated file contains no <svg> root element`);
 }

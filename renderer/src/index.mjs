@@ -14,10 +14,12 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { THEMES } from "./theme.mjs";
+import { BANNERS, THEMES, TYPING_LINES } from "./theme.mjs";
 import { loadCardData, renderUpstreamCards } from "./render/cards.mjs";
 import { computeStreak, fetchContributionCalendar, fetchFullHistory } from "./data/calendar.mjs";
 import { composeStatusPanel } from "./compose.mjs";
+import { renderBanner } from "./render/banner.mjs";
+import { renderTyping } from "./render/typing.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const rendererRoot = path.resolve(here, "..");
@@ -79,6 +81,26 @@ async function main() {
     log(
       `contributions=${history.total} (lifetime, since ${history.since}) streak=${streak.current.length} longest=${streak.longest.length}`,
     );
+  }
+
+  // Section banners and the typing line are theme-independent chrome around the
+  // panel, written once per run.
+  const bannerDir = path.join(repoRoot, "assets", "banner");
+  await fs.mkdir(bannerDir, { recursive: true });
+  for (const banner of BANNERS) {
+    const svg = renderBanner(banner);
+    const target = path.join(bannerDir, `${banner.id}.svg`);
+    await fs.writeFile(target, svg, "utf8");
+    log(`wrote ${path.relative(repoRoot, target)} (${Buffer.byteLength(svg)} bytes)`);
+  }
+
+  const typingDir = path.join(repoRoot, "assets", "typing");
+  await fs.mkdir(typingDir, { recursive: true });
+  for (const line of TYPING_LINES) {
+    const svg = renderTyping(line);
+    const target = path.join(typingDir, `${line.id}.svg`);
+    await fs.writeFile(target, svg, "utf8");
+    log(`wrote ${path.relative(repoRoot, target)} (${Buffer.byteLength(svg)} bytes)`);
   }
 
   const variants = variant === "all" ? ["light", "dark"] : [variant];

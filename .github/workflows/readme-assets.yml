@@ -1,7 +1,11 @@
 name: README assets
 
-# Every image in README.md is generated from the vendored sources under vendor/.
-# This workflow rebuilds them on a schedule and commits the result.
+# The status panel in README.md is rendered by renderer/ (plain Node, no PHP/Go
+# runtime). This workflow rebuilds it on a schedule and commits the result.
+#
+# The older per-card generators in tools/ and the vendored services in vendor/ are
+# kept in the repository only as a manual fallback: they are no longer executed
+# here, so this job needs nothing but Node.
 
 on:
   schedule:
@@ -11,17 +15,19 @@ on:
   pull_request:
     branches: [main]
     paths:
-      - "tools/**"
-      - "vendor/**"
+      - "renderer/**"
+      - "tools/check.mjs"
       - "assets/**"
+      - "demos/**"
       - "README.md"
       - ".github/workflows/readme-assets.yml"
   push:
     branches: [main]
     paths:
-      - "tools/**"
-      - "vendor/**"
+      - "renderer/**"
+      - "tools/check.mjs"
       - "assets/**"
+      - "demos/**"
       - "README.md"
       - ".github/workflows/readme-assets.yml"
 
@@ -34,92 +40,30 @@ concurrency:
 
 jobs:
   regenerate:
-    name: Regenerate README images
+    name: Regenerate the status panel
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 15
     env:
-      # Some vendored packages run `husky` from their `prepare` script; there is
-      # no repository root inside vendor/, so keep it quiet.
-      HUSKY: "0"
       CI: "true"
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: "22"
           cache: npm
-          cache-dependency-path: |
-            tools/package-lock.json
-            renderer/package-lock.json
-            vendor/github-readme-stats/package-lock.json
-            vendor/github-readme-activity-graph/package-lock.json
-
-      - name: Set up PHP + Composer
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: "8.3"
-          # intl is required by github-readme-streak-stats.
-          extensions: intl, mbstring, dom, curl, json
-          tools: composer
-          coverage: none
-
-      - name: Set up Go
-        uses: actions/setup-go@v5
-        with:
-          go-version: "1.23"
-          cache-dependency-path: vendor/skill-icons/go.sum
-
-      - name: Install generator dependencies
-        working-directory: tools
-        run: npm ci
-
-      - name: Install github-readme-stats dependencies
-        working-directory: vendor/github-readme-stats
-        run: npm ci
-
-      - name: Install github-readme-activity-graph dependencies
-        working-directory: vendor/github-readme-activity-graph
-        run: npm ci
-
-      - name: Cache PHP service dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            vendor/readme-typing-svg/vendor
-            vendor/github-readme-streak-stats/vendor
-          key: composer-${{ hashFiles('vendor/readme-typing-svg/composer.lock', 'vendor/github-readme-streak-stats/composer.lock') }}
-
-      - name: Install PHP service dependencies
-        run: |
-          composer install --no-interaction --no-progress --no-dev --working-dir=vendor/readme-typing-svg
-          composer install --no-interaction --no-progress --no-dev --working-dir=vendor/github-readme-streak-stats
+          cache-dependency-path: renderer/package-lock.json
 
       - name: Report missing optional secrets
         env:
           PAT_1: ${{ secrets.PAT_1 }}
         run: |
           if [ -z "${PAT_1}" ]; then
-            echo "::warning title=PAT_1 secret is not set::github-readme-stats needs a personal access token; the stats and top-languages cards will be skipped and their committed SVGs left untouched."
+            echo "::warning title=PAT_1 secret is not set::the GitHub stats and top-languages panels need a personal access token; without it those panels render a placeholder and the committed SVGs are left untouched."
           fi
-
-      - name: Generate images
-        working-directory: tools
-        env:
-          # github-readme-stats reads other accounts' data, which the workflow's
-          # own GITHUB_TOKEN is not allowed to do ("Resource not accessible by
-          # integration"), so it needs a personal access token. Without the
-          # secret the two stats cards are skipped by tools/generate.mjs and the
-          # previously committed SVGs stay in place.
-          PAT_1: ${{ secrets.PAT_1 }}
-          # github-readme-activity-graph accepts the built-in token.
-          TOKEN: ${{ secrets.PAT_1 || github.token }}
-          # Optional. Without it the WakaTime card stays on the remote deployment.
-          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-        run: node generate.mjs
 
       - name: Install renderer dependencies
         working-directory: renderer
@@ -128,7 +72,10 @@ jobs:
       - name: Generate the composed status panel
         working-directory: renderer
         env:
-          # The vendored github-readme-stats fetchers look for PAT_1..PAT_n.
+          # The vendored github-readme-stats fetchers look for PAT_1..PAT_n. The
+          # workflow's own GITHUB_TOKEN is scoped to this repository and cannot read
+          # other accounts' data, so it is only a fallback for the fetchers' env
+          # lookup - the panels degrade to a placeholder rather than failing.
           PAT_1: ${{ secrets.PAT_1 }}
           GITHUB_TOKEN: ${{ github.token }}
         run: node src/index.mjs
@@ -147,12 +94,12 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets
-          git commit -m "chore(assets): regenerate README images" -m "Rendered from the vendored generators in vendor/ via tools/generate.mjs."
+          git commit -m "chore(assets): regenerate README images" -m "Rendered from renderer/ via src/index.mjs."
           git push
 
       - name: Upload generated assets
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: readme-assets
           path: assets/

@@ -1,23 +1,17 @@
-<!-- https://github.com/DenverCoder1/readme-typing-svg/ -->
-<svg xmlns='http://www.w3.org/2000/svg'
-    xmlns:xlink='http://www.w3.org/1999/xlink'
-    viewBox='0 0 400 50'
-    style='background-color: #00000000;'
-    width='400px' height='50px'>
-
-    
-                    <path id='path0'>
-                            <!-- Single line -->
-                                <animate id='d0' attributeName='d' begin='0s'
-                    dur='5000ms' fill='freeze'
-                    values='m0,25 h0 ; m0,25 h400 ; m0,25 h400 ; m0,25 h400' keyTimes='0;0.8;0.8;1' />
-                    </path>
-    <text font-family='"monospace", monospace' fill='#36BCF7' font-size='20'
-        dominant-baseline='auto'
-        x='50%' text-anchor='middle'
-        letter-spacing='normal'>
-        <textPath xlink:href='#path0'>
-            UI Frameworks
-        </textPath>
-    </text>
+<svg width="228" height="60" viewBox="0 0 228 60" fill="none"
+    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="UI Frameworks">
+  <title>UI Frameworks</title>
+  <style>
+    tspan {
+      opacity: 1;
+      animation: glyph 110ms both;
+    }
+    @keyframes glyph {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+  </style>
+  <text x="36.0" y="37" fill="#6E87A6" font-family="'Fira Code', 'Cascadia Code', 'Segoe UI Mono', 'SFMono-Regular', Consolas, monospace"
+    font-size="20" font-weight="500" letter-spacing="0" xml:space="preserve"><tspan style="animation-delay:0.200s">U</tspan><tspan style="animation-delay:0.292s">I</tspan><tspan style="animation-delay:0.385s">&#160;</tspan><tspan style="animation-delay:0.477s">F</tspan><tspan style="animation-delay:0.569s">r</tspan><tspan style="animation-delay:0.662s">a</tspan><tspan style="animation-delay:0.754s">m</tspan><tspan style="animation-delay:0.846s">e</tspan><tspan style="animation-delay:0.938s">w</tspan><tspan style="animation-delay:1.031s">o</tspan><tspan style="animation-delay:1.123s">r</tspan><tspan style="animation-delay:1.215s">k</tspan><tspan style="animation-delay:1.308s">s</tspan></text>
+  
 </svg>

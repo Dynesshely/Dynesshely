@@ -158,9 +158,33 @@ row, so keep `LAYOUT.height` in sync.
   old README URLs, so switching between the composed panel and the individual
   cards does not change the numbers.
 
+## Section banners and typing lines
+
+The renderer also owns the page chrome that used to come from capsule-render and
+readme-typing-svg:
+
+| output | replaces |
+| --- | --- |
+| `assets/banner/{status,intro,skills,contact,footer}.svg` | capsule-render `type=venom` headers |
+| `assets/typing/*.svg` (16 lines) | readme-typing-svg images |
+
+- **Banners** are 800px wide flat Morandi gradients, one hue per section (dusty
+  blue / dusty violet / sage / clay rose / neutral slate), with three translucent
+  wave bands for depth. They are defined in `BANNERS` in `src/theme.mjs`; add an
+  entry there to get another section header.
+- **Typing lines** reveal glyph by glyph with a monospace `steps()` staircase and
+  a blinking caret. Everything is CSS animation, and critically the SVG has **no
+  inline `opacity: 0`**: the `both` fill mode hides glyphs only while the animation
+  is active, so a viewer that does not run animations (headless renderers, image
+  proxies) still shows the finished line instead of a blank image.
+
 ## Relationship to tools/ and vendor/
 
 `tools/` still generates the individual cards (`assets/stats/*.svg`) from the
-vendored services and is kept as a fallback: reverting the README to the old block
-is a one-commit revert. Nothing in `renderer/` starts a service or a PHP/Go
-runtime - it is plain Node and uses the same PAT_1 secret.
+vendored services, but **it no longer runs in CI** - it is kept only as a manual
+fallback so the README can be reverted to the old five-card layout. Note that a
+manual `tools` run also rewrites `assets/banner/*.svg` and `assets/typing/*.svg`
+back to the pre-Morandi versions, because those paths belong to the renderer now.
+
+Nothing in `renderer/` starts a service or a PHP/Go runtime - it is plain Node and
+uses the same PAT_1 secret.

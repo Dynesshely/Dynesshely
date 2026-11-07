@@ -29,26 +29,12 @@
   <img
     src="assets/banner/status.svg" />
   <br /><br /><br /><br /><br />
-  <!-- https://github.com/anuraghazra/github-readme-stats -->
-  <!-- <img align="center" width="400" src="https://github-readme-stats.vercel.app/api?username=Dynesshely&theme=transparent&show_icons=true&hide_border=true&show=reviews&hide_title=true&hide=contribs&number_format=long" /> -->
-  <img align="center" width="400"
-    src="assets/stats/github.svg" />
-  <!-- https://github.com/DenverCoder1/github-readme-streak-stats -->
-  <!-- <img align="center" width="400" src="https://streak-stats.demolab.com?user=Dynesshely&theme=transparent&hide_border=true" /> -->
-  <img align="center" width="400"
-    src="assets/stats/streak.svg" />
-  <br /><br /><br /><br />
-  <!-- https://github.com/Ashutosh00710/github-readme-activity-graph -->
-  <img width="800"
-    src="assets/stats/activity-graph.svg" />
-  <br /><br /><br /><br />
-  <!-- https://github.com/anuraghazra/github-readme-stats -->
-  <img align="center"
-    src="assets/stats/wakatime.svg" />
-  <!-- https://github.com/anuraghazra/github-readme-stats -->
-  <img align="center"
-    src="assets/stats/top-langs.svg" />
-  <br /><br /><br /><br />
+  <!-- One composed panel rendered by renderer/ - preview page: demos/status-panel.md -->
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/status-dark.svg">
+    <img align="center" src="assets/status.svg" width="800"
+      alt="Dynesshely status: contribution heatmap, 30-day activity, GitHub stats, streak, WakaTime and top languages">
+  </picture>
 </p>
 
 <br />

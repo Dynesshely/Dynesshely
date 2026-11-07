@@ -85,17 +85,30 @@ URL - no API key is involved.
 
 ```
 +--------------------------------------------------------------+
-| Contributions (heatmap, last year)                       5,892 |
+| Contributions (heatmap, last year)                            |
++--------------------------------------------------------------+
+| Activity (last 30 days, smoothed area/line)                   |
 +------------------------------+-------------------------------+
-| GitHub Stats                 | Streak                        |
+| GitHub Stats                 | Streak (total/current/longest) |
 +------------------------------+-------------------------------+
-| WakaTime                     | Top Languages                 |
+| WakaTime (compact, 22)       | Top Languages (donut, top 10) |
 +------------------------------+-------------------------------+
 ```
 
 To add a panel, add a box to `LAYOUT.panels` in `src/theme.mjs` and one
 `panelFrame(...)` call in `src/compose.mjs`; the height is derived from the last
 row, so keep `LAYOUT.height` in sync.
+
+## Data notes
+
+- **Streak** values are lifetime: `contributionsCollection` accepts at most one
+  year per query, so `fetchFullHistory()` walks the account year by year and
+  merges the daily counts. A single-year window would cap the streak at 365.
+- **WakaTime** is read anonymously from the public profile (`PAT_1` is only used
+  by the GitHub fetchers).
+- **Top Languages / WakaTime** use the same `langs_count` and `hide` values as the
+  old README URLs, so switching between the composed panel and the individual
+  cards does not change the numbers.
 
 ## Relationship to tools/ and vendor/
 

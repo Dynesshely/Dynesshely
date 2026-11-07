@@ -53,8 +53,11 @@ export function renderUpstreamCards(data, theme) {
   if (data.topLangs.status === "fulfilled") {
     const svg = renderTopLanguages(data.topLangs.value, {
       ...theme.card,
-      layout: "compact",
-      langs_count: 6,
+      // Same "top 10, no HTML" cut as the original README URL; a donut fills the
+      // panel height much better than a 10-row compact list.
+      layout: "donut",
+      langs_count: 10,
+      card_width: 340,
       hide: ["html"],
     });
     cards.topLangs = { svg, ...svgSize(svg) };
@@ -63,8 +66,9 @@ export function renderUpstreamCards(data, theme) {
   if (data.wakatime.status === "fulfilled") {
     const svg = renderWakatimeCard(data.wakatime.value, {
       ...theme.card,
+      // 22 languages, exactly like the old card URL.
       layout: "compact",
-      langs_count: 6,
+      langs_count: 22,
       display_format: "time",
     });
     cards.wakatime = { svg, ...svgSize(svg) };

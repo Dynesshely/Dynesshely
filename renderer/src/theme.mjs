@@ -19,16 +19,15 @@ export const LAYOUT = {
   gap: 12,
   padding: 14,
   radius: 14,
-  titleHeight: 30,
-  // rows: top banner row, then two rows of two panels
   panels: {
-    heatmap: { x: 16, y: 16, w: 768, h: 156 },
-    stats: { x: 16, y: 184, w: 378, h: 166 },
-    streak: { x: 406, y: 184, w: 378, h: 166 },
-    wakatime: { x: 16, y: 362, w: 378, h: 148 },
-    toplangs: { x: 406, y: 362, w: 378, h: 148 },
+    contributions: { x: 16, y: 16, w: 768, h: 162 },
+    activity: { x: 16, y: 190, w: 768, h: 156 },
+    stats: { x: 16, y: 358, w: 378, h: 166 },
+    streak: { x: 406, y: 358, w: 378, h: 166 },
+    wakatime: { x: 16, y: 536, w: 378, h: 357 },
+    toplangs: { x: 406, y: 536, w: 378, h: 357 },
   },
-  height: 362 + 148 + 16,
+  height: 536 + 357 + 16,
 };
 
 export const THEMES = {
@@ -42,8 +41,11 @@ export const THEMES = {
     muted: "#6e7781",
     accent: ACCENT[1],
     accentSoft: "rgba(0, 114, 255, 0.12)",
-    heat: ["#eef2f8", "#b9d9ff", "#6fb2ff", "#2f86ff", "#0072ff"],
-    heatEmpty: "rgba(15, 23, 42, 0.08)",
+    // continuous heat scale: empty cells use heatEmpty, everything else is
+    // interpolated between heatFrom (low) and heatTo (high)
+    heatFrom: "#e6effc",
+    heatTo: "#0072ff",
+    heatEmpty: "rgba(15, 23, 42, 0.07)",
     // render options handed to the vendored github-readme-stats cards
     card: {
       theme: "transparent",
@@ -69,8 +71,9 @@ export const THEMES = {
     muted: "#8b949e",
     accent: ACCENT[0],
     accentSoft: "rgba(0, 198, 255, 0.14)",
-    heat: ["#161b22", "#123a5c", "#0d5c94", "#0a82c4", "#00c6ff"],
-    heatEmpty: "rgba(255, 255, 255, 0.08)",
+    heatFrom: "#123b58",
+    heatTo: "#00c6ff",
+    heatEmpty: "rgba(255, 255, 255, 0.07)",
     card: {
       theme: "transparent",
       bg_color: "00000000",

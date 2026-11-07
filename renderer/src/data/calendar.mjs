@@ -90,6 +90,56 @@ export async function fetchContributionCalendar(username, now = new Date()) {
   return { total: calendar.totalContributions, days, weeks, counts };
 }
 
+const USER_CREATED_QUERY = `
+  query ($login: String!) {
+    user(login: $login) {
+      createdAt
+    }
+  }
+`;
+
+/**
+ * Full-history contributions.
+ *
+ * `contributionsCollection` only accepts a range of at most one year, so the
+ * account lifetime is walked one year at a time and the daily counts are merged.
+ * The streak numbers the old PHP card showed (1,121 days) are lifetime values, so
+ * a one-year window is not enough.
+ */
+export async function fetchFullHistory(username, now = new Date()) {
+  const created = await graphql(USER_CREATED_QUERY, { login: username });
+  const createdAt = new Date(created.user.createdAt);
+  const end = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1));
+
+  const counts = new Map();
+  let cursor = createdAt;
+  while (cursor < end) {
+    const to = new Date(Math.min(cursor.getTime() + 365 * DAY_MS, end.getTime()));
+    const data = await graphql(CALENDAR_QUERY, {
+      login: username,
+      from: cursor.toISOString(),
+      to: to.toISOString(),
+    });
+    const calendar = data?.user?.contributionsCollection?.contributionCalendar;
+    for (const week of calendar?.weeks ?? []) {
+      for (const day of week.contributionDays) {
+        counts.set(day.date, Math.max(counts.get(day.date) ?? 0, day.contributionCount));
+      }
+    }
+    cursor = new Date(to.getTime() + DAY_MS);
+  }
+
+  const days = [...counts.entries()]
+    .map(([date, count]) => ({ date, count }))
+    .sort((a, b) => (a.date < b.date ? -1 : 1));
+
+  return {
+    days,
+    total: days.reduce((sum, day) => sum + day.count, 0),
+    since: createdAt.toISOString().slice(0, 10),
+  };
+}
+
 /** Longest and current streak, computed the same way as github-readme-streak-stats. */
 export function computeStreak(days, now = new Date()) {
   const today = now.toISOString().slice(0, 10);

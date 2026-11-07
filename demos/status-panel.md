@@ -1,17 +1,19 @@
 # Status panel preview
 
-[`renderer/`](../renderer/README.md) composes the five cards of the main README
-into a single 800px panel: contribution heatmap, GitHub stats, streak, WakaTime
-and top languages - rendered by the vendored upstream renderers but laid out with
-one shared design system (grid, radius, borders, typography, accent colour).
+[`renderer/`](../renderer/README.md) replaces the five separate status cards of
+the profile README with a single 800px panel: contribution heatmap, 30-day
+activity, GitHub stats, streak, WakaTime and top languages - rendered by the
+vendored upstream renderers but laid out with one shared design system (grid,
+radius, borders, typography, accent colour).
 
-The main [`README.md`](../README.md) still shows the individual cards; this page
-previews the composed variant so the two can be compared side by side.
+The main [`README.md`](../README.md) now uses this composed panel; this page keeps
+the details of how it is produced, plus what changed compared with the old
+individual cards.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="../assets/status-dark.svg">
   <img src="../assets/status.svg" width="800"
-    alt="Composed status panel: contribution heatmap, GitHub stats, streak, WakaTime and top languages">
+    alt="Composed status panel: contribution heatmap, 30-day activity, GitHub stats, streak, WakaTime and top languages">
 </picture>
 
 ## How it is generated
@@ -37,10 +39,23 @@ node src/index.mjs
 
 ```
 +--------------------------------------------------------------+
-| Contributions (heatmap, last year)                       5,892 |
+| Contributions (heatmap, last year)                       5,894 |
++--------------------------------------------------------------+
+| Activity (last 30 days, smoothed area/line)                    |
 +------------------------------+-------------------------------+
-| GitHub Stats                 | Streak                        |
+| GitHub Stats                 | Streak (3 columns)            |
 +------------------------------+-------------------------------+
-| WakaTime                     | Top Languages                 |
+| WakaTime (22 languages)      | Top Languages (donut, top 10) |
 +------------------------------+-------------------------------+
 ```
+
+## What changed compared with the individual cards
+
+- **Streak** shows lifetime values (18,419 / 1,120 / 1,121), not a one-year window:
+  `contributionsCollection` is queried once per year since the account was
+  created and the daily counts are merged.
+- **WakaTime** renders the same 22 languages and **Top Languages** the same top 10
+  (excluding HTML) as the original card URLs, so the numbers match.
+- **Contributions** keeps the 53-week heatmap *and* adds a 30-day trend line, both
+  as separate cards; the heatmap now uses a continuous colour scale interpolated
+  between the quietest and busiest day instead of fixed buckets.

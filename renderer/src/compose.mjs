@@ -11,7 +11,7 @@
  */
 import { LAYOUT, THEMES } from "./theme.mjs";
 import { svgDataUri } from "./render/cards.mjs";
-import { renderHeatmapPanel } from "./render/heatmap.mjs";
+import { renderHeatmapPanel, renderTrendPanel } from "./render/heatmap.mjs";
 import { renderStreakPanel } from "./render/streak.mjs";
 
 const esc = (value) =>
@@ -71,15 +71,24 @@ export function composeStatusPanel({ variant, cards, streak, calendar }) {
     ? { kind: "inline", render: (box, t) => renderHeatmapPanel(calendar, t, box) }
     : { kind: "missing", message: "contribution data unavailable" };
 
+  const trend = calendar
+    ? { kind: "inline", render: (box, t) => renderTrendPanel(calendar, t, box) }
+    : { kind: "missing", message: "activity data unavailable" };
+
   const streakPanel = streak
     ? { kind: "inline", render: (box, t) => renderStreakPanel(streak, t, box) }
     : { kind: "missing", message: "streak data unavailable" };
 
   const body = [
-    panelFrame(theme, panels.heatmap, {
+    panelFrame(theme, panels.contributions, {
       title: "Contributions",
       hint: calendar ? `${calendar.total.toLocaleString("en-US")} in the last year` : "",
       content: heatmap,
+    }),
+    panelFrame(theme, panels.activity, {
+      title: "Activity",
+      hint: "last 30 days",
+      content: trend,
     }),
     panelFrame(theme, panels.stats, {
       title: "GitHub Stats",

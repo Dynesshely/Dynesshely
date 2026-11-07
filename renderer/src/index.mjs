@@ -16,7 +16,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { THEMES } from "./theme.mjs";
 import { loadCardData, renderUpstreamCards } from "./render/cards.mjs";
-import { computeStreak, fetchContributionCalendar } from "./data/calendar.mjs";
+import { computeStreak, fetchContributionCalendar, fetchFullHistory } from "./data/calendar.mjs";
 import { composeStatusPanel } from "./compose.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -52,10 +52,16 @@ const problems = [];
 async function main() {
   log(`rendering ${username} (${variant})`);
 
-  const [cardsRaw, calendar] = await Promise.all([
+  const [cardsRaw, calendar, history] = await Promise.all([
     loadCardData(username),
     fetchContributionCalendar(username).catch((err) => {
       problems.push(`contribution calendar: ${err.message}`);
+      return null;
+    }),
+    // The streak card shows lifetime values, which needs the whole account
+    // history: contributionsCollection only accepts one year per query.
+    fetchFullHistory(username).catch((err) => {
+      problems.push(`lifetime contributions: ${err.message}`);
       return null;
     }),
   ]);
@@ -66,10 +72,12 @@ async function main() {
     }
   }
 
-  const streak = calendar ? computeStreak(calendar.days) : null;
-  if (calendar) {
+  const streak = history
+    ? { ...computeStreak(history.days), total: history.total, since: history.since }
+    : null;
+  if (streak) {
     log(
-      `contributions=${calendar.total} streak=${streak.current.length} longest=${streak.longest.length}`,
+      `contributions=${history.total} (lifetime, since ${history.since}) streak=${streak.current.length} longest=${streak.longest.length}`,
     );
   }
 

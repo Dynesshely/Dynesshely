@@ -130,12 +130,18 @@ export const THEMES = {
 export const BANNER_FONT =
   "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif";
 
+/**
+ * Rendered by vendor/capsule-render itself (`type=venom`), so the artwork and the
+ * animation are exactly what the old public endpoint produced - only the colour
+ * stops are Morandi, one hue per section.
+ */
 export const BANNERS = [
-  { id: "status", title: "Status", height: 150, gradient: ["#93A9C4", "#6E87A6"] },
-  { id: "intro", title: "Intro", height: 150, gradient: ["#A79BB8", "#817293"] },
-  { id: "skills", title: "Skills", height: 150, gradient: ["#9CAF9F", "#76897A"] },
-  { id: "contact", title: "Contact", height: 150, gradient: ["#C2A199", "#9A776F"] },
-  { id: "footer", title: "", height: 300, gradient: ["#8C9AA8", "#5F6C79"] },
+  { id: "status", type: "venom", text: "Status", height: 150, color: "0:93A9C4,100:6E87A6", fontColor: "ffffff" },
+  { id: "intro", type: "venom", text: "Intro", height: 150, color: "0:A79BB8,100:817293", fontColor: "ffffff" },
+  { id: "skills", type: "venom", text: "Skills", height: 150, color: "0:9CAF9F,100:76897A", fontColor: "ffffff" },
+  { id: "contact", type: "venom", text: "Contact", height: 150, color: "0:C2A199,100:9A776F", fontColor: "ffffff" },
+  { id: "footer", type: "venom", text: "...", height: 300, color: "0:8C9AA8,100:5F6C79", fontColor: "ffffff",
+    extra: { section: "header", reversal: "false", fontAlignY: "44" } },
 ];
 
 /** Typing line shown above the status panel. */
@@ -147,39 +153,32 @@ export const TYPING = {
   typeMs: 1800,
 };
 
-const GROUP_COLOR = "#6E87A6";
+/** Typing lines still rendered on their own (the rest moved into the skills panel). */
+export const TYPING_LINES = [{ id: "hello", ...TYPING }];
 
 /**
- * Every typing line in the README. The first one is the animated greeting; the
- * rest are the small centred section labels inside the Skills block. They used to
- * come from readme-typing-svg (blue/black) and would otherwise stay on that
- * palette forever, since tools/ no longer runs in CI.
+ * Skills panel groups: one heading plus its icon list, laid out on a shared grid
+ * by src/render/skills.mjs. Icon ids are the short names the old skill-icons URLs
+ * used; the adapter maps them onto the vendored asset file names.
  */
-export const TYPING_LINES = [
-  { id: "hello", ...TYPING },
-  ...[
-    ["programing-languages", "Programing Languages"],
-    ["databases", "Databases"],
-    ["ui-frameworks", "UI Frameworks"],
-    ["platforms-frameworks", "Platforms / Frameworks"],
-    ["package-build", "Package / Build"],
-    ["tools", "Tools"],
-    ["game-engines", "Game Engines / 3D / AI / CV"],
-    ["hardwares", "Hardwares"],
-    ["learn-research", "Learn / Research"],
-    ["ides-editors", "IDEs / Editors"],
-    ["medias-editors", "Medias Editors"],
-    ["cloud-services", "Cloud Services"],
-    ["operating-systems", "Operating Systems"],
-    ["virtual-environment", "Virtual Environment"],
-    ["internet-browsers", "Internet Browsers"],
-  ].map(([id, text]) => ({
-    id,
-    text,
-    fontSize: 20,
-    color: GROUP_COLOR,
-    align: "center",
-    caret: false,
-    typeMs: 1200,
-  })),
+export const SKILL_GROUPS = [
+  {
+    id: "programing-languages",
+    title: "Programing Languages",
+    icons: "cs,c,cpp,rust,dart,kotlin,java,py,html,css,js,ts,php,zig,visualbasic,lua,fortran,julia,pwsh,bash,haskell,swift,go,ruby,perl".split(","),
+  },
+  { id: "databases", title: "Databases", icons: "sqlite,sqlserver,mongo,postgresql,mysql,redis".split(",") },
+  { id: "ui-frameworks", title: "UI Frameworks", icons: "avaloniaui,flutter,blazor,qt,tauri,electron,angular,vuejs,react".split(",") },
+  { id: "platforms-frameworks", title: "Platforms / Frameworks", icons: "net,nodejs,deno,spring,yew".split(",") },
+  { id: "package-build", title: "Package / Build", icons: "cmake,maven,gradle,vite,webpack,npm,yarn,pnpm".split(",") },
+  { id: "tools", title: "Tools", icons: "git,svn,postman,swagger,ipfs,nginx,tomcat,caddy,pm2,tor,terminal,thunderbird".split(",") },
+  { id: "game-engines", title: "Game Engines / 3D / AI / CV", icons: "unity,unreal,godot,cuda,pytorch,tensorflow,threejs,opencv".split(",") },
+  { id: "hardwares", title: "Hardwares", icons: "arduino,platformio".split(",") },
+  { id: "learn-research", title: "Learn / Research", icons: "mermaid,md,matlab,latex,jupyter,anaconda,numpy".split(",") },
+  { id: "ides-editors", title: "IDEs / Editors", icons: "visualstudio,vscode,xcode,rider,rustrover,clion,idea,androidstudio,resharper,pycharm,fleet,eclipse,vim,neovim,sublime,obsidian".split(",") },
+  { id: "medias-editors", title: "Medias Editors", icons: "photoshop,premiere,aftereffects,audition,illustrator,lightroom,davinci,blender,gimp,inkscape,figma,lunacy".split(",") },
+  { id: "cloud-services", title: "Cloud Services", icons: "github,gitlab,gitea,bitbucket,azure,aws,cloudflare,vercel,codepen".split(",") },
+  { id: "operating-systems", title: "Operating Systems", icons: "windows,apple,android,linux,ubuntu,debian,kali,arch,redhat,raspberrypi".split(",") },
+  { id: "virtual-environment", title: "Virtual Environment", icons: "proxmox,virtualbox,vmwareworkstation,wsl,docker".split(",") },
+  { id: "internet-browsers", title: "Internet Browsers", icons: "chrome,chromium,edge,firefox,brave,arcbrowser".split(",") },
 ];

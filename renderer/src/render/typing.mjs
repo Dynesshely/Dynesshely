@@ -1,15 +1,18 @@
 /**
  * Typing animation (replaces the readme-typing-svg images).
  *
- * Design constraint: the SVG must look complete even when animations do not run
- * (headless renderers, image proxies, accessibility tools). So nothing is hidden
- * through inline attributes - every glyph starts at its natural opacity and the
- * CSS animation's `both` fill hides it only while the animation is active. If CSS
- * animations are unavailable the result is simply the finished line, not a blank
- * image.
+ * Cycles type -> hold -> delete -> hold, the way the original service behaved:
+ * the text is revealed glyph by glyph, pauses, then is removed glyph by glyph,
+ * then starts over.
  *
- * Glyph advance is a monospace constant, so the delay staircase is computed from
- * font-size without measuring text and without embedding a font (~1-2 KB per file).
+ * Implementation notes:
+ * - The reveal is a `clipPath` rect whose width animates in `steps()` so every
+ *   step lands exactly on a monospace glyph boundary (no text measuring, no font
+ *   embedding).
+ * - `animation-timing-function` is set per keyframe segment, so the typing and
+ *   deleting halves are both stepped while the hold segments are linear.
+ * - The rect ships with its final width inline: if CSS animations are unavailable
+ *   the finished line is shown instead of an empty image.
  */
 
 const CHAR_RATIO = 0.6; // monospace advance width relative to font-size
@@ -26,12 +29,14 @@ const escapeXml = (value) =>
 
 /**
  * @param {object} spec
- * @param {string} spec.text        line to type
+ * @param {string} spec.text           line to type
  * @param {number} [spec.fontSize]
- * @param {string} [spec.color]     text colour (Morandi accent)
- * @param {string|false} [spec.caret] caret colour, or false for no caret
+ * @param {string} [spec.color]        text colour (Morandi accent)
+ * @param {string|false} [spec.caret]  caret colour, or false for no caret
  * @param {"left"|"center"} [spec.align]
- * @param {number} [spec.typeMs]    total typing duration in ms
+ * @param {number} [spec.typeMs]       typing phase duration
+ * @param {number} [spec.holdMs]       pause with the full line visible
+ * @param {number} [spec.deleteMs]     deleting phase duration
  * @param {number} [spec.paddingX]
  */
 export function renderTyping(spec) {
@@ -42,29 +47,28 @@ export function renderTyping(spec) {
     caret = "#A9B8CC",
     align = "left",
     typeMs = 1800,
+    holdMs = 1600,
+    deleteMs = 1200,
     paddingX = 36,
   } = spec;
 
   const chars = [...text];
   const charWidth = fontSize * CHAR_RATIO;
   const textWidth = chars.length * charWidth;
-  const width = Math.round(textWidth + paddingX * 2);
+  const width = Math.round(textWidth + paddingX * 2 + fontSize);
   const height = Math.round(fontSize * 3);
   const baselineY = Math.round(height / 2 + fontSize * 0.35);
   const startX = align === "center" ? (width - textWidth) / 2 : paddingX;
-  const stepSeconds = typeMs / 1000 / chars.length;
-  const glyphMs = 110;
 
-  const spans = chars
-    .map((char, index) => {
-      const delay = (0.2 + index * stepSeconds).toFixed(3);
-      const glyph = char === " " ? "&#160;" : escapeXml(char);
-      return `<tspan style="animation-delay:${delay}s">${glyph}</tspan>`;
-    })
-    .join("");
+  const typeEnd = typeMs;
+  const holdEnd = typeEnd + holdMs;
+  const deleteEnd = holdEnd + deleteMs;
+  const total = deleteEnd + 300; // small empty beat before looping
+  const pct = (ms) => ((ms / total) * 100).toFixed(2);
+  const duration = (total / 1000).toFixed(2);
 
   const caretMarkup = caret
-    ? `<rect class="caret" x="${(startX + textWidth + 2).toFixed(1)}"
+    ? `<rect class="caret" x="${(startX + 1).toFixed(1)}"
     y="${(baselineY - fontSize * 0.92).toFixed(1)}" width="2"
     height="${(fontSize * 1.15).toFixed(1)}" fill="${caret}" />`
     : "";
@@ -72,12 +76,14 @@ export function renderTyping(spec) {
   const caretCss = caret
     ? `
     .caret {
-      animation: blink 1s steps(2, jump-none) infinite;
+      animation: caret ${duration}s infinite, blink 1s steps(2, jump-none) infinite;
     }
-    @keyframes blink {
-      0%   { opacity: 1; }
-      50%  { opacity: 0; }
-      100% { opacity: 1; }
+    @keyframes caret {
+      0%             { transform: translateX(0); animation-timing-function: steps(${chars.length}, end); }
+      ${pct(typeEnd)}%   { transform: translateX(${textWidth.toFixed(1)}px); }
+      ${pct(holdEnd)}%   { transform: translateX(${textWidth.toFixed(1)}px); animation-timing-function: steps(${chars.length}, end); }
+      ${pct(deleteEnd)}% { transform: translateX(0); }
+      100%           { transform: translateX(0); }
     }`
     : "";
 
@@ -85,17 +91,38 @@ export function renderTyping(spec) {
     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${escapeXml(text)}">
   <title>${escapeXml(text)}</title>
   <style>
-    tspan {
-      opacity: 1;
-      animation: glyph ${glyphMs}ms both;
+    .reveal {
+      animation: reveal ${duration}s infinite;
     }
-    @keyframes glyph {
-      from { opacity: 0; }
-      to   { opacity: 1; }
+    @keyframes reveal {
+      0% {
+        width: 0;
+        animation-timing-function: steps(${chars.length}, end);
+      }
+      ${pct(typeEnd)}% { width: ${textWidth.toFixed(1)}px; }
+      ${pct(holdEnd)}% {
+        width: ${textWidth.toFixed(1)}px;
+        animation-timing-function: steps(${chars.length}, end);
+      }
+      ${pct(deleteEnd)}% { width: 0; }
+      100% { width: 0; }
     }${caretCss}
+    @keyframes blink {
+      0%   { opacity: 1; }
+      50%  { opacity: 0; }
+      100% { opacity: 1; }
+    }
   </style>
-  <text x="${startX.toFixed(1)}" y="${baselineY}" fill="${color}" font-family="${TYPING_FONT}"
-    font-size="${fontSize}" font-weight="500" letter-spacing="0" xml:space="preserve">${spans}</text>
+  <defs>
+    <clipPath id="typing-reveal">
+      <rect class="reveal" x="${startX.toFixed(1)}" y="0"
+        width="${textWidth.toFixed(1)}" height="${height}" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#typing-reveal)">
+    <text x="${startX.toFixed(1)}" y="${baselineY}" fill="${color}" font-family="${TYPING_FONT}"
+      font-size="${fontSize}" font-weight="500" letter-spacing="0">${escapeXml(text)}</text>
+  </g>
   ${caretMarkup}
 </svg>
 `;

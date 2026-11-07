@@ -1,5 +1,7 @@
 # --- generator scratch -------------------------------------------------------
 .build/
+# renderer bundles the vendored capsule-render models here on first run
+renderer/.cache/
 
 # --- node --------------------------------------------------------------------
 node_modules/

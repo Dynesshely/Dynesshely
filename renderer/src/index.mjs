@@ -20,6 +20,7 @@ import { computeStreak, fetchContributionCalendar, fetchFullHistory } from "./da
 import { composeStatusPanel } from "./compose.mjs";
 import { renderBanner } from "./render/banner.mjs";
 import { renderTyping } from "./render/typing.mjs";
+import { renderIcon, renderSkillsPanel } from "./render/skills.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const rendererRoot = path.resolve(here, "..");
@@ -88,7 +89,7 @@ async function main() {
   const bannerDir = path.join(repoRoot, "assets", "banner");
   await fs.mkdir(bannerDir, { recursive: true });
   for (const banner of BANNERS) {
-    const svg = renderBanner(banner);
+    const svg = await renderBanner(banner);
     const target = path.join(bannerDir, `${banner.id}.svg`);
     await fs.writeFile(target, svg, "utf8");
     log(`wrote ${path.relative(repoRoot, target)} (${Buffer.byteLength(svg)} bytes)`);
@@ -99,6 +100,27 @@ async function main() {
   for (const line of TYPING_LINES) {
     const svg = renderTyping(line);
     const target = path.join(typingDir, `${line.id}.svg`);
+    await fs.writeFile(target, svg, "utf8");
+    log(`wrote ${path.relative(repoRoot, target)} (${Buffer.byteLength(svg)} bytes)`);
+  }
+
+  // Skills panel: one image for the whole block (icons + group headings).
+  const skills = await renderSkillsPanel({ variant: "light" });
+  const skillsTarget = path.join(repoRoot, "assets", "skills.svg");
+  await fs.writeFile(skillsTarget, skills.svg, "utf8");
+  log(`wrote ${path.relative(repoRoot, skillsTarget)} (${Buffer.byteLength(skills.svg)} bytes)`);
+  for (const item of skills.missing) problems.push(`skills icon unavailable: ${item}`);
+
+  // Contact row icons (one tile each) - same vendored assets as the skills grid.
+  const iconDir = path.join(repoRoot, "assets", "icons");
+  await fs.mkdir(iconDir, { recursive: true });
+  for (const [id, file] of [["x", "contact-x"], ["mastodon", "contact-mastodon"], ["gmail", "contact-gmail"]]) {
+    const { svg, missing } = await renderIcon(id);
+    if (!svg) {
+      problems.push(`contact icon unavailable: ${id}`);
+      continue;
+    }
+    const target = path.join(iconDir, `${file}.svg`);
     await fs.writeFile(target, svg, "utf8");
     log(`wrote ${path.relative(repoRoot, target)} (${Buffer.byteLength(svg)} bytes)`);
   }

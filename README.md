@@ -66,77 +66,10 @@
   <img
     src="assets/banner/skills.svg" />
   <br /><br /><br /><br /><br />
-  <!-- https://github.com/LelouchFR/skill-icons -->
-  <img align="center" src="assets/typing/programing-languages.svg">
-  <br /><br />
+  <!-- Icons and group headings are one image, rendered by renderer/ -->
   <img align="center"
-    src="assets/icons/languages.svg">
-  <br /><br /><br /><br />
-  <img align="center" src="assets/typing/databases.svg">
-  <br /><br />
-  <img align="center" src="assets/icons/databases.svg">
-  <br /><br /><br /><br />
-  <img align="center" src="assets/typing/ui-frameworks.svg">
-  <br /><br />
-  <img align="center"
-    src="assets/icons/ui-frameworks.svg">
-  <br /><br /><br /><br />
-  <img align="center" src="assets/typing/platforms-frameworks.svg">
-  <br /><br />
-  <img align="center" src="assets/icons/platforms-frameworks.svg">
-  <br /><br /><br /><br />
-  <img align="center" src="assets/typing/package-build.svg">
-  <br /><br />
-  <img align="center" src="assets/icons/package-build.svg">
-  <br /><br /><br /><br />
-  <img align="center" src="assets/typing/tools.svg">
-  <br /><br />
-  <img align="center"
-    src="assets/icons/tools.svg">
-  <br /><br /><br /><br />
-  <img align="center"
-    src="assets/typing/game-engines.svg">
-  <br /><br />
-  <img align="center"
-    src="assets/icons/game-engines.svg">
-  <br /><br /><br /><br />
-  <img align="center" src="assets/typing/hardwares.svg">
-  <br /><br />
-  <img align="center" src="assets/icons/hardwares.svg">
-  <br /><br /><br /><br />
-  <img align="center" src="assets/typing/learn-research.svg">
-  <br /><br />
-  <img align="center"
-    src="assets/icons/learn-research.svg">
-  <br /><br /><br /><br />
-  <img align="center" src="assets/typing/ides-editors.svg">
-  <br /><br />
-  <img align="center"
-    src="assets/icons/ides-editors.svg">
-  <br /><br /><br /><br />
-  <img align="center" src="assets/typing/medias-editors.svg">
-  <br /><br />
-  <img align="center"
-    src="assets/icons/medias-editors.svg">
-  <br /><br /><br /><br />
-  <img align="center" src="assets/typing/cloud-services.svg">
-  <br /><br />
-  <img align="center"
-    src="assets/icons/cloud-services.svg">
-  <br /><br /><br /><br />
-  <img align="center" src="assets/typing/operating-systems.svg">
-  <br /><br />
-  <img align="center"
-    src="assets/icons/operating-systems.svg">
-  <br /><br /><br /><br />
-  <img align="center" src="assets/typing/virtual-environment.svg">
-  <br /><br />
-  <img align="center"
-    src="assets/icons/virtual-environment.svg">
-  <br /><br /><br /><br />
-  <img align="center" src="assets/typing/internet-browsers.svg">
-  <br /><br />
-  <img align="center" src="assets/icons/internet-browsers.svg">
+    src="assets/skills.svg"
+    alt="Skills: languages, databases, frameworks, build tools, editors, cloud and operating systems">
 </p>
 
 <br>

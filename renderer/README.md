@@ -158,25 +158,36 @@ row, so keep `LAYOUT.height` in sync.
   old README URLs, so switching between the composed panel and the individual
   cards does not change the numbers.
 
-## Section banners and typing lines
+## Section banners, skills panel and typing lines
 
-The renderer also owns the page chrome that used to come from capsule-render and
-readme-typing-svg:
+The renderer also owns the page chrome that used to come from third-party
+services:
 
 | output | replaces |
 | --- | --- |
 | `assets/banner/{status,intro,skills,contact,footer}.svg` | capsule-render `type=venom` headers |
-| `assets/typing/*.svg` (16 lines) | readme-typing-svg images |
+| `assets/skills.svg` | skill-icons grids **and** the typing headings above them |
+| `assets/icons/contact-*.svg` | the three contact tiles from skill-icons |
+| `assets/typing/hello.svg` | readme-typing-svg greeting |
 
-- **Banners** are 800px wide flat Morandi gradients, one hue per section (dusty
-  blue / dusty violet / sage / clay rose / neutral slate), with three translucent
-  wave bands for depth. They are defined in `BANNERS` in `src/theme.mjs`; add an
-  entry there to get another section header.
-- **Typing lines** reveal glyph by glyph with a monospace `steps()` staircase and
-  a blinking caret. Everything is CSS animation, and critically the SVG has **no
-  inline `opacity: 0`**: the `both` fill mode hides glyphs only while the animation
-  is active, so a viewer that does not run animations (headless renderers, image
-  proxies) still shows the finished line instead of a blank image.
+- **Banners are rendered by the vendored capsule-render sources**, not by a
+  reimplementation: `src/render/banner.mjs` bundles
+  `vendor/capsule-render/model/index.ts` with esbuild and calls the same model
+  classes that back the public endpoint, so the artwork and the `twinkling`
+  animation are identical - only the colour stops are Morandi, one hue per
+  section (`BANNERS` in `src/theme.mjs`).
+- **The skills panel** inlines 143 vendored icon SVGs
+  (`src/assets/icons/`, taken from `vendor/skill-icons/assets/<name>-dark.svg`)
+  into one 800px image with group headings. Icons that ship without a background
+  tile get a matching rounded tile so the grid reads evenly, and every icon's
+  internal ids are prefixed to keep 140+ gradients/clip paths from colliding.
+  Short names from the old URLs (`js`, `py`, `net`, ...) are mapped through the
+  same table upstream used.
+- **Typing lines** cycle type -> hold -> delete -> hold, like the original
+  service. The reveal is a `clipPath` whose width animates in `steps()`, with the
+  per-segment timing function set on the keyframes so both the typing and the
+  deleting halves are stepped. The rect ships with its final width inline, so a
+  viewer without CSS animation shows the finished line rather than a blank box.
 
 ## Relationship to tools/ and vendor/
 

@@ -1,0 +1,20 @@
+{
+  "name": "readme-status-renderer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Self-hosted status panel: renders the GitHub / WakaTime cards with upstream renderers and composes them into one SVG",
+  "scripts": {
+    "build": "node src/index.mjs",
+    "build:light": "node src/index.mjs --variant light --out assets/status.svg",
+    "build:dark": "node src/index.mjs --variant dark --out assets/status-dark.svg",
+    "build:all": "node src/index.mjs --variant all"
+  },
+  "dependencies": {
+    "axios": "^1.13.1",
+    "dotenv": "^17.2.3",
+    "emoji-name-map": "^2.0.3",
+    "github-username-regex": "^1.0.0",
+    "word-wrap": "^1.2.5"
+  }
+}

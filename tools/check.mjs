@@ -18,10 +18,15 @@ const repoRoot = path.resolve(here, "..");
 const readmePath = path.join(repoRoot, "README.md");
 const assetsDir = path.join(repoRoot, "assets");
 
-const readme = await fs.readFile(readmePath, "utf8");
-const referenced = new Set(
-  [...readme.matchAll(/assets\/[\w./-]+\.svg/g)].map((match) => match[0]),
-);
+const docsDir = path.join(repoRoot, "demos");
+
+// The main README and the previews under demos/ both reference generated assets.
+const docFiles = [readmePath, ...(await walk(docsDir)).filter((file) => file.endsWith(".md"))];
+const referenced = new Set();
+for (const file of docFiles) {
+  const text = await fs.readFile(file, "utf8");
+  for (const match of text.matchAll(/assets\/[\w./-]+\.svg/g)) referenced.add(match[0]);
+}
 
 const problems = [];
 const warnings = [];
@@ -34,7 +39,7 @@ for (const ref of referenced) {
     const content = await fs.readFile(file, "utf8");
     if (!/<svg[\s>]/i.test(content)) problems.push(`${ref}: file exists but contains no <svg> root element`);
   } catch {
-    problems.push(`${ref}: referenced by README.md but missing on disk`);
+    problems.push(`${ref}: referenced by README.md or demos/ but missing on disk`);
   }
 }
 
@@ -52,12 +57,12 @@ async function walk(dir) {
 const generated = await walk(assetsDir);
 for (const file of generated) {
   const relative = path.relative(repoRoot, file).split(path.sep).join("/");
-  if (!referenced.has(relative)) warnings.push(`${relative}: generated but not referenced by README.md`);
+  if (!referenced.has(relative)) warnings.push(`${relative}: generated but not referenced by README.md or demos/`);
   const content = await fs.readFile(file, "utf8").catch(() => "");
   if (!/<svg[\s>]/i.test(content)) problems.push(`${relative}: generated file contains no <svg> root element`);
 }
 
-console.log(`README references ${referenced.size} local asset(s); assets/ contains ${generated.length} file(s).`);
+console.log(`README + demos reference ${referenced.size} local asset(s); assets/ contains ${generated.length} file(s).`);
 for (const warning of warnings) console.warn(`warning: ${warning}`);
 
 if (problems.length) {

@@ -5,6 +5,10 @@ vendored generators in `../vendor/`. Nothing on the profile page depends on a
 third-party rendering service any more, so an upstream outage (like the
 `402 DEPLOYMENT_DISABLED` from `github-readme-activity-graph`) cannot break it.
 
+> The composed status panel now shown in the README is rendered by `../renderer/`
+> instead. This folder still generates the individual cards (`assets/stats/*.svg`)
+> and is kept as a fallback, so reverting the README block is a one-commit revert.
+
 ## How it works
 
 ```

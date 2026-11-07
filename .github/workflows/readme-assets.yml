@@ -54,6 +54,7 @@ jobs:
           cache: npm
           cache-dependency-path: |
             tools/package-lock.json
+            renderer/package-lock.json
             vendor/github-readme-stats/package-lock.json
             vendor/github-readme-activity-graph/package-lock.json
 
@@ -119,6 +120,18 @@ jobs:
           # Optional. Without it the WakaTime card stays on the remote deployment.
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
         run: node generate.mjs
+
+      - name: Install renderer dependencies
+        working-directory: renderer
+        run: npm ci
+
+      - name: Generate the composed status panel
+        working-directory: renderer
+        env:
+          # The vendored github-readme-stats fetchers look for PAT_1..PAT_n.
+          PAT_1: ${{ secrets.PAT_1 }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node src/index.mjs
 
       - name: Verify README references
         run: node tools/check.mjs

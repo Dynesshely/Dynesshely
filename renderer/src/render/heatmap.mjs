@@ -27,13 +27,77 @@ const rgbToHex = (rgb) =>
   `#${rgb.map((channel) => Math.round(channel).toString(16).padStart(2, "0")).join("")}`;
 
 /**
- * Continuous heat scale: each day is interpolated between heatFrom (quiet) and
- * heatTo (peak) by count/max, with a slight gamma so low days stay distinguishable.
- * No fixed buckets.
+ * Distribution-aware heat scale.
+ *
+ * A plain count/max ramp (even with a gamma) collapses the busy middle: this
+ * profile has 227 of 365 days at exactly 9 contributions, so most of the grid sat
+ * on one flat tone while a few peaks owned the top of the scale. Two normalised
+ * views are blended instead:
+ *
+ *   normalCdf(z) - z = (count - mean) / stdev, pushed through the normal CDF. This
+ *                  uses the distribution's spread (variance) to place a day at its
+ *                  "how unusual is this?" position: around the mean it changes
+ *                  fastest, which is exactly where low/mid counts live
+ *   relative     - (count / max) ^ 0.5, keeps absolute magnitude in play so the
+ *                  peak stays at the very top and mid values don't outrun it
+ *
+ * The normal CDF is used instead of an empirical percentile on purpose: the
+ * empirical curve has a cliff at the mode (8 -> 9 would jump half a shade),
+ * whereas the CDF is smooth and still monotonic in count.
+ *
+ * Empty days stay outside the ramp (heatEmpty) so "no activity" never reads as
+ * "a little activity".
  */
-function heatColor(count, max, theme) {
+const WEIGHT_DISTRIBUTION = 0.55;
+const WEIGHT_MAGNITUDE = 0.45;
+const MAGNITUDE_GAMMA = 0.5;
+const T_FLOOR = 0.06;
+const T_CEIL = 1;
+
+/** Abramowitz & Stegun 7.1.26 error-function approximation (max error ~1.5e-7). */
+function erf(x) {
+  const sign = x < 0 ? -1 : 1;
+  const ax = Math.abs(x);
+  const t = 1 / (1 + 0.3275911 * ax);
+  const y =
+    1 -
+    ((((1.061405429 * t - 1.453152027) * t + 1.421413741) * t - 0.284496736) * t +
+      0.254829592) *
+      t *
+      Math.exp(-ax * ax);
+  return sign * y;
+}
+
+const normalCdf = (z) => 0.5 * (1 + erf(z / Math.SQRT2));
+
+function buildHeatScale(weeks, counts) {
+  const values = weeks
+    .flat()
+    .map((date) => counts.get(date) ?? 0)
+    .filter((count) => count > 0);
+
+  const n = values.length;
+  if (n === 0) return { max: 1, mean: 0, sd: 0 };
+
+  const sum = values.reduce((accumulator, value) => accumulator + value, 0);
+  const mean = sum / n;
+  const variance = values.reduce((accumulator, value) => accumulator + (value - mean) ** 2, 0) / n;
+
+  return { max: Math.max(...values), mean, sd: Math.sqrt(variance) };
+}
+
+function heatColor(count, scale, theme) {
   if (!count) return theme.heatEmpty;
-  const t = Math.pow(Math.min(1, count / Math.max(1, max)), 0.55);
+
+  const capped = Math.min(count, scale.max);
+  const z = scale.sd > 0 ? (capped - scale.mean) / scale.sd : 0;
+  const distribution = normalCdf(z);
+  const magnitude = Math.pow(capped / Math.max(1, scale.max), MAGNITUDE_GAMMA);
+
+  const blended =
+    WEIGHT_DISTRIBUTION * distribution + WEIGHT_MAGNITUDE * magnitude;
+  const t = Math.min(T_CEIL, Math.max(T_FLOOR, blended));
+
   const from = hexToRgb(theme.heatFrom);
   const to = hexToRgb(theme.heatTo);
   return rgbToHex(from.map((channel, index) => channel + (to[index] - channel) * t));
@@ -41,7 +105,7 @@ function heatColor(count, max, theme) {
 
 function renderHeatmap(calendar, theme, box) {
   const weeks = calendar.weeks.slice(-53);
-  const max = Math.max(1, ...weeks.flat().map((date) => calendar.counts.get(date) ?? 0));
+  const scale = buildHeatScale(weeks, calendar.counts);
 
   const labelWidth = 20;
   const gridWidth = weeks.length * STEP;
@@ -60,7 +124,7 @@ function renderHeatmap(calendar, theme, box) {
       const count = calendar.counts.get(date) ?? 0;
       const x = originX + offsetX + col * STEP;
       const y = originY + row * STEP;
-      cells += `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" rx="2.5" fill="${heatColor(count, max, theme)}"><title>${date}: ${count}</title></rect>`;
+      cells += `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" rx="2.5" fill="${heatColor(count, scale, theme)}"><title>${date}: ${count}</title></rect>`;
 
       const month = Number(date.slice(5, 7)) - 1;
       if (row === 0 && month !== lastMonth) {
@@ -151,13 +215,13 @@ function renderTrend(days, theme, box) {
     <g>
       <defs>
         <linearGradient id="trendFill" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="${theme.accent}" stop-opacity="0.28" />
+          <stop offset="0%" stop-color="${theme.accent}" stop-opacity="0.34" />
           <stop offset="100%" stop-color="${theme.accent}" stop-opacity="0" />
         </linearGradient>
       </defs>
       ${gridLines}
       <path d="${area}" fill="url(#trendFill)" />
-      <path d="${line}" fill="none" stroke="${theme.accent}" stroke-width="1.6"
+      <path d="${line}" fill="none" stroke="${theme.accent}" stroke-width="1.8"
         stroke-linecap="round" stroke-linejoin="round" />
       ${dots}
       ${xLabels}

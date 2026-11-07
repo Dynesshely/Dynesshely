@@ -14,6 +14,7 @@ import { fetchWakatimeStats } from "../upstream/github-readme-stats/src/fetchers
 import { renderStatsCard } from "../upstream/github-readme-stats/src/cards/stats.js";
 import { renderTopLanguages } from "../upstream/github-readme-stats/src/cards/top-languages.js";
 import { renderWakatimeCard } from "../upstream/github-readme-stats/src/cards/wakatime.js";
+import { morandiizeSvg } from "./morandi.mjs";
 
 export function svgDataUri(svg) {
   return `data:image/svg+xml;base64,${Buffer.from(svg, "utf8").toString("base64")}`;
@@ -42,6 +43,9 @@ export function renderUpstreamCards(data, theme) {
   if (data.stats.status === "fulfilled") {
     const svg = renderStatsCard(data.stats.value, {
       ...theme.card,
+      // Rendered near the panel content width (350px) so embedding does not scale
+      // the 14px labels down into unreadable 10px.
+      card_width: 400,
       show_icons: true,
       hide: ["contribs"],
       show: ["reviews"],
@@ -57,10 +61,11 @@ export function renderUpstreamCards(data, theme) {
       // panel height much better than a 10-row compact list.
       layout: "donut",
       langs_count: 10,
-      card_width: 340,
+      card_width: 350,
       hide: ["html"],
     });
-    cards.topLangs = { svg, ...svgSize(svg) };
+    // The donut is painted with upstream brand colours; mute them to match.
+    cards.topLangs = { svg: morandiizeSvg(svg), ...svgSize(svg) };
   }
 
   if (data.wakatime.status === "fulfilled") {
@@ -69,9 +74,10 @@ export function renderUpstreamCards(data, theme) {
       // 22 languages, exactly like the old card URL.
       layout: "compact",
       langs_count: 22,
+      card_width: 360,
       display_format: "time",
     });
-    cards.wakatime = { svg, ...svgSize(svg) };
+    cards.wakatime = { svg: morandiizeSvg(svg), ...svgSize(svg) };
   }
 
   return cards;

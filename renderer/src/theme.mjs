@@ -1,6 +1,10 @@
 /**
  * Design tokens for the composed status panel.
  *
+ * Palette: Morandi - muted, grey-leaning tones (fog blue, warm grey, parchment)
+ * so the panel sits quietly on both GitHub themes instead of the saturated blue
+ * the individual cards used to bring.
+ *
  * Two variants are produced because an SVG used through <img> cannot respond to
  * `prefers-color-scheme`; the README picks a variant with <picture> instead.
  */
@@ -10,8 +14,25 @@
 const FONT =
   "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'";
 
-/** Accent pair reused from the capsule-render banners so the page feels coherent. */
-export const ACCENT = ["#00c6ff", "#0072ff"];
+/**
+ * Morandi swatches.
+ *   mist    #A9B8CC  dusty blue (the darkest accent, used on dark backgrounds)
+ *   fog     #7D8FA8  deeper dusty blue (visible on white)
+ *   warmGrey#6B655E  labels on white
+ *   ink     #3F3B37  body text on white
+ *   bone    #CFC8BC  body text on dark
+ *   stone   #B0A89C  secondary text on dark
+ */
+export const MORANDI = {
+  mist: "#9DB2CC",
+  fog: "#7D8FA8",
+  warmGrey: "#6B655E",
+  ink: "#3F3B37",
+  bone: "#CFC8BC",
+  stone: "#B0A89C",
+  slate: "#38424D",
+  parchment: "#E3E7EC",
+};
 
 export const LAYOUT = {
   width: 800,
@@ -34,57 +55,62 @@ export const THEMES = {
   light: {
     variant: "light",
     font: FONT,
-    panelFill: "rgba(15, 23, 42, 0.035)",
-    panelStroke: "rgba(15, 23, 42, 0.10)",
-    title: "#57606a",
-    text: "#24292f",
-    muted: "#6e7781",
-    accent: ACCENT[1],
-    accentSoft: "rgba(0, 114, 255, 0.12)",
+    panelFill: "rgba(90, 82, 74, 0.045)",
+    panelStroke: "rgba(90, 82, 74, 0.12)",
+    title: "#57524C",
+    text: MORANDI.ink,
+    muted: MORANDI.warmGrey,
+    accent: MORANDI.fog,
+    accentSoft: "rgba(125, 143, 168, 0.14)",
     // continuous heat scale: empty cells use heatEmpty, everything else is
-    // interpolated between heatFrom (low) and heatTo (high)
-    heatFrom: "#e6effc",
-    heatTo: "#0072ff",
-    heatEmpty: "rgba(15, 23, 42, 0.07)",
+    // interpolated between heatFrom (quiet) and heatTo (peak)
+    heatFrom: MORANDI.parchment,
+    heatTo: MORANDI.fog,
+    heatEmpty: "rgba(63, 59, 55, 0.055)",
     // render options handed to the vendored github-readme-stats cards
     card: {
       theme: "transparent",
       bg_color: "00000000",
       hide_border: true,
       hide_title: true,
-      card_width: 495,
+      card_width: 420,
       disable_animations: true,
       border_radius: 0,
-      title_color: "#24292f",
-      text_color: "#57606a",
-      icon_color: "#0072ff",
+      title_color: "57524C",
+      // labels and numbers share this colour upstream, so it has to be dark
+      // enough to read at 14px on white
+      text_color: "514C46",
+      icon_color: "7D8FA8",
+      ring_color: "7D8FA8",
       text_bold: true,
     },
   },
   dark: {
     variant: "dark",
     font: FONT,
-    panelFill: "rgba(255, 255, 255, 0.05)",
-    panelStroke: "rgba(255, 255, 255, 0.10)",
-    title: "#8b949e",
-    text: "#c9d1d9",
-    muted: "#8b949e",
-    accent: ACCENT[0],
-    accentSoft: "rgba(0, 198, 255, 0.14)",
-    heatFrom: "#123b58",
-    heatTo: "#00c6ff",
-    heatEmpty: "rgba(255, 255, 255, 0.07)",
+    panelFill: "rgba(232, 226, 216, 0.045)",
+    panelStroke: "rgba(232, 226, 216, 0.11)",
+    title: MORANDI.bone,
+    text: "#E7E1D6",
+    muted: MORANDI.stone,
+    accent: "#8FA8C6",
+    accentSoft: "rgba(169, 184, 204, 0.16)",
+    heatFrom: MORANDI.slate,
+    heatTo: "#A6BDD9",
+    heatEmpty: "rgba(228, 222, 211, 0.045)",
     card: {
       theme: "transparent",
       bg_color: "00000000",
       hide_border: true,
       hide_title: true,
-      card_width: 495,
+      card_width: 420,
       disable_animations: true,
       border_radius: 0,
-      title_color: "#d0d7de",
-      text_color: "#b1bac4",
-      icon_color: "#00c6ff",
+      title_color: "D8D2C6",
+      // bright enough to pass as body text on #0d1117
+      text_color: "DED8CC",
+      icon_color: "A9B8CC",
+      ring_color: "A9B8CC",
       text_bold: true,
     },
   },

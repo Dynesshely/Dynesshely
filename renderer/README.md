@@ -67,6 +67,54 @@ call site instead of in the copied code:
 - Two variants are written because `prefers-color-scheme` inside an SVG served as
   `<img>` does not work; the README picks one with `<picture>`.
 
+## Palette (Morandi)
+
+All panel colours come from `src/theme.mjs`: muted, grey-leaning tones (fog blue,
+warm grey, parchment) so the panel sits quietly on both GitHub themes. Two
+gotchas are encoded there:
+
+- **Card colour options must not carry a leading `#`.** The vendored
+  `getCardColors()` validates bare hex (`57524C`), so a value like `#57524C`
+  silently falls back to the default theme colours - which is why the labels used
+  to render in the stock dark grey and the rank ring in bright blue.
+- **Language colours are desaturated after rendering.** Upstream paints each
+  language with its brand colour from `languageColors.json` (saturated Vue green,
+  C# purple, ...). There is no option to override them and patching the vendored
+  copy would break the verbatim-upstream rule, so `src/render/morandi.mjs`
+  rewrites every hex colour in the rendered top-languages / WakaTime SVG: hue and
+  lightness are kept, saturation is clamped to 0.3. Greys (our own text colours)
+  are below that saturation and pass through unchanged.
+
+Cards are rendered at roughly the panel's content width (`card_width` 400 / 350 /
+360) instead of the upstream default 495: embedding a 495px card into a 350px
+slot scaled 14px labels down to ~10px, which was the other half of the
+readability problem.
+
+### Heat grid scale
+
+A plain `count / max` ramp (with or without a gamma) flattens this profile,
+because its contribution distribution is extremely spiky: **227 of 365 days sit on
+exactly 9 contributions** (p50 = 9), while a handful of days reach 180. Any
+absolute ramp paints that 62% majority as one tone.
+
+`src/render/heatmap.mjs` therefore blends two normalised views:
+
+```
+t = 0.55 * normalCdf((count - mean) / stdev) + 0.45 * (count / max) ^ 0.5
+```
+
+- the term **normalCdf** brings the variance in: it is steepest around the mean,
+  which is exactly the low/mid band most days live in, so 6 → 9 → 11 → 20 spread
+  out visibly instead of collapsing
+- the **magnitude** term keeps absolute counts in play so the peaks still end at
+  the top of the ramp
+
+The normal CDF is chosen over an empirical percentile on purpose: the empirical
+curve has a cliff at the mode (8 → 9 would jump half a shade), while the CDF is
+smooth, strictly monotonic in count, and stable as data changes. Empty days stay
+outside the ramp (`heatEmpty`) so "no activity" never reads as "a little
+activity".
+
 ## Usage
 
 ```bash

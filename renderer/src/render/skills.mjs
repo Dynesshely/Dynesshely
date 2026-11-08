@@ -16,7 +16,8 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { SKILL_GROUPS, THEMES } from "../theme.mjs";
+import { SKILL_GROUPS, SKILL_ICON_STYLE, THEMES } from "../theme.mjs";
+import { morandiIconMarkup } from "./icon-palette.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const iconsDir = path.resolve(here, "..", "assets", "icons");
@@ -104,8 +105,9 @@ const iconCache = new Map();
 const escapeXml = (value) =>
   String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
-async function loadIcon(name) {
-  if (iconCache.has(name)) return iconCache.get(name);
+async function loadIcon(name, { recolor = true } = {}) {
+  const cacheKey = `${name}:${recolor}`;
+  if (iconCache.has(cacheKey)) return iconCache.get(cacheKey);
   const file = path.join(iconsDir, `${name}.svg`);
   let markup = null;
   try {
@@ -122,10 +124,16 @@ async function loadIcon(name) {
     if (!/<rect[^>]*width="256"[^>]*height="256"/.test(markup)) {
       markup = `<rect width="256" height="256" rx="60" fill="${TILE_COLOR}" />${markup}`;
     }
+
+    // Recolour the logo onto the hand-picked Morandi board. The tile colour is
+    // passed through untouched, so every icon keeps the same dark backing.
+    if (recolor && SKILL_ICON_STYLE.morandi) {
+      markup = morandiIconMarkup(markup, name);
+    }
   } catch {
     markup = null;
   }
-  iconCache.set(name, markup);
+  iconCache.set(cacheKey, markup);
   return markup;
 }
 
@@ -180,7 +188,7 @@ export async function renderSkillsPanel({ variant = "light" } = {}) {
     const items = [];
     for (const id of group.icons) {
       const name = resolveName(id);
-      const markup = await loadIcon(name);
+      const markup = await loadIcon(name, { recolor: true });
       if (!markup) missing.push(`${group.title ?? group.id}: ${id} (${name})`);
       items.push({ name, markup });
     }
@@ -330,7 +338,9 @@ ${blocks.join("\n")}
  */
 export async function renderIcon(id, size = 48) {
   const name = resolveName(id);
-  const markup = await loadIcon(name);
+  // Contact tiles are brand marks (X, Mastodon, Gmail) - they keep their own
+  // colours; only the skills grid is re-tinted.
+  const markup = await loadIcon(name, { recolor: false });
   if (!markup) return { svg: null, missing: name };
   const svg = `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" fill="none"
     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${name}">

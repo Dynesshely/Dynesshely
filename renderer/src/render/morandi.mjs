@@ -61,12 +61,26 @@ function hslToHex(h, s, l) {
   return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
 }
 
-/** Desaturate one colour; greys and near-greys are returned unchanged. */
-export function morandiColor(hex) {
+/**
+ * Desaturate one colour; greys and near-greys are returned unchanged.
+ *
+ * @param {string} hex  `#rrggbb`
+ * @param {object} [options]
+ * @param {number} [options.maxSaturation]  ceiling for the HSL saturation
+ * @param {number} [options.lightnessFloor]
+ * @param {number} [options.lightnessCeiling]
+ */
+export function morandiColor(hex, options = {}) {
+  const {
+    maxSaturation = CLAMP,
+    lightnessFloor = MIN_LIGHTNESS,
+    lightnessCeiling = MAX_LIGHTNESS,
+  } = options;
+
   const [h, s, l] = hexToHsl(hex);
-  if (s < 0.12) return hex; // already a neutral (our own text/icon colours)
-  const nextS = Math.min(s, CLAMP);
-  const nextL = Math.min(MAX_LIGHTNESS, Math.max(MIN_LIGHTNESS, l));
+  if (s < 0.12) return hex; // already a neutral
+  const nextS = Math.min(s, maxSaturation);
+  const nextL = Math.min(lightnessCeiling, Math.max(lightnessFloor, l));
   return hslToHex(h, nextS, nextL);
 }
 

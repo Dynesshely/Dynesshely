@@ -170,21 +170,77 @@ export const SKILL_GROUPS = [
   {
     id: "programing-languages",
     title: "Programing Languages",
-    perLine: 5,
     icons: "cs,c,cpp,rust,dart,kotlin,java,py,html,css,js,ts,php,zig,visualbasic,lua,fortran,julia,pwsh,bash,haskell,swift,go,ruby,perl".split(","),
   },
-  { id: "databases", title: "Databases", perLine: 15, icons: "sqlite,sqlserver,mongo,postgresql,mysql,redis".split(",") },
-  { id: "ui-frameworks", title: "UI Frameworks", perLine: 3, icons: "avaloniaui,flutter,blazor,qt,tauri,electron,angular,vuejs,react".split(",") },
-  { id: "platforms-frameworks", title: "Platforms / Frameworks", perLine: 15, icons: "net,nodejs,deno,spring,yew".split(",") },
-  { id: "package-build", title: "Package / Build", perLine: 15, icons: "cmake,maven,gradle,vite,webpack,npm,yarn,pnpm".split(",") },
-  { id: "tools", title: "Tools", perLine: 6, icons: "git,svn,postman,swagger,ipfs,nginx,tomcat,caddy,pm2,tor,terminal,thunderbird".split(",") },
-  { id: "game-engines", title: "Game Engines / 3D / AI / CV", perLine: 15, icons: "unity,unreal,godot,cuda,pytorch,tensorflow,threejs,opencv".split(",") },
-  { id: "hardwares", title: "Hardwares", perLine: 15, icons: "arduino,platformio".split(",") },
-  { id: "learn-research", title: "Learn / Research", perLine: 15, icons: "mermaid,md,matlab,latex,jupyter,anaconda,numpy".split(",") },
-  { id: "ides-editors", title: "IDEs / Editors", perLine: 4, icons: "visualstudio,vscode,xcode,rider,rustrover,clion,idea,androidstudio,resharper,pycharm,fleet,eclipse,vim,neovim,sublime,obsidian".split(",") },
-  { id: "medias-editors", title: "Medias Editors", perLine: 4, icons: "photoshop,premiere,aftereffects,audition,illustrator,lightroom,davinci,blender,gimp,inkscape,figma,lunacy".split(",") },
-  { id: "cloud-services", title: "Cloud Services", perLine: 3, icons: "github,gitlab,gitea,bitbucket,azure,aws,cloudflare,vercel,codepen".split(",") },
-  { id: "operating-systems", title: "Operating Systems", perLine: 5, icons: "windows,apple,android,linux,ubuntu,debian,kali,arch,redhat,raspberrypi".split(",") },
-  { id: "virtual-environment", title: "Virtual Environment", perLine: 15, icons: "proxmox,virtualbox,vmwareworkstation,wsl,docker".split(",") },
-  { id: "internet-browsers", title: "Internet Browsers", perLine: 15, icons: "chrome,chromium,edge,firefox,brave,arcbrowser".split(",") },
+  {
+    id: "frameworks-ui",
+    title: "Frameworks / UI",
+    icons: "avaloniaui,blazor,qt,tauri,electron,angular,vuejs,react,nextjs,nuxtjs,svelte,astro,pinia,tailwindcss,bootstrap,materialui,sass".split(","),
+  },
+  { id: "mobile", title: "Mobile", icons: "flutter,reactnative,jetpackcompose".split(",") },
+  {
+    id: "backend-apis",
+    title: "Backend / APIs",
+    icons: "dotnet,nodejs,deno,spring,yew,expressjs,nestjs,flask,django,fastapi,graphql,prisma".split(","),
+  },
+  {
+    id: "databases",
+    title: "Databases",
+    icons: "sqlite,sqlserver,mongo,postgresql,mysql,redis,mariadb,elasticsearch".split(","),
+  },
+  {
+    id: "build-test-quality",
+    title: "Build & Test",
+    icons: "cmake,maven,gradle,vite,webpack,npm,yarn,pnpm,eslint,prettier,vitest,jest,playwright,cypress".split(","),
+  },
+  {
+    id: "cloud-services",
+    title: "Cloud Services",
+    icons: "github,gitlab,gitea,bitbucket,azure,aws,cloudflare,vercel,codepen".split(","),
+  },
+  {
+    id: "devops-infra",
+    title: "DevOps / Infra",
+    icons: "githubactions,docker,kubernetes,portainer,ansible,grafana".split(","),
+  },
+  {
+    id: "servers-network",
+    title: "Servers / Network",
+    icons: "nginx,caddy,apache,tomcat,pm2,ipfs,tor,wireshark,putty".split(","),
+  },
+  { id: "tools", title: "Tools", icons: "git,svn,postman,swagger,terminal,thunderbird,dbeaver".split(",") },
+  {
+    id: "ai-ml",
+    title: "AI / ML",
+    icons: "cuda,pytorch,tensorflow,opencv,chatgpt,claude,gemini,ollama,huggingface,langchain".split(","),
+  },
+  { id: "game-3d", title: "Game / 3D", icons: "unity,unrealengine,godot,threejs,blender".split(",") },
+  {
+    id: "media",
+    title: "Media",
+    icons: "photoshop,premiere,aftereffects,audition,illustrator,lightroom,davinci,gimp,inkscape,figma,lunacy,obs,ffmpeg,kdenlive".split(","),
+  },
+  {
+    id: "ides-editors",
+    title: "IDEs / Editors",
+    icons: "visualstudio,vscode,xcode,rider,rustrover,clion,idea,androidstudio,resharper,pycharm,fleet,eclipse,vim,neovim,sublime,obsidian".split(","),
+  },
+  {
+    id: "docs-learning",
+    title: "Docs & Learning",
+    icons: "hexo,hugo,jekyll,mermaid,markdown,latex,matlab,jupyter,anaconda,numpy".split(","),
+  },
+  {
+    id: "operating-systems",
+    title: "Operating Systems",
+    icons: "windows,apple,android,linux,ubuntu,debian,kali,arch,redhat,raspberrypi,nixos".split(","),
+  },
+  {
+    id: "virtualization-hardware",
+    // Two-line heading: the first four are virtualisation, the last two are
+    // hardware boards, and pretending they are one concept was misleading.
+    titleLines: ["Virtualization", "Hardwares"],
+    icons: "proxmox,virtualbox,vmwareworkstation,wsl,arduino,platformio".split(","),
+  },
+  { id: "internet-browsers", title: "Internet Browsers", icons: "chrome,chromium,edge,firefox,brave,arcbrowser".split(",") },
 ];

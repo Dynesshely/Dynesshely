@@ -1,15 +1,17 @@
 /**
- * Skills panel: fixed columns of different widths.
+ * Skills panel: three fixed columns of different widths.
  *
- * The panel is split into columns of 5, 4 and 3 cells. Every group keeps the width
- * it naturally wants (`naturalWidth`, the column count that wastes the fewest
- * cells), so languages stay 5 wide, the editor grids stay 4 wide and the small
- * groups stay 3 wide. A group wider than its column (e.g. the 7-icon Learn row) is
- * re-flowed to the column width - 7 icons become 4+3.
+ * The panel is split into 5-, 4- and 3-cell columns; one icon is one cell and a
+ * heading line is one cell. Groups are assigned to columns by an explicit plan
+ * (`COLUMN_PLAN`) rather than by a search: the columns have to be balanced *and*
+ * the reading order has to stay sensible, and a greedy packer managed neither -
+ * it left one column at 25 cells and another at 12.
  *
- * Within the layout, groups are placed tallest-first into the shortest column that
- * can hold them, which keeps the three columns close in height instead of dumping
- * everything into the first one.
+ * Inside a column each group keeps the column's width and is stacked vertically.
+ * A group wider than every column (the 7-icon Learn row) is re-flowed to 4+3.
+ *
+ * Headings may span several lines (`titleLines`), so a group that mixes two
+ * concepts can label them separately; the heading block grows to match.
  */
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -57,17 +59,46 @@ const GAP_CELLS = 1;
 const BLEED = 8;
 const PADDING = 8;
 
-/**
- * Column widths, widest first. Each group goes into the narrowest column that can
- * hold a shape close to its natural width; 5 -> languages, 4 -> editor grids,
- * 3 -> the small groups and the 2-icon Hardwares row.
- */
 const COLUMN_WIDTHS = [5, 4, 3];
+
+/**
+ * Which groups live in which column. Hand-tuned so the three columns end up
+ * close in height while the groups still read in a sensible order top to bottom.
+ */
+const COLUMN_PLAN = [
+  [
+    "programing-languages",
+    "frameworks-ui",
+    "game-3d",
+    "media",
+    "docs-learning",
+    "ai-ml",
+  ],
+  [
+    "backend-apis",
+    "databases",
+    "build-test-quality",
+    "tools",
+    "ides-editors",
+    "operating-systems",
+  ],
+  [
+    "mobile",
+    "cloud-services",
+    "devops-infra",
+    "servers-network",
+    "virtualization-hardware",
+    "internet-browsers",
+  ],
+];
 
 /** Rounded tile behind icons that ship without one, so every cell reads the same. */
 const TILE_COLOR = "#2C3238";
 
 const iconCache = new Map();
+
+const escapeXml = (value) =>
+  String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 async function loadIcon(name) {
   if (iconCache.has(name)) return iconCache.get(name);
@@ -100,8 +131,8 @@ function resolveName(id) {
   return NAME_OVERRIDES[lower] ?? SHORT_NAMES[lower] ?? lower;
 }
 
-/** Every column count a group can take, with the empty cells it would leave. */
-function shapeCandidates(count, maxCols) {
+/** Every column count a group can take, given how many heading lines it needs. */
+function shapeCandidates(count, maxCols, titleRows) {
   const out = [];
   const upper = Math.max(1, Math.min(count, maxCols));
   for (let perLine = 1; perLine <= upper; perLine += 1) {
@@ -110,23 +141,23 @@ function shapeCandidates(count, maxCols) {
       perLine,
       rows,
       width: perLine,
-      height: rows + 1, // + heading row
+      height: rows + titleRows,
       waste: perLine * rows - count,
     });
   }
   return out;
 }
 
-/** The shape with the fewest empty cells (ties: the most square). */
-function naturalShape(count) {
-  return [...shapeCandidates(count, count)].sort(
-    (a, b) => a.waste - b.waste || Math.abs(a.width - a.height) - Math.abs(b.width - b.height),
+/** The most square shape - squareness first, waste second. */
+function naturalShape(count, titleRows) {
+  return [...shapeCandidates(count, count, titleRows)].sort(
+    (a, b) => Math.abs(a.width - a.height) - Math.abs(b.width - b.height) || a.waste - b.waste,
   )[0];
 }
 
-/** The widest shape that still fits `maxCols`. */
-function shapeForWidth(count, maxCols) {
-  return [...shapeCandidates(count, maxCols)].sort(
+/** The widest shape that fits `maxCols`. */
+function shapeForWidth(count, maxCols, titleRows) {
+  return [...shapeCandidates(count, maxCols, titleRows)].sort(
     (a, b) => b.width - a.width || a.waste - b.waste,
   )[0];
 }
@@ -140,58 +171,36 @@ export async function renderSkillsPanel({ variant = "light" } = {}) {
   const theme = THEMES[variant];
   const missing = [];
 
-  const shapes = [];
+  const byId = new Map();
   for (const group of SKILL_GROUPS) {
     const items = [];
     for (const id of group.icons) {
       const name = resolveName(id);
       const markup = await loadIcon(name);
-      if (!markup) missing.push(`${group.title}: ${id} (${name})`);
+      if (!markup) missing.push(`${group.title ?? group.id}: ${id} (${name})`);
       items.push({ name, markup });
     }
-    const natural = naturalShape(items.length);
-    shapes.push({ ...group, count: items.length, items, naturalWidth: natural.width });
+    const titleLines = group.titleLines ?? [group.title];
+    // The heading block is always one cell tall; extra lines stack inside it.
+    // Letting each line claim a whole 44px cell left a big gap between
+    // "Virtualization" and "Hardwares".
+    const titleRows = 1;
+    const natural = naturalShape(items.length, titleRows);
+    byId.set(group.id, { ...group, titleLines, titleRows, count: items.length, items, naturalWidth: natural.width });
   }
 
-  // Assign groups to columns: widest groups first, each into the shortest column
-  // whose width can hold its natural shape (or a re-flowed version of it).
   const columns = COLUMN_WIDTHS.map((width) => ({ width, blocks: [], height: 0 }));
-  const ordered = [...shapes].sort((a, b) => b.naturalWidth - a.naturalWidth || b.count - a.count);
-
-  for (const shape of ordered) {
-    // First choice: a column wide enough for the group's natural width, so 5-wide
-    // language groups never get re-flowed into a 4-wide column (which turned the
-    // 25-icon list into 4x7). Only when no column is wide enough - the 7-icon
-    // Learn row - does it fall back to any column.
-    const exact = columns.filter((column) => column.width >= shape.naturalWidth);
-
-    let target;
-    if (exact.length) {
-      target = exact[0];
-      for (const column of exact) {
-        if (column.height < target.height) target = column;
-      }
-    } else {
-      // No column is wide enough for the natural shape (the 7-icon Learn row).
-      // Pick the column where re-flowing leaves the fewest empty cells - 7 icons
-      // become 4+3 rather than 5+2 - and only then the shortest column.
-      let bestWaste = Number.POSITIVE_INFINITY;
-      target = columns[0];
-      for (const column of columns) {
-        const candidate = shapeForWidth(shape.count, column.width);
-        if (candidate.waste < bestWaste || (candidate.waste === bestWaste && column.height < target.height)) {
-          bestWaste = candidate.waste;
-          target = column;
-        }
-      }
+  COLUMN_PLAN.forEach((ids, columnIndex) => {
+    const column = columns[columnIndex];
+    for (const id of ids) {
+      const shape = byId.get(id);
+      if (!shape) throw new Error(`skills: COLUMN_PLAN references unknown group "${id}"`);
+      const blockShape = shapeForWidth(shape.count, column.width, shape.titleRows);
+      column.blocks.push({ ...shape, ...blockShape });
+      column.height += blockShape.height + GAP_CELLS;
     }
+  });
 
-    const blockShape = shapeForWidth(shape.count, target.width);
-    target.blocks.push({ ...shape, ...blockShape });
-    target.height += blockShape.height + GAP_CELLS;
-  }
-
-  // Trim each column to the widest block it actually holds.
   for (const column of columns) {
     column.actualWidth = Math.max(...column.blocks.map((block) => block.width), 1);
   }
@@ -214,14 +223,20 @@ export async function renderSkillsPanel({ variant = "light" } = {}) {
         width="${block.width * CELL + BLEED * 2}" height="${block.height * CELL + BLEED * 2}"
         rx="14" fill="${theme.panelFill}" stroke="${theme.panelStroke}" stroke-width="1" />`);
 
-      blocks.push(`<text x="${blockX + 12}" y="${blockY + CELL / 2 + 4}" fill="${theme.muted}"
-        font-family="${theme.font}" font-size="12" font-weight="700" letter-spacing="0.3">${block.title}</text>`);
+      const lineGap = 15;
+      const firstLineOffset = CELL / 2 + 4 - ((block.titleLines.length - 1) * lineGap) / 2;
+      block.titleLines.forEach((line, index) => {
+        const fontSize = block.titleLines.length > 1 ? 11 : 12;
+        blocks.push(`<text x="${blockX + 12}" y="${(blockY + firstLineOffset + index * lineGap).toFixed(1)}"
+          fill="${theme.muted}" font-family="${theme.font}" font-size="${fontSize}" font-weight="700"
+          letter-spacing="0.3">${escapeXml(line)}</text>`);
+      });
 
       block.items.forEach((item, index) => {
         const iconRow = Math.floor(index / block.perLine);
         const columnInBlock = index % block.perLine;
         const x = blockX + columnInBlock * CELL + (CELL - ICON) / 2;
-        const iconY = blockY + (iconRow + 1) * CELL + (CELL - ICON) / 2;
+        const iconY = blockY + (iconRow + block.titleRows) * CELL + (CELL - ICON) / 2;
         const body = item.markup
           ? `<g transform="translate(${x},${iconY}) scale(${(ICON / 256).toFixed(5)})">${item.markup}</g>`
           : `<rect x="${x}" y="${iconY}" width="${ICON}" height="${ICON}" rx="10"
@@ -245,8 +260,7 @@ ${blocks.join("\n")}
 }
 
 /**
- * A single icon, used for the Contact row. Same vendored assets and id-prefixing
- * as the skills grid, just one tile.
+ * A single icon, used for the Contact row.
  */
 export async function renderIcon(id, size = 48) {
   const name = resolveName(id);

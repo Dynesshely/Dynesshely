@@ -552,4 +552,166 @@ export const ICON_ROLE_OVERRIDES = {
       white: "#2C3238",
     },
   },
-};
+    // Rust's gear is a single saturated orange; the generic ladder shifted it pink.
+  rust: {
+    plate: "#2C3238",
+    map: {
+      "#242938": "#2C3238",
+      "#ce422b": "#C0684E",
+    },
+  },
+
+  // The vendored mark is the purple #663399 variant, not the blue one - the accent had been set to blue and recoloured the logo away from its identity.
+  css: {
+    plate: "#2C3238",
+    map: {
+      "#663399": "#8574B0",
+      "#ffffff": "#F2F0EC",
+      "white": "#F2F0EC",
+    },
+  },
+
+  // Two-tone grid: the yellow tiles must stay yellow, the dark tiles stay dark.
+  // Two-tone grid. The plate is a mid slate so the *empty* cells can sit below it
+  // and the yellow tiles above it: with everything on #2C3238 the empty cells were
+  // indistinguishable from the background.
+  // Two-tone grid. The original stacking is plate (dark) < grey cells (mid) <
+  // yellow cells (light); keeping that order is what makes the grid readable, and
+  // the grey cells are pushed a step brighter than the plate so the empty squares
+  // separate cleanly instead of merging into the background.
+  pnpm: {
+    plate: "#2C3238",
+    map: {
+      "#242938": "#2C3238", // plate
+      "#4e4e4e": "#666F78", // grey cells: clearly lighter than the plate
+      "#f9ad00": "#D8A94F", // yellow cells
+      "#ffffff": "#F2F0EC",
+      white: "#F2F0EC",
+    },
+  },
+
+  // Four reds that used to collapse onto one tone; each keeps its own step.
+  redis: {
+    plate: "#2C3238",
+    map: {
+      "#242938": "#2C3238",
+      "#d82c20": "#C4685A",
+      "#ad2115": "#B25A4A",
+      "#a41e11": "#A85243",
+      "#7a0c00": "#8A4034",
+      "#ffffff": "#F2F0EC",
+      "white": "#F2F0EC",
+    },
+  },
+
+  // The N is one light-blue plate plus one darker blue stroke.
+  numpy: {
+    plate: "#2C3238",
+    map: {
+      "#242938": "#2C3238",
+      "#4dabcf": "#7FB2CA",
+      "#4d77cf": "#5D72A8",
+    },
+  },
+
+  // Four blue panes on a dark plate: the pane colour carries the logo.
+  windows: {
+    plate: "#2C3238",
+    map: {
+      "#242938": "#2C3238",
+      "#00adef": "#66A8C6",
+      "#ffffff": "#F2F0EC",
+      "white": "#F2F0EC",
+    },
+  },
+
+  // A dense stack of six near-black greens read as a solid black square; spreading them over a visible green range restores the shape.
+  ffmpeg: {
+    plate: "#2C3238",
+    map: {
+      "#242938": "#2C3238",
+      "#0b4819": "#3E6B49",
+      "#1a5c34": "#527F5C",
+      "#084010": "#2B4A33",
+      "#0c541e": "#3A6044",
+      "#13802d": "#6FA07A",
+      "#105c80": "#4A7A99",
+    },
+  },
+
+  // Red hat on white fedora: keep both, only mute the red.
+  redhat: {
+    plate: "#2C3238",
+    map: {
+      "#242938": "#2C3238",
+      "#ee0000": "#B85C56",
+      "#ffffff": "#F2F0EC",
+      "#000000": "#1B1E22",
+      "white": "#F2F0EC",
+      "black": "#1B1E22",
+    },
+  },
+
+  // The logo is entirely greys; the ladder had turned three distinct greys into one.
+  unity: {
+    plate: "#2C3238",
+    map: {
+      "#242938": "#2C3238",
+      "#cccccc": "#C9C9C9",
+      "#a6a6a6": "#8C8C8C",
+      "#ffffff": "#EDECEA",
+      "white": "#EDECEA",
+    },
+  },
+
+  // Pure white U on near-black navy; white stayed white and vanished into the grid.
+  unrealengine: {
+    plate: "#2C3238",
+    map: {
+      "#0e1128": "#2C3238",
+      "#ffffff": "#A8BED2",
+      "white": "#A8BED2",
+    },
+  },
+
+  // Single blue mark on the dark plate, lightened so the container shape reads.
+  portainer: {
+    plate: "#2C3238",
+    map: {
+      "#242938": "#2C3238",
+      "#3bbced": "#6BA9C4",
+    },
+  },
+
+  // Blue lock plus green accents - both hues have to survive.
+  caddy: {
+    plate: "#2C3238",
+    map: {
+      "#242938": "#2C3238",
+      "#1f88c0": "#5E97B6",
+      "#22b638": "#6EA577",
+      "#ffffff": "#F2F0EC",
+      "white": "#F2F0EC",
+    },
+  },
+
+  // Green mark on a dark plate, nudged up in value.
+  gitea: {
+    plate: "#2C3238",
+    map: {
+      "#242938": "#2C3238",
+      "#609926": "#7BA762",
+      "#ffffff": "#F2F0EC",
+      "white": "#F2F0EC",
+    },
+  },
+
+  // White cat on a dark plate: it must stay near-white to read at 36px.
+  github: {
+    plate: "#2C3238",
+    map: {
+      "#242938": "#2C3238",
+      "#ffffff": "#E6E4E0",
+      "white": "#E6E4E0",
+    },
+  },};

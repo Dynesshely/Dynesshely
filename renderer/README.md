@@ -15,6 +15,9 @@ renderer/
   src/render/cards.mjs   calls the vendored github-readme-stats renderers
   src/render/streak.mjs  streak panel (ported from the PHP card)
   src/render/heatmap.mjs contribution heatmap
+  src/render/skills.mjs  skills panel grid + icon loading
+  src/render/icon-palette.mjs  recolours the vendored icons onto the palette
+  src/render/icon-artwork.mjs  hand-drawn substitutes for two or three logos
   src/upstream/          code copied from upstream projects (see below)
 ```
 
@@ -183,10 +186,12 @@ services:
   column (the 7-icon Learn / Research row) is re-flowed to the column where it
   leaves the fewest empty cells - 4+3 rather than 5+2.
 
-  Groups are placed widest-first into the column that can hold their natural
-  shape, then by shortest column, so the three columns end up close in height
-  (20 / 23 / 20 cells). Each column is trimmed to the widest block it holds, and
-  the canvas to the occupied area, giving **632x1028**.
+  Groups are placed by an explicit `COLUMN_PLAN` rather than by a search: the
+  columns have to be balanced *and* the reading order has to stay sensible, and a
+  greedy packer managed neither. The three columns come out 29 / 25 / 24 cells
+  tall; the `Operating Systems` group spans the first two columns at the bottom,
+  which closes the panel into a rectangle instead of leaving a ragged edge. The
+  canvas is **632x1292**.
 
   Spacing: a block keeps one empty cell from its neighbours; its backing panel
   bleeds 8px (twice the 4px cell inset) past the content, which narrows the visual
@@ -196,7 +201,39 @@ services:
   Icons that ship without a background tile get a matching rounded tile so the
   grid reads evenly, and every icon's internal ids are prefixed to keep 140+
   gradients/clip paths from colliding. Short names from the old URLs (`js`, `py`,
-  `net`, ...) are mapped through the same table upstream used.- **Typing lines** cycle type -> hold -> delete -> hold, like the original
+  `net`, ...) are mapped through the same table upstream used.
+
+  Icon colouring is fixed, not derived at runtime (`src/render/icon-palette.mjs`):
+
+  - `ICON_COLORS` holds one hand-picked Morandi accent per icon;
+  - `ICON_ROLE_OVERRIDES` holds an explicit *original colour -> replacement*
+    table for the marks a single accent cannot describe (SQLite's dark wordmark on
+    a light body, pnpm's two-tone grid, Redis' four reds). These bypass every
+    heuristic, so their result is reviewable;
+  - `ICON_MULTI_COLOR` keeps the hue structure of genuinely multi-colour logos
+    (Chrome, Figma, Firefox) and only mutes the saturation;
+  - `ICON_KEEP_ORIGINAL` renders the mark as published and only normalises its
+    plate to the shared tile (Zen Browser's white ring on a dark plate has no
+    brand hue to preserve).
+
+  A logo that no table can rescue is redrawn instead (`src/render/icon-artwork.mjs`).
+  **Safari** is the case that forced this: the vendored SVG carries a 16 KB
+  tick-mark path (60 individual marks), two Gaussian-blur filters and a five-stop
+  radial gradient. Recoloured, it reads as a smudge at 36px - the filters cannot be
+  colour-mapped at all, and 60 ticks collapse into noise. The replacement is plain
+  geometry on the same 256x256 canvas: one plate, one bezel ring, one dial with a
+  single highlight, four ticks on the diagonals (so they never hide under the
+  needle), a rounded diamond needle and a dark hub pin with a cream ring. It is
+  about 1.2 KB of markup instead of 21 KB, and it stays crisp at every size.
+  Hand-drawn entries bypass the recolour pipeline entirely - they are authored in
+  the Morandi palette already, so re-tinting them would only move hand-picked
+  values.
+
+  Three colour syntaxes are normalised first (six-digit hex, three-digit hex and
+  CSS colour names): missing the last two is what used to leave `fill="navy"` and
+  `fill="white"` untouched.
+
+- **Typing lines** cycle type -> hold -> delete -> hold, like the original
   service. The reveal is a `clipPath` whose width animates in `steps()`, with the
   per-segment timing function set on the keyframes so both the typing and the
   deleting halves are stepped. The rect ships with its final width inline, so a

@@ -242,7 +242,13 @@ export const SKILL_GROUPS = [
     titleLines: ["Virtualization", "Hardwares"],
     icons: "proxmox,virtualbox,vmwareworkstation,wsl,arduino,platformio".split(","),
   },
-  { id: "internet-browsers", title: "Internet Browsers", icons: "chrome,chromium,edge,firefox,brave,arcbrowser".split(",") },
+  {
+    id: "internet-browsers",
+    // Zen ships as a white ring on a dark plate and has no brand hue, so it is
+    // drawn as published (see ICON_KEEP_ORIGINAL); the rest are re-tinted.
+    title: "Internet Browsers",
+    icons: "chrome,chromium,edge,firefox,brave,arcbrowser,zen,safari".split(","),
+  },
 ];
 
 /**
@@ -467,6 +473,12 @@ export const ICON_COLORS = {
   firefox: "#c8c37f",
   brave: "#c27b71",
   arcbrowser: "#6b57b7",
+  // Neither of these two is applied by the tinting pipeline - Zen renders as
+  // published (ICON_KEEP_ORIGINAL) and Safari is hand-drawn from scratch
+  // (src/render/icon-artwork.mjs). They are listed so the swatch in the comparison
+  // sheet still has a value to show next to the cell.
+  zen: "#a8b4c0",
+  safari: "#7fb6cc",
 };
 /**
  * Icons whose identity *is* their multi-colour structure.
@@ -492,6 +504,16 @@ export const ICON_MULTI_COLOR = [
   "virtualbox", "visualstudio", "vite", "vitest", "vmwareworkstation", "vscode",
   "webstorm", "wsl", "xcode",
 ];
+
+/**
+ * Icons that render with their own original artwork.
+ *
+ * The default pipeline re-tints every logo onto its `ICON_COLORS` accent. Zen
+ * Browser ships as a white ring on a dark plate and has no brand hue to preserve
+ * that way, so it is drawn as-is - only the plate is normalised to the shared
+ * tile so the cell does not show a slightly different dark rectangle.
+ */
+export const ICON_KEEP_ORIGINAL = ["zen"];
 
 /**
  * Per-icon role overrides.
@@ -714,4 +736,5 @@ export const ICON_ROLE_OVERRIDES = {
       "#ffffff": "#E6E4E0",
       "white": "#E6E4E0",
     },
-  },};
+  },
+};

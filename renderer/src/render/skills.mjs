@@ -17,6 +17,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { SKILL_GROUPS, SKILL_ICON_STYLE, THEMES } from "../theme.mjs";
+import { customIconMarkup } from "./icon-artwork.mjs";
 import { morandiIconMarkup } from "./icon-palette.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -110,6 +111,16 @@ const escapeXml = (value) =>
 async function loadIcon(name, { recolor = true } = {}) {
   const cacheKey = `${name}:${recolor}`;
   if (iconCache.has(cacheKey)) return iconCache.get(cacheKey);
+
+  // Hand-drawn substitutes win over the vendored artwork. They are already on the
+  // shared tile and already in the Morandi palette, so no recolouring is applied -
+  // running the pipeline over them would only move the hand-picked values.
+  const drawn = customIconMarkup(name);
+  if (drawn) {
+    iconCache.set(cacheKey, drawn);
+    return drawn;
+  }
+
   const file = path.join(iconsDir, `${name}.svg`);
   let markup = null;
   try {

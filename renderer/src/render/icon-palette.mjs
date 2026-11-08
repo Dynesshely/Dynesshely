@@ -23,7 +23,13 @@
  * colour names - and all three are normalised before tinting. Miss the last two and
  * Ansible's `fill="white"` on `fill="#000"` never gets touched.
  */
-import { ICON_COLORS, ICON_MULTI_COLOR, ICON_ROLE_OVERRIDES, SKILL_ICON_STYLE } from "../theme.mjs";
+import {
+  ICON_COLORS,
+  ICON_KEEP_ORIGINAL,
+  ICON_MULTI_COLOR,
+  ICON_ROLE_OVERRIDES,
+  SKILL_ICON_STYLE,
+} from "../theme.mjs";
 
 const TILE = SKILL_ICON_STYLE.tile.toLowerCase();
 const WHITE = "#F2F0EC";
@@ -179,6 +185,14 @@ export function morandiIconMarkup(markup, name) {
   const accentStep = accentAt(accent, STEPS[1]);
   const accentBright = accentAt(accent, STEPS[2]);
   const accentDeep = accentAt(accent, STEPS[0]);
+
+  // A few marks have no brand hue worth preserving (Zen's white ring on a dark
+  // plate), so they are drawn as published. Only the plate is normalised to the
+  // shared tile, otherwise the cell shows a second, slightly different dark
+  // rectangle next to every recoloured icon.
+  if (ICON_KEEP_ORIGINAL.includes(name)) {
+    return markup.replace(/#242938/gi, TILE);
+  }
 
   let normalised = normaliseColors(markup);
 

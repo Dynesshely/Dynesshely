@@ -68,29 +68,33 @@ const COLUMN_WIDTHS = [5, 4, 3];
 const COLUMN_PLAN = [
   [
     "programing-languages",
-    "frameworks-ui",
-    "game-3d",
-    "media",
-    "docs-learning",
+    "cloud-services",
+    "servers-network",
+    "tools",
     "ai-ml",
+    "game-3d",
+    "docs-learning",
   ],
   [
-    "backend-apis",
     "databases",
     "build-test-quality",
-    "tools",
+    "media",
     "ides-editors",
-    "operating-systems",
-  ],
-  [
-    "mobile",
-    "cloud-services",
-    "devops-infra",
-    "servers-network",
-    "virtualization-hardware",
     "internet-browsers",
   ],
+  [
+    "frameworks-ui",
+    "mobile",
+    "backend-apis",
+    "devops-infra",
+    "virtualization-hardware",
+  ],
 ];
+/**
+ * A group that spans several adjacent columns at the bottom, closing the panel
+ * into one clean rectangle instead of leaving a ragged last column.
+ */
+const SPANNED_GROUPS = [{ id: "operating-systems", firstColumn: 1, columnSpan: 2 }];
 
 /** Rounded tile behind icons that ship without one, so every cell reads the same. */
 const TILE_COLOR = "#2C3238";
@@ -189,7 +193,7 @@ export async function renderSkillsPanel({ variant = "light" } = {}) {
     byId.set(group.id, { ...group, titleLines, titleRows, count: items.length, items, naturalWidth: natural.width });
   }
 
-  const columns = COLUMN_WIDTHS.map((width) => ({ width, blocks: [], height: 0 }));
+  const columns = COLUMN_WIDTHS.map((width) => ({ width, blocks: [], height: 0, spanned: null }));
   COLUMN_PLAN.forEach((ids, columnIndex) => {
     const column = columns[columnIndex];
     for (const id of ids) {
@@ -203,6 +207,32 @@ export async function renderSkillsPanel({ variant = "light" } = {}) {
 
   for (const column of columns) {
     column.actualWidth = Math.max(...column.blocks.map((block) => block.width), 1);
+  }
+
+  // Spanned groups sit at the bottom of the panel and cover several columns, so
+  // the two columns it covers end at the same line - that is what closes the
+  // layout into one rectangle instead of leaving a ragged edge.
+  for (const span of SPANNED_GROUPS) {
+    const shape = byId.get(span.id);
+    if (!shape) throw new Error(`skills: SPANNED_GROUPS references unknown group "${span.id}"`);
+
+    const covered = columns.slice(span.firstColumn, span.firstColumn + span.columnSpan);
+    const baseY = Math.max(...covered.map((c) => c.height));
+    const spanWidth =
+      covered.reduce((sum, c) => sum + c.actualWidth, 0) + (covered.length - 1) * GAP_CELLS;
+
+    const blockShape = shapeForWidth(shape.count, spanWidth, shape.titleRows);
+    const block = { ...shape, ...blockShape, x: span.firstColumn, y: baseY };
+    const blockBottom = baseY + blockShape.height;
+
+    columns[span.firstColumn].spanned = block;
+    for (const [index, column] of covered.entries()) {
+      const columnX =
+        columns.slice(0, span.firstColumn + index).reduce((sum, c) => sum + c.actualWidth, 0) +
+        (span.firstColumn + index) * GAP_CELLS;
+      column.spannedX = columnX;
+      column.height = blockBottom + GAP_CELLS;
+    }
   }
 
   const totalWidth = columns.reduce((sum, c) => sum + c.actualWidth, 0) + (columns.length - 1) * GAP_CELLS;
@@ -246,6 +276,42 @@ export async function renderSkillsPanel({ variant = "light" } = {}) {
 
       y += block.height + GAP_CELLS;
     }
+
+    // spanning block, drawn from its own origin across the covered columns
+    if (column.spanned) {
+      const span = column.spanned;
+      const spanX = PADDING + column.spannedX * CELL;
+      const spanY = PADDING + span.y * CELL;
+      const spanWidth = columns
+        .slice(span.x, span.x + SPANNED_GROUPS[0].columnSpan)
+        .reduce((sum, c) => sum + c.actualWidth, 0) + (SPANNED_GROUPS[0].columnSpan - 1) * GAP_CELLS;
+
+      blocks.push(`<rect x="${spanX - BLEED}" y="${spanY - BLEED}"
+        width="${spanWidth * CELL + BLEED * 2}" height="${span.height * CELL + BLEED * 2}"
+        rx="14" fill="${theme.panelFill}" stroke="${theme.panelStroke}" stroke-width="1" />`);
+
+      const lineGap = 15;
+      const firstLineOffset = CELL / 2 + 4 - ((span.titleLines.length - 1) * lineGap) / 2;
+      span.titleLines.forEach((line, index) => {
+        const fontSize = span.titleLines.length > 1 ? 11 : 12;
+        blocks.push(`<text x="${spanX + 12}" y="${(spanY + firstLineOffset + index * lineGap).toFixed(1)}"
+          fill="${theme.muted}" font-family="${theme.font}" font-size="${fontSize}" font-weight="700"
+          letter-spacing="0.3">${escapeXml(line)}</text>`);
+      });
+
+      span.items.forEach((item, index) => {
+        const iconRow = Math.floor(index / span.perLine);
+        const columnInBlock = index % span.perLine;
+        const x = spanX + columnInBlock * CELL + (CELL - ICON) / 2;
+        const iconY = spanY + (iconRow + span.titleRows) * CELL + (CELL - ICON) / 2;
+        const body = item.markup
+          ? `<g transform="translate(${x},${iconY}) scale(${(ICON / 256).toFixed(5)})">${item.markup}</g>`
+          : `<rect x="${x}" y="${iconY}" width="${ICON}" height="${ICON}" rx="10"
+            fill="none" stroke="${theme.panelStroke}" stroke-width="1" />`;
+        blocks.push(body);
+      });
+    }
+
     columnX += column.actualWidth + GAP_CELLS;
   }
 

@@ -233,7 +233,7 @@ export const SKILL_GROUPS = [
   {
     id: "operating-systems",
     title: "Operating Systems",
-    icons: "windows,apple,android,linux,ubuntu,debian,kali,arch,redhat,raspberrypi,nixos".split(","),
+    icons: "windows,apple,android,linux,ubuntu,debian,kali,arch,redhat,centos,fedora,manjaro,mint,popos,raspberrypi,nixos".split(","),
   },
   {
     id: "virtualization-hardware",

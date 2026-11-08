@@ -288,7 +288,7 @@ export const ICON_COLORS = {
   ts: "#8aa3bc",
   php: "#8aa3bc",
   zig: "#c3a676",
-  visualbasic: "#578db7",
+  visualbasic: "#6fa3cc",
   lua: "#8aa3bc",
   fortran: "#947ab0",
   julia: "#c17570",
@@ -331,7 +331,7 @@ export const ICON_COLORS = {
   fastapi: "#57b7ae",
   graphql: "#c578ab",
   prisma: "#7f8cc7",
-  sqlite: "#5799b7",
+  sqlite: "#7fb8d4",
   sqlserver: "#c57b78",
   mongo: "#8aa3bc",
   postgresql: "#6893b5",
@@ -405,7 +405,7 @@ export const ICON_COLORS = {
   audition: "#7e7ec8",
   illustrator: "#d0ad7d",
   lightroom: "#7da8c7",
-  davinci: "#7178c2",
+  davinci: "#7f86c9",
   gimp: "#b78957",
   inkscape: "#8aa3bc",
   figma: "#67bd9c",
@@ -430,7 +430,7 @@ export const ICON_COLORS = {
   sublime: "#c9965c",
   obsidian: "#9076c3",
   hexo: "#679dbe",
-  hugo: "#be6999",
+  hugo: "#d47ba6",
   jekyll: "#b75757",
   mermaid: "#c77e94",
   markdown: "#8aa3bc",
@@ -446,7 +446,7 @@ export const ICON_COLORS = {
   ubuntu: "#c49576",
   debian: "#be6887",
   kali: "#79a4c6",
-  arch: "#6ba3bf",
+  arch: "#7cb8d8",
   redhat: "#c06c6c",
   centos: "#c3a876",
   fedora: "#5e79b0",
@@ -482,7 +482,7 @@ export const ICON_MULTI_COLOR = [
   // feature that makes the logo recognisable.
   "android", "androidstudio", "angular", "apache", "apple", "arcbrowser", "astro",
   "azure", "blender", "brave", "centos", "chrome", "chromium", "clion",
-  "cmake", "cypress", "dart", "davinci", "eclipse", "edge", "elasticsearch",
+  "cmake", "cypress", "dart", "eclipse", "edge", "elasticsearch",
   "ffmpeg", "figma", "firefox", "flask", "fleet", "flutter", "gemini", "gimp",
   "gitlab", "gmail", "gnome", "grafana", "huggingface", "idea", "inkscape",
   "ipfs", "jetpackcompose", "julia", "kde", "kdenlive", "kotlin", "latex",
@@ -492,3 +492,64 @@ export const ICON_MULTI_COLOR = [
   "virtualbox", "visualstudio", "vite", "vitest", "vmwareworkstation", "vscode",
   "webstorm", "wsl", "xcode",
 ];
+
+/**
+ * Per-icon role overrides.
+ *
+ * Some marks have a coloured plate and a glyph of the *same* colour family, so the
+ * generic "map everything onto one accent ladder" leaves the figure barely visible
+ * against its own background. These entries assign the three roles explicitly:
+ *
+ *   plate   - the full-bleed backing rect
+ *   glyph   - the white-ish figure drawn on top
+ *   artwork - everything coloured that is neither of the above
+ *
+ * Values are hand-picked and static; an icon listed here bypasses the ladder
+ * entirely, which makes its final look reviewable instead of derived.
+ */
+export const ICON_ROLE_OVERRIDES = {
+  // Explicit colour maps: every colour in these icons is mapped by its *original*
+  // value to a hand-picked replacement. No heuristics, no luminance guesses - which
+  // is what kept turning the SQLite wordmark invisible and flattening the Visual
+  // Basic roundel. The plate entry covers the full-bleed backing rect.
+  sqlite: {
+    plate: "#2C3238",
+    map: {
+      "#003b57": "#17323F", // wordmark: dark ink on the light body
+      "#0f80cc": "#6AA6C6", // body gradient, mid
+      "#97d9f6": "#9CC4DA", // body gradient, light
+      "#ffffff": "#F2F0EC", // feather
+      white: "#F2F0EC",
+    },
+  },
+
+  visualbasic: {
+    plate: "#2C3238",
+    map: {
+      "#242938": "#2C3238", // original plate
+      "#004e8c": "#6FA8C8", // roundel
+      "#ffffff": "#F2F0EC", // VB
+      white: "#F2F0EC",
+    },
+  },
+
+  hugo: {
+    plate: "#2C3238",
+    map: {
+      "#242938": "#2C3238",
+      "#c9177d": "#A86180", // hexagon outer
+      "#fe4088": "#B87A93", // hexagon inner
+      "#fffdfe": "#F2F0EC", // H
+    },
+  },
+
+  arch: {
+    plate: "#2C3238",
+    map: {
+      "#242938": "#2C3238",
+      "#1793d1": "#8FC4DC", // the A
+      "#ffffff": "#2C3238", // the A's inner cut-outs stay dark
+      white: "#2C3238",
+    },
+  },
+};

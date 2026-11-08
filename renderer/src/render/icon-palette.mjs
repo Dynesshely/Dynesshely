@@ -23,7 +23,7 @@
  * colour names - and all three are normalised before tinting. Miss the last two and
  * Ansible's `fill="white"` on `fill="#000"` never gets touched.
  */
-import { ICON_COLORS, ICON_MULTI_COLOR, SKILL_ICON_STYLE } from "../theme.mjs";
+import { ICON_COLORS, ICON_MULTI_COLOR, ICON_ROLE_OVERRIDES, SKILL_ICON_STYLE } from "../theme.mjs";
 
 const TILE = SKILL_ICON_STYLE.tile.toLowerCase();
 const WHITE = "#F2F0EC";
@@ -182,6 +182,86 @@ export function morandiIconMarkup(markup, name) {
 
   let normalised = normaliseColors(markup);
 
+  // Explicit colour maps win over every heuristic. Each icon lists its original
+  // colours and their replacements, so the result is fully reviewable - and the
+  // "which part is the plate, which is the figure" question is answered per icon
+  // instead of guessed from luminance.
+  const override = ICON_ROLE_OVERRIDES[name];
+  if (override) {
+    normalised = normalised.replace(BLEED_RECT, (tag) =>
+      tag.replace(/(fill)="[^"]*"/, `$1="${override.plate}"`),
+    );
+
+    const lookup = (value) => {
+      const key = value.toLowerCase();
+      return override.map[key] ?? override.map[value] ?? null;
+    };
+
+    // named colours first, then hex
+    normalised = normalised.replace(/(fill|stroke|stop-color)="([a-zA-Z]+)"/g, (match, attr, value) => {
+      const hit = lookup(value);
+      return hit ? `${attr}="${hit}"` : match;
+    });
+
+    // hex on any colour-bearing attribute, including gradient stops
+    return normalised.replace(
+      /(fill|stroke|stop-color)="(#[0-9a-fA-F]{3,6})"/g,
+      (match, attr, hex) => {
+        const full = hex.length === 4
+          ? `#${hex[1]}${hex[1]}${hex[2]}${hex[2]}${hex[3]}${hex[3]}`
+          : hex;
+        const hit = lookup(full);
+        return hit ? `${attr}="${hit}"` : match;
+      },
+    );
+  }
+  // DaVinci's mark is a ring drawn as 366 separate one-colour paths - 364 distinct
+  // colours cycling through the whole hue wheel. At 36px those adjacent cells read as
+  // jagged noise. Quantising them to six ordered steps turns the ring back into a
+  // smooth sweep while keeping the "spectrum" intent.
+  if (name === "davinci") {
+    // The mark is a white plate, a black camera silhouette and a pinwheel of 361
+    // one-colour slices (a sliced radial gradient). Three problems at 36px:
+    //  - the plate stays pure white and outshines everything else in the grid
+    //  - the slices carry 361 distinct hues, which reads as jaggies
+    //  - the radial gradients add banding on top of that
+    // So: plate -> warm off-white, camera -> near-black, gradients flattened to one
+    // tone each, and the slices collapsed onto three flat Morandi hues (one per vane).
+    const PLATE = "#E9E5DF";
+    const vaneColors = ["#8D94D6", "#BEAA73", "#C08398"];
+
+    normalised = normalised.replace(BLEED_RECT, (tag) =>
+      tag.replace(/(fill)="[^"]*"/, `$1="${PLATE}"`),
+    );
+
+    // Flat gradients: both stops get the same colour, so no banding survives.
+    const stopToVane = (hueDegrees) => {
+      if (hueDegrees >= 190 && hueDegrees < 310) return vaneColors[0];
+      if (hueDegrees >= 40 && hueDegrees < 190) return vaneColors[1];
+      return vaneColors[2];
+    };
+    let gradientIndex = 0;
+    normalised = normalised.replace(/<radialGradient[\s\S]*?<\/radialGradient>/g, (block) => {
+      const flat = vaneColors[gradientIndex % vaneColors.length];
+      gradientIndex += 1;
+      return block.replace(/stop-color="[^"]*"/g, `stop-color="${flat}"`);
+    });
+
+    // Slices: map by hue. Only true neutrals are exempt - a bright saturated yellow
+    // also has high luminance, so guarding on luminance alone silently skipped the
+    // yellow vane's slices and left them pure #FFFD00.
+    normalised = normalised.replace(/fill="(#[0-9a-fA-F]{6})"/g, (match, hex) => {
+      const lower = hex.toLowerCase();
+      const [h, s] = hexToHsl(lower);
+      if (s < 0.12) return match; // neutral: white highlights, black outline
+      return `fill="${stopToVane(h * 360)}"`;
+    });
+
+    // The white plate itself is drawn as a path, not a rect - retint it too.
+    normalised = normalised.replace(/fill="#ffffff"/gi, `fill="${PLATE}"`);
+
+    return normalised;
+  }
   // CMake is three gradient-filled triangles. Once muted, three gradients in three
   // bright hues fight each other; flattening each triangle to one flat tone and
   // separating them by value instead keeps the geometry and kills the noise.
@@ -194,6 +274,17 @@ export function morandiIconMarkup(markup, name) {
       const [au, as] = hexToHsl(accent);
       const flat = hslToHex(au, Math.max(0.26, as * 0.9), level);
       return block.replace(/stop-color="#[0-9a-fA-F]{6}"/g, `stop-color="${flat}"`);
+    });
+
+    // Same reason as DaVinci: the four levels are the point, a second pass would
+    // collapse them back onto one ladder.
+    return normalised.replace(HEX6, (match) => {
+      const lower = match.toLowerCase();
+      if (lower === TILE) return lower;
+      const lum = luminance(lower);
+      if (lum > 0.72) return WHITE;
+      if (lum < 0.02) return BLACK;
+      return lower;
     });
   }
 

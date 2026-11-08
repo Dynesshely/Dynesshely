@@ -102,6 +102,8 @@ const TILE_COLOR = "#2C3238";
 
 const iconCache = new Map();
 
+export { resolveName };
+
 const escapeXml = (value) =>
   String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 

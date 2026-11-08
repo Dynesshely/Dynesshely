@@ -49,6 +49,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          # Full history: the commit step rebases onto origin/main when a human push
+          # lands mid-run, and a shallow clone cannot rebase.
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v7
@@ -95,7 +99,22 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets
           git commit -m "chore(assets): regenerate README images" -m "Rendered from renderer/ via src/index.mjs."
-          git push
+
+          # `concurrency` keeps two runs of this workflow apart, but it cannot stop a
+          # human push landing while this job is running. Rebasing and retrying turns
+          # that race into a normal fast-forward instead of a failed run.
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              echo "Pushed on attempt ${attempt}."
+              exit 0
+            fi
+            echo "Push rejected (attempt ${attempt}); rebasing onto origin/main."
+            git pull --rebase --autostash origin main
+            sleep $((attempt * 3))
+          done
+
+          echo "::error::Could not push the regenerated assets after 5 attempts."
+          exit 1
 
       - name: Upload generated assets
         if: always()

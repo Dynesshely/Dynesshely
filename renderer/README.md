@@ -176,14 +176,27 @@ services:
   classes that back the public endpoint, so the artwork and the `twinkling`
   animation are identical - only the colour stops are Morandi, one hue per
   section (`BANNERS` in `src/theme.mjs`).
-- **The skills panel** inlines 143 vendored icon SVGs
-  (`src/assets/icons/`, taken from `vendor/skill-icons/assets/<name>-dark.svg`)
-  into one 800px image with group headings. Icons that ship without a background
-  tile get a matching rounded tile so the grid reads evenly, and every icon's
-  internal ids are prefixed to keep 140+ gradients/clip paths from colliding.
-  Short names from the old URLs (`js`, `py`, `net`, ...) are mapped through the
-  same table upstream used.
-- **Typing lines** cycle type -> hold -> delete -> hold, like the original
+- **The skills panel uses fixed columns of different widths.** The panel is split
+  into 5-, 4- and 3-cell columns; one icon is one cell, a heading is one cell. Each
+  group keeps the width it naturally wants, so languages stay 5 wide, the editor
+  grids stay 4 wide and the small groups stay 3 wide. A group wider than every
+  column (the 7-icon Learn / Research row) is re-flowed to the column where it
+  leaves the fewest empty cells - 4+3 rather than 5+2.
+
+  Groups are placed widest-first into the column that can hold their natural
+  shape, then by shortest column, so the three columns end up close in height
+  (20 / 23 / 20 cells). Each column is trimmed to the widest block it holds, and
+  the canvas to the occupied area, giving **632x1028**.
+
+  Spacing: a block keeps one empty cell from its neighbours; its backing panel
+  bleeds 8px (twice the 4px cell inset) past the content, which narrows the visual
+  gap without costing grid cells. Headings are vertically centred in their cell
+  row with a 12px left margin.
+
+  Icons that ship without a background tile get a matching rounded tile so the
+  grid reads evenly, and every icon's internal ids are prefixed to keep 140+
+  gradients/clip paths from colliding. Short names from the old URLs (`js`, `py`,
+  `net`, ...) are mapped through the same table upstream used.- **Typing lines** cycle type -> hold -> delete -> hold, like the original
   service. The reveal is a `clipPath` whose width animates in `steps()`, with the
   per-segment timing function set on the keyframes so both the typing and the
   deleting halves are stepped. The rect ships with its final width inline, so a

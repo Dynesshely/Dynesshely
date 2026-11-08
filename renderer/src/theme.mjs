@@ -161,24 +161,30 @@ export const TYPING_LINES = [{ id: "hello", ...TYPING }];
  * by src/render/skills.mjs. Icon ids are the short names the old skill-icons URLs
  * used; the adapter maps them onto the vendored asset file names.
  */
+/**
+ * `perLine` keeps the column count each group had in the original skill-icons
+ * URLs (`perline=`), so the composition preserves the familiar 5-wide language
+ * grid, the 3x3 UI frameworks block, the 4-wide editor grid, and so on.
+ */
 export const SKILL_GROUPS = [
   {
     id: "programing-languages",
     title: "Programing Languages",
+    perLine: 5,
     icons: "cs,c,cpp,rust,dart,kotlin,java,py,html,css,js,ts,php,zig,visualbasic,lua,fortran,julia,pwsh,bash,haskell,swift,go,ruby,perl".split(","),
   },
-  { id: "databases", title: "Databases", icons: "sqlite,sqlserver,mongo,postgresql,mysql,redis".split(",") },
-  { id: "ui-frameworks", title: "UI Frameworks", icons: "avaloniaui,flutter,blazor,qt,tauri,electron,angular,vuejs,react".split(",") },
-  { id: "platforms-frameworks", title: "Platforms / Frameworks", icons: "net,nodejs,deno,spring,yew".split(",") },
-  { id: "package-build", title: "Package / Build", icons: "cmake,maven,gradle,vite,webpack,npm,yarn,pnpm".split(",") },
-  { id: "tools", title: "Tools", icons: "git,svn,postman,swagger,ipfs,nginx,tomcat,caddy,pm2,tor,terminal,thunderbird".split(",") },
-  { id: "game-engines", title: "Game Engines / 3D / AI / CV", icons: "unity,unreal,godot,cuda,pytorch,tensorflow,threejs,opencv".split(",") },
-  { id: "hardwares", title: "Hardwares", icons: "arduino,platformio".split(",") },
-  { id: "learn-research", title: "Learn / Research", icons: "mermaid,md,matlab,latex,jupyter,anaconda,numpy".split(",") },
-  { id: "ides-editors", title: "IDEs / Editors", icons: "visualstudio,vscode,xcode,rider,rustrover,clion,idea,androidstudio,resharper,pycharm,fleet,eclipse,vim,neovim,sublime,obsidian".split(",") },
-  { id: "medias-editors", title: "Medias Editors", icons: "photoshop,premiere,aftereffects,audition,illustrator,lightroom,davinci,blender,gimp,inkscape,figma,lunacy".split(",") },
-  { id: "cloud-services", title: "Cloud Services", icons: "github,gitlab,gitea,bitbucket,azure,aws,cloudflare,vercel,codepen".split(",") },
-  { id: "operating-systems", title: "Operating Systems", icons: "windows,apple,android,linux,ubuntu,debian,kali,arch,redhat,raspberrypi".split(",") },
-  { id: "virtual-environment", title: "Virtual Environment", icons: "proxmox,virtualbox,vmwareworkstation,wsl,docker".split(",") },
-  { id: "internet-browsers", title: "Internet Browsers", icons: "chrome,chromium,edge,firefox,brave,arcbrowser".split(",") },
+  { id: "databases", title: "Databases", perLine: 15, icons: "sqlite,sqlserver,mongo,postgresql,mysql,redis".split(",") },
+  { id: "ui-frameworks", title: "UI Frameworks", perLine: 3, icons: "avaloniaui,flutter,blazor,qt,tauri,electron,angular,vuejs,react".split(",") },
+  { id: "platforms-frameworks", title: "Platforms / Frameworks", perLine: 15, icons: "net,nodejs,deno,spring,yew".split(",") },
+  { id: "package-build", title: "Package / Build", perLine: 15, icons: "cmake,maven,gradle,vite,webpack,npm,yarn,pnpm".split(",") },
+  { id: "tools", title: "Tools", perLine: 6, icons: "git,svn,postman,swagger,ipfs,nginx,tomcat,caddy,pm2,tor,terminal,thunderbird".split(",") },
+  { id: "game-engines", title: "Game Engines / 3D / AI / CV", perLine: 15, icons: "unity,unreal,godot,cuda,pytorch,tensorflow,threejs,opencv".split(",") },
+  { id: "hardwares", title: "Hardwares", perLine: 15, icons: "arduino,platformio".split(",") },
+  { id: "learn-research", title: "Learn / Research", perLine: 15, icons: "mermaid,md,matlab,latex,jupyter,anaconda,numpy".split(",") },
+  { id: "ides-editors", title: "IDEs / Editors", perLine: 4, icons: "visualstudio,vscode,xcode,rider,rustrover,clion,idea,androidstudio,resharper,pycharm,fleet,eclipse,vim,neovim,sublime,obsidian".split(",") },
+  { id: "medias-editors", title: "Medias Editors", perLine: 4, icons: "photoshop,premiere,aftereffects,audition,illustrator,lightroom,davinci,blender,gimp,inkscape,figma,lunacy".split(",") },
+  { id: "cloud-services", title: "Cloud Services", perLine: 3, icons: "github,gitlab,gitea,bitbucket,azure,aws,cloudflare,vercel,codepen".split(",") },
+  { id: "operating-systems", title: "Operating Systems", perLine: 5, icons: "windows,apple,android,linux,ubuntu,debian,kali,arch,redhat,raspberrypi".split(",") },
+  { id: "virtual-environment", title: "Virtual Environment", perLine: 15, icons: "proxmox,virtualbox,vmwareworkstation,wsl,docker".split(",") },
+  { id: "internet-browsers", title: "Internet Browsers", perLine: 15, icons: "chrome,chromium,edge,firefox,brave,arcbrowser".split(",") },
 ];
